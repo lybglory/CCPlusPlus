@@ -1,0 +1,5 @@
+﻿  asm.c
+E:\LearingProject\CCPlusPlus\02ASM\asm.c(6,9): warning C4129: “d”: 不可识别的字符转义序列
+E:\LearingProject\CCPlusPlus\02ASM\asm.c(6,9): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 2 拥有了类型“int”
+E:\LearingProject\CCPlusPlus\02ASM\asm.c(12,9): warning C4129: “d”: 不可识别的字符转义序列
+  02ASM.vcxproj -> E:\LearingProject\CCPlusPlus\02ASM\Debug\02ASM.exe
