@@ -1,0 +1,3 @@
+﻿  main.c
+E:\LearingProject\CCPlusPlus\day3\main.c(3,1): warning C4305: “初始化”: 从“int”到“char”截断
+  day3.vcxproj -> E:\LearingProject\CCPlusPlus\day3\x64\Debug\day3.exe
