@@ -1,0 +1,6 @@
+﻿  main.cpp
+e:\ccplusproject\c-c--\day3\main.cpp(3): warning C4305: “初始化”: 从“int”到“char”截断
+e:\ccplusproject\c-c--\day3\main.cpp(3): warning C4309: “初始化”: 截断常量值
+e:\ccplusproject\c-c--\day3\main.cpp(13): warning C4309: “初始化”: 截断常量值
+e:\ccplusproject\c-c--\day3\main.cpp(16): warning C4326: “main”的返回类型应为“int”而非“void”
+  day3.vcxproj -> E:\CCPlusProject\C-C--\day3\Debug\day3.exe
