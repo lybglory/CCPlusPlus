@@ -41,11 +41,20 @@ void testPrintfOther() {
 	printf("##%8d##\n", 2019);
 	printf("##%6d##\n", 2019);
 	printf("##%06d##\n", 2019);
+	printf("##%3.3f##\n", 3.14592653);
+}
+void printfEveryNum() {
+	int num = 1231;
+	printf("1st:%d\n", num / 1000);
+	printf("2sec:%d\n", num % 1000/100);
+	printf("3thir:%d\n", num % 1000 % 100/10);
+	printf("4four:%d\n", num % 10);
 }
 void main() {
 	//testSystem();
 	//testCharLength();
 	//testCharAndString();
 	//testGetchar();
-	testPrintfOther();
+	//testPrintfOther();
+	printfEveryNum();
 }
