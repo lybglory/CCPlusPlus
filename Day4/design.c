@@ -145,10 +145,31 @@ void PrintfZhiShu() {
 	}
 }
 
+
+void ContinueWhile() {
+	// while continue实现计算1到100(含)之间的，除了能被7整除之外所有整数的和
+	int i = 1;
+	int sum = 0;
+	int sum7 = 0;
+	while (i<=100) {
+		if (i%7==0) {
+			//能被7整除的数，不进行累加，跳过循环，继续下一次循环
+			//i需要+1
+			i++;
+			continue;
+		}
+		//之和累加完了，i同样需要进行+1
+		sum += i;
+		i++;
+	}
+	printf("sum=%d", sum);
+}
+
 void main() {
 	//ifElseIfElse();
 	//SanMuMatch();
 	//DoWhileFunc();
 	//ForFunc();
-	PrintfZhiShu();
+	//PrintfZhiShu();
+	ContinueWhile();
 }
