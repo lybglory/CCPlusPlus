@@ -51,8 +51,32 @@ void WhileFunc() {
 		printf("a = %d\n", a);
 	}
 }
+void WhileFunc1() {
+	int num = 1;
+	int sum = 0;
+	while (num<=100) {
+		sum += num;
+		num++;
+	}
+	printf("sum=%d",sum);//sum=5050
+}
+
+void DoWhileFunc() {
+	int a = 10;
+	do
+	{
+		printf("a = %d\n", a);
+		a++;
+	} while (a < 10);
+	printf("======\n");
+	int b = 10;
+	while (b<10) {
+		printf("b = %d\n", b);
+		b++;
+	}
+}
 void main() {
 	//ifElseIfElse();
 	//SanMuMatch();
-	WhileFunc();
+	DoWhileFunc();
 }
