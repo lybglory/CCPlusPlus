@@ -42,7 +42,17 @@ void SanMuMatch() {
 	scanf("%d",&year);
 	printf(year >2018?"2019Äê":"2018Äê");
 }
+
+void WhileFunc() {
+	int a = 20;
+	while (a > 10)
+	{
+		scanf("%d", &a);
+		printf("a = %d\n", a);
+	}
+}
 void main() {
 	//ifElseIfElse();
-	SanMuMatch();
+	//SanMuMatch();
+	WhileFunc();
 }
