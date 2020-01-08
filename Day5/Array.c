@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-main() {
+main2() {
 	int num[5] = { 0 };
 	int numLength = sizeof(num) / sizeof(num[0]);
 	int maxNum = 0;
