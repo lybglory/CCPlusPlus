@@ -59,7 +59,16 @@ void AppendChars() {
 
 }
 
+void CharsIOput() {
+	char str[100];
+
+	printf("input string1 : \n");
+	scanf("%s", str);//scanf(“%s”,str)默认以空格分隔
+	printf("output:%s\n", str);
+
+}
 void main() {
 	//TypeWord();
-	AppendChars();
+	//AppendChars();
+	CharsIOput();
 }
