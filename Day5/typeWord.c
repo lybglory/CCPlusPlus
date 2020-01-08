@@ -34,6 +34,32 @@ void TypeWord() {
 	printf("\n输入的正确数：%g;\n正确率：%2.0f%%\n", score, (score/10)*100 );
 	printf("所消耗的时间：%ds", timeEnd - timeStart);
 }
+
+void AppendChars() {
+	char str1[] = "abcdef";
+	char str2[] = "123456";
+	char dst[100];
+
+	int i = 0;
+	while (str1[i] != 0)
+	{
+		dst[i] = str1[i];
+		i++;
+	}
+
+	int j = 0;
+	while (str2[j] != 0)
+	{
+		dst[i + j] = str2[j];
+		j++;
+	}
+	dst[i + j] = 0; //字符串结束符
+
+	printf("dst = %s\n", dst);
+
+}
+
 void main() {
-	TypeWord();
+	//TypeWord();
+	AppendChars();
 }
