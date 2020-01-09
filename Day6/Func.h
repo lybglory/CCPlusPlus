@@ -1,2 +1,2 @@
 #pragma once
-extern int GetMax(int nums[5]);
+extern int GetMax(int nums[],int n);
