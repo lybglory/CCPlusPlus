@@ -72,7 +72,7 @@ void PointerTest() {
 
 
 }
-void main() {
+void main1() {
 	//GetArryMax();
 	//PointerSize();
 	//PointerModify();
