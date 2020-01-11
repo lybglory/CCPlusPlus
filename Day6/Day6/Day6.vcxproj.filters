@@ -21,6 +21,15 @@
     <ClCompile Include="..\Func.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\Recursion.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LearRecursion.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\recursionN.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Func.h">

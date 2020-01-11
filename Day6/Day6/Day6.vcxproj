@@ -20,7 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Func.c" />
+    <ClCompile Include="..\LearRecursion.c" />
     <ClCompile Include="..\main.c" />
+    <ClCompile Include="..\Recursion.c" />
+    <ClCompile Include="..\recursionN.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Func.h" />
