@@ -22,6 +22,7 @@
     <ClCompile Include="..\Func.c" />
     <ClCompile Include="..\LearRecursion.c" />
     <ClCompile Include="..\main.c" />
+    <ClCompile Include="..\rabbit.c" />
     <ClCompile Include="..\Recursion.c" />
     <ClCompile Include="..\recursionN.cpp" />
   </ItemGroup>

@@ -4,7 +4,7 @@
 int sum = 0;
 int i = 1;
 int temp = 0;
-int Fac(int num) {
+int Facur(int num) {
 	temp = num;
 	if (num == 1) {
 		printf("当n=%d,Fac(%d)=1;退出递归\n", num, num);
@@ -22,5 +22,5 @@ void main2()
 {
 	int m;
 	scanf("%d", &m);
-	printf("递归求1+...+%d=%d\n", m, Fac(m));
+	printf("递归求1+...+%d=%d\n", m, Facur(m));
 }

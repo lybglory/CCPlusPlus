@@ -30,6 +30,9 @@
     <ClCompile Include="..\recursionN.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\rabbit.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Func.h">

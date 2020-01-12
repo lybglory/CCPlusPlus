@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int z = 1;
-double dTemp = 0;
+double recursValue = 0;
 //递归实现 
 double tencent(int n)//要返回double类型，不然溢出 
 {
@@ -10,21 +10,21 @@ double tencent(int n)//要返回double类型，不然溢出
 	{
 		printf("第%d阶结束递归:共有1种走法\n", n);
 
-		dTemp = 1.0;//return 1 不能这样写，溢出 
+		recursValue = 1.0;//return 1 不能这样写，溢出 
 	}
 	else if (n == 2)
 	{
 		printf("第%d阶结束递归:共有2种走法\n", n);
-		dTemp = 2.0;//return 2 不能这样写，溢出 
+		recursValue = 2.0;//return 2 不能这样写，溢出 
 	}
 	else
 	{
 		int temp = n;
 		printf("进入递归第%d次:第%d台阶走法=第%d台阶走法+第%d台阶走法;此时n=%d\n", z++, n, temp - 1, temp - 2, temp);
-		dTemp = tencent(n - 1) + tencent(n - 2);
-		printf("依次返回第%d次递归：共有 %2.0f 种走法\n", --z, dTemp);
+		recursValue = tencent(n - 1) + tencent(n - 2);
+		printf("依次返回第%d次递归：共有 %2.0f 种走法\n", --z, recursValue);
 	}
-	return dTemp;
+	return recursValue;
 }
 //for循环实现
 int For(int n)

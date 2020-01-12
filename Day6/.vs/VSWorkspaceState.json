@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Day6\\Debug",
+    "\\x64"
   ],
-  "SelectedNode": "\\main.c",
+  "SelectedNode": "\\Day6.sln",
   "PreviewInSolutionExplorer": false
 }
