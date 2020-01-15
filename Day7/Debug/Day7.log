@@ -1,0 +1,6 @@
+﻿  PointerChange.c
+E:\LearingProject\CCPlusPlus\Day7\PointerChange.c(9,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int *”
+E:\LearingProject\CCPlusPlus\Day7\PointerChange.c(9,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
+E:\LearingProject\CCPlusPlus\Day7\PointerChange.c(17,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int *”
+E:\LearingProject\CCPlusPlus\Day7\PointerChange.c(17,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
+  Day7.vcxproj -> E:\LearingProject\CCPlusPlus\Day7\Debug\Day7.exe
