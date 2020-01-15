@@ -6,6 +6,12 @@ void Swap(int *pa, int *pb) {
 		*pb = p;
 	printf("Swap：pa=%x,pb=%x\n", &pa, &pb);
 }
+void Swap2(int* pa, int* pb) {
+	int *p = pa;
+	pa = pb;
+	pb = p;
+	printf("Swap：pa=%x,pb=%x\n", &pa, &pb);
+}
 
 void main() {
 	printf("请随意输入2个整数：");
@@ -15,7 +21,8 @@ void main() {
 	printf("main：a=%x; b=%x\n", &a, &b);
 	printf("a=%d; b=%d\n", a, b);
 	if (a<b) {
-		Swap(pa, pb);
+		//Swap(pa, pb);
+		Swap2(pa,pb);
 	}
 	printf("交换以后：a=%d; b=%d\n", a, b);
 	//结果：a=2020;b=2019
