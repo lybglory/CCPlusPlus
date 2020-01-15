@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PointerChange.c">
+    <ClCompile Include="PointerChangeFail.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeSuccess.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

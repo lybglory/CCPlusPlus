@@ -1,12 +1,12 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-void ChangeValue1(int pa,int pb) {	
-	if (pa < pb) {
+void Change1(int pa,int pb) {	
+	//if (pa < pb) {
 		int p = pa;
 		pa = pb;
 		pb = p;
-	}
-	printf("ChangeValue1的地址：pa=%x,pb=%x\n", &pa, &pb);
+	//}
+	printf("Change1的地址：pa=%x,pb=%x\n", &pa, &pb);
 }
 
 void main1() {
@@ -16,6 +16,9 @@ void main1() {
 	scanf("%d,%d", pa, pb);//注意需要输入逗号，类型要匹配
 	printf("main中的变量地址：a=%x; b=%x\n", &a, &b);
 	printf("a=%d; b=%d\n", a, b);
-	ChangeValue1(a,b);
+	if (a<b) {
+		Change1(a, b);
+	}
+	
 	printf("改变以后：a=%d; b=%d\n", *pa, *pb);
 }
