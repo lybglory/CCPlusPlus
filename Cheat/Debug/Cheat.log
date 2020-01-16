@@ -1,0 +1,5 @@
+﻿  Cheat.c
+E:\LearingProject\CCPlusPlus\Cheat\Cheat.c(11,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“char *”
+E:\LearingProject\CCPlusPlus\Cheat\Cheat.c(11,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
+E:\LearingProject\CCPlusPlus\Cheat\Cheat.c(11,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 3 拥有了类型“double *”
+  Cheat.vcxproj -> E:\LearingProject\CCPlusPlus\Cheat\Debug\Cheat.exe
