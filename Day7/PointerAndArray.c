@@ -10,6 +10,13 @@ void ArrayPointer1() {
 
 }
 
+void ArrayPointer2() {
+	int num[15] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+	printf("%d\n",num[*(num+num[*(num+num[3])])]);
+	printf("*(num+4)=%d",*(num+4));
+}
+
 void main() {
-	ArrayPointer1();
+	//ArrayPointer1();
+	ArrayPointer2();
 }
