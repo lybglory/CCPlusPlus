@@ -16,7 +16,7 @@ void ArrayPointer2() {
 	printf("*(num+4)=%d",*(num+4));
 }
 
-void main() {
+void main3() {
 	//ArrayPointer1();
 	ArrayPointer2();
 }

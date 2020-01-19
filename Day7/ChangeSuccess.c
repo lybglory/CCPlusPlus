@@ -13,7 +13,7 @@ void Swap2(int* pa, int* pb) {
 	printf("Swap：pa=%x,pb=%x\n", &pa, &pb);
 }
 
-void main() {
+void main2() {
 	printf("请随意输入2个整数：");
 	int a, b;
 	int *pa = &a, *pb = &b;

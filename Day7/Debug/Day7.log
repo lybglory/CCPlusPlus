@@ -1,8 +1,3 @@
-﻿  ChangeSuccess.c
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(7,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int **”
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(7,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int **”
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(13,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int **”
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(13,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int **”
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(21,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\ChangeSuccess.c(21,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
+﻿  _04.c
+E:\LearingProject\CCPlusPlus\Day7\_04.c(7,23): warning C4018: “<”: 有符号/无符号不匹配
   Day7.vcxproj -> E:\LearingProject\CCPlusPlus\Day7\Debug\Day7.exe

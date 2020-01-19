@@ -139,7 +139,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ChangeSuccess.c" />
+    <ClCompile Include="PointerAndArray.c" />
     <ClCompile Include="PointerChangeFail.c" />
+    <ClCompile Include="_04.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

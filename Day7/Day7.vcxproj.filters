@@ -21,5 +21,11 @@
     <ClCompile Include="ChangeSuccess.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PointerAndArray.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_04.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
