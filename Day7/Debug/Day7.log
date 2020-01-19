@@ -1,3 +1,6 @@
-﻿  _04.c
-E:\LearingProject\CCPlusPlus\Day7\_04.c(8,23): warning C4018: “<”: 有符号/无符号不匹配
+﻿  _05.c
+E:\LearingProject\CCPlusPlus\Day7\_05.c(9,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int **”
+E:\LearingProject\CCPlusPlus\Day7\_05.c(9,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int **”
+E:\LearingProject\CCPlusPlus\Day7\_05.c(17,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int *”
+E:\LearingProject\CCPlusPlus\Day7\_05.c(17,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
   Day7.vcxproj -> E:\LearingProject\CCPlusPlus\Day7\Debug\Day7.exe

@@ -12,7 +12,7 @@ void printArrary(int *arr, int n) {
 	}
 }
 
-void main() {
+void main4() {
 	int arr[10] = { 0,1,2,3,4,5,6,7,8,9 };
 	int arrLength = sizeof(arr) / sizeof(arr[0]);
 	printf("main:arr数组总大小=%d\n",sizeof(arr));//5X4=20字节
