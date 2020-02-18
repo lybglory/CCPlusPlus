@@ -143,6 +143,8 @@
     <ClCompile Include="PointerChangeFail.c" />
     <ClCompile Include="_04.c" />
     <ClCompile Include="_05.c" />
+    <ClCompile Include="_06.c" />
+    <ClCompile Include="_07.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
