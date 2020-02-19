@@ -23,7 +23,7 @@ int GetCharArrLength(char *p_charArr,int n) {
 	return count;
 }
 
-void main() {
+void main07_06() {
 	//字符数组指定长度后，末尾自动补0结束
 	char charArr[32] = "";
 	int length = 0;
