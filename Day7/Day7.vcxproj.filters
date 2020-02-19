@@ -36,5 +36,11 @@
     <ClCompile Include="_07.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="07_05.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_07_06.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

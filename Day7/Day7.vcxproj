@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="07_05.c" />
     <ClCompile Include="ChangeSuccess.c" />
     <ClCompile Include="PointerAndArray.c" />
     <ClCompile Include="PointerChangeFail.c" />
@@ -145,6 +146,7 @@
     <ClCompile Include="_05.c" />
     <ClCompile Include="_06.c" />
     <ClCompile Include="_07.c" />
+    <ClCompile Include="_07_06.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

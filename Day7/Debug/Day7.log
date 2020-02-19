@@ -1,10 +1,2 @@
-﻿  _05.c
-E:\LearingProject\CCPlusPlus\Day7\_05.c(6,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(6,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(10,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(10,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(18,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 3 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(18,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 4 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(24,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 3 拥有了类型“int *”
-E:\LearingProject\CCPlusPlus\Day7\_05.c(24,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 4 拥有了类型“int *”
+﻿  _07_06.c
   Day7.vcxproj -> E:\LearingProject\CCPlusPlus\Day7\Debug\Day7.exe
