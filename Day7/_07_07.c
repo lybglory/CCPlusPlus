@@ -6,7 +6,7 @@ int *getNumPoint()
 	return &num;
 }
 
-void main()
+void main_07_07()
 {
 	*(getNumPoint()) = 2020;
 	printf("num = %d\n", num);
