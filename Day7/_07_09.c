@@ -1,5 +1,26 @@
 #include <stdio.h>
 void main() {
+	//"Uinty" "C++" "GoLang" "UE4" "2020-02-28"
+	//定义一个数组存放上面5个元素首元素地址
+	char *str[5] = { "Uinty","Cplus","GoLang","UE4","2020-02-28-2:00" };
+	//任意指针变量，都是4个字节(32bit平台)。数组大小=单个元素大小X元素个数=4X5=20
+	printf("数组大小=sizeof(str)=%d\n",sizeof(str));
+	int length = sizeof(str) / sizeof(str[0]);
+	for (size_t i = 0; i < length; i++)
+	{
+		printf("%s ",str[i]);
+	}
+	//仅获取"GoLang"的'L'
+	printf("\n%C",*(str[2]+2));
+
+	char str2[] = { "Unity Golang C++ UE4" };
+	printf("\n%s",&str2[6]);
+	char *str3[4] = { "Unity","Golang", "C++", "UE4" };
+	printf("\n%p", *str3[1]);
+
+}
+
+void main_07_09_00() {
 	//C语言中没有字符串这种数据类型，可以通过char的数组来替代；字符串一定是一个char的数组,
 	char str[] = "zi chan";
 	//"zi chan"有个字符，字符串必定以'\0'结尾。所以一共有8个
