@@ -17,7 +17,7 @@ void mystrcat(char *p_ch1, const char *p_ch2)
 	}
 }
 
-void main() {
+void main_07_19_00() {
 	char str[100] = "hello zi chan";
 	char str2[] = "20200228";
 
