@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="07_05.c" />
+    <ClCompile Include="07_10.c" />
     <ClCompile Include="ChangeSuccess.c" />
     <ClCompile Include="PointerAndArray.c" />
     <ClCompile Include="PointerChangeFail.c" />

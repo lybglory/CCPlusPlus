@@ -1,4 +1,2 @@
-﻿  _07_09.c
-E:\LearingProject\CCPlusPlus\Day7\_07_09.c(9,23): warning C4018: “<”: 有符号/无符号不匹配
-E:\LearingProject\CCPlusPlus\Day7\_07_09.c(19,9): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 1 拥有了类型“int”
+﻿  07_10.c
   Day7.vcxproj -> E:\LearingProject\CCPlusPlus\Day7\Debug\Day7.exe

@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main() {
+void mainmain_07_09_01() {
 	//"Uinty" "C++" "GoLang" "UE4" "2020-02-28"
 	//定义一个数组存放上面5个元素首元素地址
 	char *str[5] = { "Uinty","Cplus","GoLang","UE4","2020-02-28-2:00" };
