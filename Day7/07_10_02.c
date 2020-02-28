@@ -1,7 +1,7 @@
 #include <stdio.h>
 //num: 传参数的个数（包含可执行程序）
 //p：指针数组，指向输入的参数
-void main(int num, char *p[]) {
+void main07_10(int num, char *p[]) {
 	//指针数组，它是数组，每个元素都是指针
 	int i = 0;
 	printf("num = %d\n", num);
