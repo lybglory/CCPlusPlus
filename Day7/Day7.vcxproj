@@ -141,7 +141,7 @@
     <ClCompile Include="07_05.c" />
     <ClCompile Include="07_10.c" />
     <ClCompile Include="07_10_02.c" />
-    <ClCompile Include="07_11c.cpp" />
+    <ClCompile Include="07_11.c" />
     <ClCompile Include="ChangeSuccess.c" />
     <ClCompile Include="PointerAndArray.c" />
     <ClCompile Include="PointerChangeFail.c" />
