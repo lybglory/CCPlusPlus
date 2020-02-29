@@ -20,10 +20,29 @@ void TestSscanf() {
 	printf("ch1=%s; date=%d; ch2=%s\n", ch1,year,ch2);
 
 }
+void TestStrchr() {
+	char buff[64] = "TodayIs2020/2/29RainingDay";
+	
+	char *p_rec = NULL;
+	char* p_buff = buff;
+	int i = 0;
+	//strchr(字符串首地址,需要匹配的字符)，返回的是当前字符的地址(指针)
+	while (p_rec = strchr(p_buff, 'a')) {
+		i++;
+		//数组名表示数组的首地址，当前地址-首地址=元素下标
+		printf("当前a的地址=%x,字符数组首地址=%x\n", p_rec, p_buff);
+		printf("第%d个a的下标位置=%d\n",i,p_rec-buff);
+		//将字符'a'替换*
+		*p_rec = '*';
+		p_buff = p_rec + 1;
+	}
+	printf("%s", buff);
+}
 void main() {
 	//TestSprintf();
 	//TestSscanf();
-	TestSscanf();
+	//TestSscanf();
+	TestStrchr();
 }
 
 void main07_11() {
