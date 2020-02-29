@@ -38,11 +38,28 @@ void TestStrchr() {
 	}
 	printf("%s", buff);
 }
+
+void TestStrstr() {
+	char i_buff[64] = "";
+	fgets(i_buff, sizeof(i_buff),stdin);
+
+	char *p_rec = NULL;
+	char *p_buff = i_buff;
+	int i = 0;
+	char *p_filter = "**";
+	while (p_rec = strstr(p_buff, "sb")) {
+		//strncpy(目标字符串首地址,源字符首地址,拷贝个数)
+		strncpy(p_rec, p_filter,2);
+		p_buff = p_rec + strlen(p_filter);
+	}
+	printf("%s", i_buff);
+}
 void main() {
 	//TestSprintf();
 	//TestSscanf();
 	//TestSscanf();
-	TestStrchr();
+	//TestStrchr();
+	TestStrstr();
 }
 
 void main07_11() {
