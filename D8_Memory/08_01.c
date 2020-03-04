@@ -58,7 +58,18 @@ void TestMemcmp() {
 	{
 		printf("memcmp:str1<str2\n");
 	}
-
+	int n1[] = { 2020,03,05};
+	int n2[] = {2019,03,27};
+	if (memcmp(n1, n2, sizeof(n1)) == 0) {
+		printf("memcmp:n1=n2\n");
+	}
+	else if (memcmp(n1, n2, sizeof(n1)) > 0) {
+		printf("memcmp:n1>n2\n");
+	}
+	else if (memcmp(n1, n2, sizeof(n1)) < 0)
+	{
+		printf("memcmp:n1<n2\n");
+	}
 }
 void main() {
 	//TestMemSet();
