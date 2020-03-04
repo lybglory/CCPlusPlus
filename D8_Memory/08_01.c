@@ -1,7 +1,6 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-//内存操作函数需要引入string头文件
 #include <string.h>
 void TestMemSet() {
 	char buff[32] = "TodayIs 2020/3/4";
@@ -34,7 +33,35 @@ void TestMemcpy() {
 	PrintfMemcpy(dstArray,sizeof(dstArray));
 }
 
+void TestMemcmp() {
+	char str1[32] = "C\0Language";
+	char str2[32] = "Go\0Language";
+	printf("str1=%s,str2=%s\n",str1,str2);
+	if (strcmp(str1,str2)==0) {
+		printf("strcmp:str1=str2\n");
+	}
+	else if (strcmp(str1, str2) >0) {
+		printf("strcmp:str1>str2\n");
+	}
+	else if(strcmp(str1, str2) < 0)
+	{
+		printf("strcmp:str1<str2\n");
+	}
+	//memcmp
+	if (memcmp(str1, str2,sizeof(str1)) == 0) {
+		printf("memcmp:str1=str2\n");
+	}
+	else if (memcmp(str1, str2, sizeof(str1)) > 0) {
+		printf("memcmp:str1>str2\n");
+	}
+	else if (memcmp(str1, str2, sizeof(str1)) < 0)
+	{
+		printf("memcmp:str1<str2\n");
+	}
+
+}
 void main() {
 	//TestMemSet();
-	TestMemcpy();
+	//TestMemcpy();
+	TestMemcmp();
 }
