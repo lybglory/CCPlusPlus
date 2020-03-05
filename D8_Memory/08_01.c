@@ -71,8 +71,25 @@ void TestMemcmp() {
 		printf("memcmp:n1<n2\n");
 	}
 }
+
+void TestMalloc() {
+	int *p = NULL;
+	p = (int *)malloc(sizeof(int *));
+	printf("sizeof(int *)=%d,sizeof(p)=%d\n",sizeof(int *),sizeof(p));
+	if (p==NULL) {
+		perror("堆区申请失败");
+		return;
+	}
+	memset(p,0,sizeof(p));
+	*p = 2020;
+	printf("*p=%d\n",*p);
+	free(p);
+	printf("释放之后：p=%d\n", *p);
+}
+
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
-	TestMemcmp();
+	//TestMemcmp();
+	TestMalloc();
 }
