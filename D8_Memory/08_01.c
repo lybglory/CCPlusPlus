@@ -86,10 +86,44 @@ void TestMalloc() {
 	free(p);
 	printf("释放之后：p=%d\n", *p);
 }
+void IOArray(int *p,int n) {
+	printf("请输入%d个元素：",n);
+	for (size_t i = 0; i < n; i++)
+	{
+		scanf("%d",&p[i]);
+	}
+
+	for (size_t i = 0; i < n; i++)
+	{
+		printf("%d ",p[i]);
+	}
+}
+
+void TestMallocCase() {
+	printf("请输入元素个数:");
+	int num;
+	scanf("%d",&num);
+
+	int *p_array = NULL;
+	//申请
+	p_array = (int *)malloc(num*sizeof(int));
+	if(p_array==NULL){
+		perror("malloc申请失败");
+		return;
+	}
+	//清空内存
+	memset(p_array,0, num * sizeof(int));
+	//使用
+	IOArray(p_array,num);
+	//释放
+	free(p_array);
+
+}
 
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
 	//TestMemcmp();
-	TestMalloc();
+	//TestMalloc();
+	TestMallocCase();
 }

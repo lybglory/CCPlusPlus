@@ -1,3 +1,5 @@
 ﻿  08_01.c
 E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(13,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(91,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(96,23): warning C4018: “<”: 有符号/无符号不匹配
   D8_Memory.vcxproj -> E:\LearingProject\CCPlusPlus\D8_Memory\Debug\D8_Memory.exe
