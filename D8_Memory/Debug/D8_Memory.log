@@ -2,4 +2,6 @@
 E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(13,23): warning C4018: “<”: 有符号/无符号不匹配
 E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(91,23): warning C4018: “<”: 有符号/无符号不匹配
 E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(96,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(124,13): warning C4047: “return”:“int *”与“char (*)[32]”的间接级别不同
+E:\LearingProject\CCPlusPlus\D8_Memory\08_01.c(124): warning C4172: 返回局部变量或临时变量的地址: chr
   D8_Memory.vcxproj -> E:\LearingProject\CCPlusPlus\D8_Memory\Debug\D8_Memory.exe

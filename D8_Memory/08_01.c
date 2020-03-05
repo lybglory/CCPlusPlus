@@ -119,11 +119,27 @@ void TestMallocCase() {
 	free(p_array);
 
 }
+int *DoNotReturnAddr() {
+	char chr[32] = "Today is sunny day";
+	return &chr;
+}
+void DotOperaFreeSpace() {
+	int *p = (int *)malloc(sizeof(int));
+	memset(p,0,sizeof(int));
+	*p = 2020;
+	printf("p=%p; *p=%d\n",p,*p);
+	free(p);
+	printf("p=%p; *p=%d\n", p, *p);
+}
 
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
 	//TestMemcmp();
 	//TestMalloc();
-	TestMallocCase();
+	//TestMallocCase();
+	//char *p_chr = NULL;
+	//p_chr=DoNotReturnAddr();
+	//printf("*p_chr=%s",*p_chr);
+	DotOperaFreeSpace();
 }
