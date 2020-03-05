@@ -132,18 +132,49 @@ void DotOperaFreeSpace() {
 	printf("p=%p; *p=%d\n", p, *p);
 }
 void DotFreeSameHeapSpace() {
-	char strArray[32]= "Today is 2020/3/6 0:30";
+	char strArray[23]= "Today is 2020/3/6 0:30";
+	int factLength = strlen(strArray);
 	int strLength = sizeof(strArray) / sizeof(strArray[0]);
 	char *p_str = (char *)malloc(strLength);
-	printf("strLength=%d\n", strLength);
+	printf("strLength=%d,fact=%d\n", strLength,factLength);
 	memset(p_str,0, strLength);
 	p_str = strArray;
-	printf("*p_str=%s\n",p_str);
-	free(p_str);
+	printf("p_str=%s\n",p_str);
+	//free(p_str);
 	//不要重复释放
 	//free(p_str);
+	if (p_str!=NULL) {
+		free(p_str);
+		p_str = NULL;
+	}
 }
 
+void DotFreeSameHeapSpace2() {
+	int num = 2020;
+	int *p = (int*)malloc(sizeof(int));
+	memset(p,0,sizeof(int));
+	*p = num;
+	printf("*p=%d\n",*p);
+	free(p);
+}
+
+void DotFreeSameHeapSpace3() {
+	char strArr[] = "2020-3-6";
+	int strLeng = strlen(strArr);
+	char *p_str = (char*)malloc(sizeof(strLeng));
+	printf("length=%d,strLeng=%d\n", sizeof(char), strLeng);
+	//memset(p_str, 0, strLeng);
+	p_str = strArr;
+	printf("p_str=%s\n", p_str);
+	//free(p_str);
+	//不要重复释放
+	//free(p_str);
+	if (p_str != NULL) {
+		free(p_str);
+		p_str = NULL;
+	}
+
+}
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
@@ -154,5 +185,7 @@ void main() {
 	//p_chr=DoNotReturnAddr();
 	//printf("*p_chr=%s",*p_chr);
 	//DotOperaFreeSpace();
-	DotFreeSameHeapSpace();
+	//DotFreeSameHeapSpace();
+	//DotFreeSameHeapSpace2();
+	DotFreeSameHeapSpace3();
 }
