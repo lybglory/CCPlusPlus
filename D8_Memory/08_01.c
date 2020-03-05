@@ -131,6 +131,18 @@ void DotOperaFreeSpace() {
 	free(p);
 	printf("p=%p; *p=%d\n", p, *p);
 }
+void DotFreeSameHeapSpace() {
+	char strArray[32]= "Today is 2020/3/6 0:30";
+	int strLength = sizeof(strArray) / sizeof(strArray[0]);
+	char *p_str = (char *)malloc(strLength);
+	printf("strLength=%d\n", strLength);
+	memset(p_str,0, strLength);
+	p_str = strArray;
+	printf("*p_str=%s\n",p_str);
+	free(p_str);
+	//不要重复释放
+	//free(p_str);
+}
 
 void main() {
 	//TestMemSet();
@@ -141,5 +153,6 @@ void main() {
 	//char *p_chr = NULL;
 	//p_chr=DoNotReturnAddr();
 	//printf("*p_chr=%s",*p_chr);
-	DotOperaFreeSpace();
+	//DotOperaFreeSpace();
+	DotFreeSameHeapSpace();
 }
