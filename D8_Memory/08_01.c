@@ -183,7 +183,7 @@ int *TestMallocSpace(int *pointer) {
 void MallocPTP(int **pointer) {
 	*pointer = (int*)malloc(sizeof(int));
 }
-void main() {
+void main_08_01() {
 	//TestMemSet();
 	//TestMemcpy();
 	//TestMemcmp();

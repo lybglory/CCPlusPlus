@@ -18,5 +18,16 @@
     <ClCompile Include="08_01.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MallocCase.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MallocMain.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MallocCase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -139,6 +139,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="08_01.c" />
+    <ClCompile Include="MallocCase.c" />
+    <ClCompile Include="MallocMain.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MallocCase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
