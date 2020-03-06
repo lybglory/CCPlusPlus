@@ -175,6 +175,11 @@ void DotFreeSameHeapSpace3() {
 	}
 
 }
+
+int *TestMallocSpace(int *pointer) {
+	pointer = NULL;
+	return pointer = (int *)malloc(sizeof(int));
+}
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
@@ -187,5 +192,9 @@ void main() {
 	//DotOperaFreeSpace();
 	//DotFreeSameHeapSpace();
 	//DotFreeSameHeapSpace2();
-	DotFreeSameHeapSpace3();
+	//DotFreeSameHeapSpace3();
+	int *p = NULL;
+	p =TestMallocSpace(p);
+	*p = 2020;
+	printf("*p=%d\n",*p);
 }
