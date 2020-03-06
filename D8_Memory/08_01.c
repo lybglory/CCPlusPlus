@@ -197,4 +197,8 @@ void main() {
 	p =TestMallocSpace(p);
 	*p = 2020;
 	printf("*p=%d\n",*p);
+	if (p!=NULL) {
+		free(p);
+		p = NULL;
+	}
 }
