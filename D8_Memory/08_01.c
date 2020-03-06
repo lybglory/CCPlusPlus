@@ -180,6 +180,9 @@ int *TestMallocSpace(int *pointer) {
 	pointer = NULL;
 	return pointer = (int *)malloc(sizeof(int));
 }
+void MallocPTP(int **pointer) {
+	*pointer = (int*)malloc(sizeof(int));
+}
 void main() {
 	//TestMemSet();
 	//TestMemcpy();
@@ -193,6 +196,7 @@ void main() {
 	//DotFreeSameHeapSpace();
 	//DotFreeSameHeapSpace2();
 	//DotFreeSameHeapSpace3();
+	/*
 	int *p = NULL;
 	p =TestMallocSpace(p);
 	*p = 2020;
@@ -201,4 +205,16 @@ void main() {
 		free(p);
 		p = NULL;
 	}
+	*/
+
+	int *p = NULL;
+	MallocPTP(&p);
+	*p = 2020;
+	printf("*p=%d\n", *p);
+	if (p != NULL) {
+		free(p);
+		p = NULL;
+	}
+	
+
 }
