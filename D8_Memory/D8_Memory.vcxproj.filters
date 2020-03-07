@@ -24,6 +24,9 @@
     <ClCompile Include="MallocMain.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryStr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MallocCase.h">

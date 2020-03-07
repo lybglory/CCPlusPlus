@@ -1,6 +1,2 @@
-﻿  MallocCase.c
-E:\LearingProject\CCPlusPlus\D8_Memory\MallocCase.c(10,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“int **”
-E:\LearingProject\CCPlusPlus\D8_Memory\MallocCase.c(15,23): warning C4018: “<”: 有符号/无符号不匹配
-E:\LearingProject\CCPlusPlus\D8_Memory\MallocCase.c(20,23): warning C4018: “<”: 有符号/无符号不匹配
-E:\LearingProject\CCPlusPlus\D8_Memory\MallocCase.c(27,23): warning C4018: “<”: 有符号/无符号不匹配
+﻿  MemoryStr.c
   D8_Memory.vcxproj -> E:\LearingProject\CCPlusPlus\D8_Memory\Debug\D8_Memory.exe

@@ -141,6 +141,7 @@
     <ClCompile Include="08_01.c" />
     <ClCompile Include="MallocCase.c" />
     <ClCompile Include="MallocMain.c" />
+    <ClCompile Include="MemoryStr.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MallocCase.h" />
