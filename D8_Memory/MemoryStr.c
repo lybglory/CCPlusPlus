@@ -4,20 +4,34 @@
 #include <string.h>
 void TestStrtok() {
 	char buff[32] = "Today:is:202/3/7:sunny:day";
-	char *array[32] = {buff,NULL};
+	char filter[2] = ":";
+	char *cutArray[32] = {NULL};
 	int i = 0;
-	while ((array[i]=strtok(array[i],":"))!=NULL)
+	cutArray[i] = strtok(buff, filter);
+	while (cutArray[i]!=NULL)
 	{
+		int temp = i;
+		printf("array[%d]=%s\n", i, cutArray[temp]);
 		i++;
-	}
-	//遍历元素。不知道长度用while
-	i = 0;
-	while (array[i] != NULL)
-	{
-		printf("array[%d]=%s\n", i, array[i++]);
+		cutArray[i] = strtok(NULL, filter);
 	}
 	
 }
+void TestStrokStand() {
+	char text[32] = "Today:is:202/3/7:sunny:day";
+	char filter[2] = ":";
+	char *cutText=strtok(text, filter);
+	while (cutText!=NULL)
+	{
+		printf("cuText=%s",cutText);
+		cutText = strtok(NULL, filter);
+		
+	}
+	//遍历元素。不知道长度用while
+	
+
+}
 void main() {
 	TestStrtok();
+	//TestStrokStand();
 }
