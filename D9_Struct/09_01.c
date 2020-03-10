@@ -9,6 +9,12 @@ struct Person
 	char Gender;
 };
 
+struct Resume {
+	struct Person personInfo;
+	char education[10];
+	char skill[20];
+	int tel;
+};
 void LearnStruct() {
 	struct Person Chan = {"LXM",0,'M'};
 	printf("name=%s; age=%d; sex=%c\n",Chan.name,Chan.age,Chan.Gender);
@@ -78,12 +84,20 @@ void IOStruArr() {
 		printf("name=%s; age=%d; gender=%c\n", struArr[i].name, struArr[i].age, struArr[i].Gender);
 	}
 }
-
+void StruNestStru() {
+	struct Resume binResume = { {"lyb",30,'F'},"BS","Full stack",10010 };
+	printf("name=%s; age=%d; gender=%c;\nedu=%s; skill=%s; tel=%d\n",
+		binResume.personInfo.name,
+		binResume.personInfo.age,
+		binResume.personInfo.Gender,
+		binResume.education,binResume.skill,binResume.tel);
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
 	//StruAssignt();
 	//SwapStructValue();
 	//StructArrary();
-	IOStruArr();
+	//IOStruArr();
+	StruNestStru();
 }

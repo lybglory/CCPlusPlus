@@ -1,5 +1,5 @@
 ﻿  09_01.c
-E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(62,23): warning C4018: “<”: 有符号/无符号不匹配
-E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(72,23): warning C4018: “<”: 有符号/无符号不匹配
-E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(76,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(68,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(78,23): warning C4018: “<”: 有符号/无符号不匹配
+E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(82,23): warning C4018: “<”: 有符号/无符号不匹配
   D9_Struct.vcxproj -> E:\LearingProject\CCPlusPlus\D9_Struct\Debug\D9_Struct.exe
