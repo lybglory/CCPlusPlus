@@ -56,9 +56,20 @@ void SwapStructValue() {
 	printf("after Mei:name=%s; age=%d; sex=%c\n", Mei.name, Mei.age, Mei.Gender);
 }
 
+void StructArrary() {
+	struct Person StruArr[3] = { {"LYB",30,'M'},{"LXM",30,'F'},{"LZC",1,'F'} };
+	int struArrLength = sizeof(StruArr) / sizeof(StruArr[0]);
+	for (size_t i = 0; i < struArrLength; i++)
+	{
+		printf("name=%s; age=%d; gender=%c\n",StruArr[i].name,StruArr[i].age,StruArr[i].Gender);
+	}
+}
+
+
 void main() {
 	//LearnStruct();
 	//InputStruct();
 	//StruAssignt();
-	SwapStructValue();
+	//SwapStructValue();
+	StructArrary();
 }
