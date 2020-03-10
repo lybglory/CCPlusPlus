@@ -42,9 +42,23 @@ void StruAssignt() {
 	memcpy(&Tang, &Chan, sizeof(struct Person));
 	printf("Tang:name=%s; age=%d; sex=%c\n", Tang.name, Tang.age, Tang.Gender);
 }
+void SwapStructValue() {
+	struct Person Chan = { "LZC",1,'F' };
+	struct Person Mei = { "LXM",30,'F' };
+	printf("before Chan:name=%s;age=%d;sex=%c\n", Chan.name, Chan.age, Chan.Gender);
+	printf("before Mei:name=%s; age=%d; sex=%c\n", Mei.name, Mei.age, Mei.Gender);
+	//方法：定义第三方相同结构体类型变量
+	struct Person structTemp;
+	structTemp = Chan;
+	Chan = Mei;
+	Mei = structTemp;
+	printf("after Chan:name=%s;age=%d; sex=%c\n", Chan.name, Chan.age, Chan.Gender);
+	printf("after Mei:name=%s; age=%d; sex=%c\n", Mei.name, Mei.age, Mei.Gender);
+}
 
 void main() {
 	//LearnStruct();
 	//InputStruct();
-	StruAssignt();
+	//StruAssignt();
+	SwapStructValue();
 }
