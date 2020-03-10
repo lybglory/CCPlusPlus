@@ -25,7 +25,26 @@ void InputStruct() {
 	printf("name=%s; age=%d; sex=%c\n", Chan.name, Chan.age, Chan.Gender);
 }
 
+void StruAssignt() {
+	struct Person Chan = { "LZC",1,'F' };
+	struct Person Tang;
+	//方法1：成员变量逐个赋值
+	strcpy(Tang.name,Chan.name);
+	Tang.age = Chan.age;
+	Tang.Gender = Chan.Gender;
+	printf("Tang:name=%s; age=%d; sex=%c\n", Tang.name, Tang.age, Tang.Gender);
+
+	//方法2:推荐(底层实现就是通过memcpy)
+	Tang = Chan;
+	printf("Tang:name=%s; age=%d; sex=%c\n", Tang.name, Tang.age, Tang.Gender);
+
+	//方法3：底层实现
+	memcpy(&Tang, &Chan, sizeof(struct Person));
+	printf("Tang:name=%s; age=%d; sex=%c\n", Tang.name, Tang.age, Tang.Gender);
+}
+
 void main() {
 	//LearnStruct();
-	InputStruct();
+	//InputStruct();
+	StruAssignt();
 }
