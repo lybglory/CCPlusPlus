@@ -64,12 +64,26 @@ void StructArrary() {
 		printf("name=%s; age=%d; gender=%c\n",StruArr[i].name,StruArr[i].age,StruArr[i].Gender);
 	}
 }
-
+void IOStruArr() {
+	struct Person struArr[3];
+	memset(struArr, 0, sizeof(struArr));
+	int struArrLen = sizeof(struArr) / sizeof(struArr[0]);
+	printf("Please enter a member of the structure array.\nFormart:name age gender\n");
+	for (size_t i = 0; i < struArrLen; i++)
+	{
+		scanf("%s %d %c",struArr[i].name,&struArr[i].age,&struArr[i].Gender);
+	}
+	for (size_t i = 0; i < struArrLen; i++)
+	{
+		printf("name=%s; age=%d; gender=%c\n", struArr[i].name, struArr[i].age, struArr[i].Gender);
+	}
+}
 
 void main() {
 	//LearnStruct();
 	//InputStruct();
 	//StruAssignt();
 	//SwapStructValue();
-	StructArrary();
+	//StructArrary();
+	IOStruArr();
 }
