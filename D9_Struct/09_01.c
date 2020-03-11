@@ -92,6 +92,15 @@ void StruNestStru() {
 		binResume.personInfo.Gender,
 		binResume.education,binResume.skill,binResume.tel);
 }
+
+void StructPointer() {
+	struct Person bin = {"lyb",18,'M'};
+	struct Person *p_stru = NULL;
+	p_stru = &bin;
+	printf("bin:name=%s; age=%d; gender=%c\n", bin.name, bin.age, bin.Gender);
+	printf("*p_stu:name=%s; age=%d; gender=%c\n", (*p_stru).name, (*p_stru).age, (*p_stru).Gender);
+	printf("p_stu->:name=%s; age=%d; gender=%c\n", p_stru->name, p_stru->age, p_stru->Gender);
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -99,5 +108,6 @@ void main() {
 	//SwapStructValue();
 	//StructArrary();
 	//IOStruArr();
-	StruNestStru();
+	//StruNestStru();
+	StructPointer();
 }
