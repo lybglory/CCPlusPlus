@@ -116,7 +116,7 @@ void HeapstruArr() {
 		//scanf("%s %d %c",p_pr[i].name, &p_pr[i].age,&p_pr[i].sex);
 		scanf("%s %d %c", (*(p_pr+i)).name, &(*(p_pr + i)).age, &(*(p_pr + i)).sex);
 	}
-	for (size_t i = 0; i < num; i++){
+	for (int i = 0; i < num; i++){
 		//printf("p_pr+%d->name=%s; age=%d; sex=%c\n", i,(p_pr+i)->name, (p_pr + i)->age, (p_pr + i)->sex);
 		printf("p_pr[%d].name=%s; age=%d; sex=%c\n",i,p_pr[i].name, p_pr[i].age, p_pr[i].sex);
 	}
@@ -130,6 +130,22 @@ void  StruPointerFunc(struct Person *p_stru) {
 	printf("Please input msg.Format:name age sex\n");
 	scanf("%s %d %c",p_stru->name,&p_stru->age, &p_stru->sex);
 }
+
+void StruArrFunc(struct Person *p_struArr,int len) {
+	printf("Please input %d user msg.Format:name age sex\n",len);
+	for (size_t i = 0; i < len; i++)
+	{	//scanf("%s %d %c", p_struArr[i].name, &p_struArr[i].age,&p_struArr[i].sex);
+
+		scanf("%s %d %c", (p_struArr + i)->name, &(p_struArr + i)->age, &(p_struArr + i)->sex);
+		scanf("%s %d %c", (p_struArr + i)->name, &(p_struArr + i)->age, &(p_struArr + i)->sex);
+	}
+	//±éÀúÊý×é
+	for (size_t i = 0; i < len; i++)
+	{
+		printf("name=%s; age=%d; sex=%c\n", (p_struArr+i)->name, (p_struArr + i)->age, (p_struArr + i)->sex);
+		//printf("name=%s; age=%d; sex=%c\n", p_struArr[i].name, p_struArr[i].age, p_struArr[i].sex);
+	}
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -140,8 +156,15 @@ void main() {
 	//StruNestStru();
 	//StructPointer();
 	//HeapstruArr();
-	struct Person mei;
+	/*struct Person mei;
 	memset(&mei,0,sizeof(struct Person));
 	StruPointerFunc(&mei);
-	printf("name=%s; age=%d; sex=%c", mei.name,mei.age,mei.sex);
+	printf("name=%s; age=%d; sex=%c", mei.name,mei.age,mei.sex);*/
+
+	struct Person mei[3];
+	memset(mei, 0, sizeof(mei));
+	int n = sizeof(mei) / sizeof(mei[0]);
+	printf("Array length=%d;\nsizeof(mei)=%d;\nsizeof(struct Person)=%d\n", n, sizeof(mei), sizeof(struct Person));
+	StruArrFunc(mei,n);
+
 }
