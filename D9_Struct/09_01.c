@@ -125,6 +125,11 @@ void HeapstruArr() {
 		p_pr = NULL;
 	}
 }
+
+void  StruPointerFunc(struct Person *p_stru) {
+	printf("Please input msg.Format:name age sex\n");
+	scanf("%s %d %c",p_stru->name,&p_stru->age, &p_stru->sex);
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -134,5 +139,9 @@ void main() {
 	//IOStruArr();
 	//StruNestStru();
 	//StructPointer();
-	HeapstruArr();
+	//HeapstruArr();
+	struct Person mei;
+	memset(&mei,0,sizeof(struct Person));
+	StruPointerFunc(&mei);
+	printf("name=%s; age=%d; sex=%c", mei.name,mei.age,mei.sex);
 }
