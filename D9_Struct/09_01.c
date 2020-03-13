@@ -146,6 +146,20 @@ void StruArrFunc(struct Person *p_struArr,int len) {
 		//printf("name=%s; age=%d; sex=%c\n", p_struArr[i].name, p_struArr[i].age, p_struArr[i].sex);
 	}
 }
+struct Loan {
+	double total;
+	int years;
+	char *type;//指针变量作为struct member
+};
+void PntAsStruMemb() {
+	//type保存的是"Equal payment of principal"文字常量区首元素的地址
+	struct Loan house = { 48,30,"Equal payment of principal" };
+	printf("total=%0.0fW years=%d type=%s\n", house.total, house.years, house.type);
+	house.type = "Equality corpus and interest";
+	printf("total=%0.0fW years=%d type=%s\n", house.total, house.years, house.type);
+	//报错，不允许访问。因为文字常量区只读。
+	//house.type[0] = '*';
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -161,10 +175,10 @@ void main() {
 	StruPointerFunc(&mei);
 	printf("name=%s; age=%d; sex=%c", mei.name,mei.age,mei.sex);*/
 
-	struct Person mei[3];
+	/*struct Person mei[3];
 	memset(mei, 0, sizeof(mei));
 	int n = sizeof(mei) / sizeof(mei[0]);
 	printf("Array length=%d;\nsizeof(mei)=%d;\nsizeof(struct Person)=%d\n", n, sizeof(mei), sizeof(struct Person));
-	StruArrFunc(mei,n);
-
+	StruArrFunc(mei,n);*/
+	PntAsStruMemb();
 }
