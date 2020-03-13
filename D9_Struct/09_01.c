@@ -158,7 +158,24 @@ void PntAsStruMemb() {
 	house.type = "Equality corpus and interest";
 	printf("total=%0.0fW years=%d type=%s\n", house.total, house.years, house.type);
 	//报错，不允许访问。因为文字常量区只读。
-	//house.type[0] = '*';
+	house.type[0] = '*';
+}
+
+void PntHeapStruMem() {
+	//结构体成员指向堆区
+	struct Loan house = { 48,30,NULL };
+	house.type=(char *)malloc(sizeof("等额本金"));
+	memset(house.type, 0, sizeof("等额本金"));
+	strcpy(house.type, "等额本金");
+	printf("total=%0.0fW years=%d type=%s\n", house.total, house.years, house.type);
+	//释放空间
+	if (house.type != NULL) {
+		free(house.type);
+		house.type = NULL;
+	}
+
+
+
 }
 void main() {
 	//LearnStruct();
@@ -180,5 +197,6 @@ void main() {
 	int n = sizeof(mei) / sizeof(mei[0]);
 	printf("Array length=%d;\nsizeof(mei)=%d;\nsizeof(struct Person)=%d\n", n, sizeof(mei), sizeof(struct Person));
 	StruArrFunc(mei,n);*/
-	PntAsStruMemb();
+	//PntAsStruMemb();
+	PntHeapStruMem();
 }
