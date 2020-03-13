@@ -198,6 +198,41 @@ void StruAndMemHeap() {
 		house = NULL;
 	}
 }
+
+void ConstMdStruPntMem() {
+	struct Loan hse1 = {48,30,"House1"};
+	struct Loan hse2 = { 35,20,"House2" };
+
+	printf("house1=%x {%x %x %x};\n",&hse1, &hse1.total, &hse1.years, &hse1.type);
+	printf("house2=%x {%x %x %x};\n",&hse2, &hse2.total, &hse2.years, &hse2.type);
+
+	//const在*的左边:修饰的是 指向空间的内容只读。地址可读可写。
+	//对于结构体来说，修饰的是结构体指向的空内容，也就是成员内容只读(成员地址其实也是只读)，结构体可读可写
+	const struct Loan *repay1 = &hse1;
+	printf("repay1：%0.0lfW %d %s\n", repay1->total, repay1->years, repay1->type);
+	//repay1->total = 80;	//报错，成员内容只读
+	repay1=&hse2;			//结构体地址可读可写
+	printf("repay1：%0.0lfW %d %s\n", repay1->total, repay1->years, repay1->type);
+	printf("repay1：%x %x %x\n", &repay1->total, &repay1->years, &repay1->type);
+
+	struct Loan car = { 20,10,"car" };
+	//const在*的右边:修饰的是 地址。地址只读，指向空间的可读可写。
+	//对于结构体来说，修饰的是结构体的地址，也就是地址只读，指向空间的内容可读可写
+	struct Loan *const repay2 = &hse2;
+	//repay2 = &hse1;			//报错，结构体地址只读
+	*repay2 = car;				//结构体指向的内容可读可写
+	repay2->type = "等额本金";	//同理：成员内容可读可写
+	printf("repay2：%0.0lfW %d %s\n", repay2->total, repay2->years, repay2->type);
+	printf("repay2：%x %x %x\n", &repay2->total, &repay2->years, &repay2->type);
+
+	struct Loan const *edu = &hse1;
+	printf("edu：%x %x %x\n", &edu->total, &edu->years, &edu->type);
+	edu =&car;
+	printf("edu：%0.0lf %d %s\n", edu->total, edu->years, edu->type);
+
+
+
+}
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -218,7 +253,9 @@ void main() {
 	int n = sizeof(mei) / sizeof(mei[0]);
 	printf("Array length=%d;\nsizeof(mei)=%d;\nsizeof(struct Person)=%d\n", n, sizeof(mei), sizeof(struct Person));
 	StruArrFunc(mei,n);*/
+
 	//PntAsStruMemb();
 	//PntHeapStruMem();
-	StruAndMemHeap();
+	//StruAndMemHeap();
+	ConstMdStruPntMem();
 }
