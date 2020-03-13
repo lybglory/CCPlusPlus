@@ -173,9 +173,30 @@ void PntHeapStruMem() {
 		free(house.type);
 		house.type = NULL;
 	}
+}
+void StruAndMemHeap() {
+	struct Loan *house=NULL;
+	//结构体指向堆区
+	house = (struct Loadn *)malloc(sizeof(struct Loan));
+	memset(house, 0, sizeof(struct Loan));
+	printf("please intput loan mesg.\nFotmat:total years type:\n");
 
-
-
+	//结构体成员向堆区申请空间，+1表示有一个字节存储'\0'
+	house->type=(char *)malloc(sizeof("等额本金"));
+	memset(house->type,0, sizeof("等额本金"));
+	//输入double类型数据时，格式必须是%lf。输出可以是%f也可以是%lf
+	scanf("%lf %d %s", &house->total, &house->years, house->type);
+	printf("&house->total=%lf; &house->years=%d; house->type=%s\n", house->total, house->years, house->type);
+	printf("total=%0.0lfW years=%d type=%s\n", house->total, house->years, house->type);
+	//释放空间,先释放结构体成员。在释放结构体
+	if (house->type != NULL) {
+		free(house->type);
+		house->type= NULL;
+	}
+	if (house != NULL) {
+		free(house);
+		house = NULL;
+	}
 }
 void main() {
 	//LearnStruct();
@@ -198,5 +219,6 @@ void main() {
 	printf("Array length=%d;\nsizeof(mei)=%d;\nsizeof(struct Person)=%d\n", n, sizeof(mei), sizeof(struct Person));
 	StruArrFunc(mei,n);*/
 	//PntAsStruMemb();
-	PntHeapStruMem();
+	//PntHeapStruMem();
+	StruAndMemHeap();
 }
