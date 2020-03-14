@@ -23,4 +23,6 @@ E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(226,9): warning C4477: “printf�
 E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(229,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“const double *”
 E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(229,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“const int *”
 E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(229,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 3 拥有了类型“char *const *”
+E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(235,1): warning C4047: “初始化”:“const int *”与“int”的间接级别不同
+E:\LearingProject\CCPlusPlus\D9_Struct\09_01.c(236,1): warning C4047: “初始化”:“const int *”与“int”的间接级别不同
   D9_Struct.vcxproj -> E:\LearingProject\CCPlusPlus\D9_Struct\Debug\D9_Struct.exe

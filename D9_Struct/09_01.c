@@ -234,9 +234,23 @@ void ConstMdStruPntMem() {
 void TestConstPoint() {
 	const int *p_cnst = 2020;
 	int const *p_cnst2 = 5;
-	int num = 0314;
-	//*p_cnst = 0314;		//错误，不能通过指针改变变量的值
+	int num = 314;
+	int year= 2019;
+	//*p_cnst = 314;		//错误，不能通过指针改变变量的值
 	p_cnst = &num;			//正确，可以通过其他的引用来改变变量的值
+	p_cnst = &year;
+	printf("*p_cnst=%d\n", *p_cnst);
+}
+
+void PointerConst() {
+	int year = 2020;
+	int *const p_cnst=&year;//要马上初始化(只能初始化地址)，之后无法赋值
+	int date = 314;
+	//p_cnst = &date;		//错误：指针常量指的是指针本身是一个常量。不能指向其他地址
+	*p_cnst = date;			//正确：地址中指向的内容可以改变
+	int days = 365;
+	const int *const p_day = &days;//这里只能初始化地址
+	printf("*p_cnst=%d *p_day=%d\n",*p_cnst,*p_day);
 }
 void main() {
 	//LearnStruct();
@@ -263,5 +277,6 @@ void main() {
 	//PntHeapStruMem();
 	//StruAndMemHeap();
 	//ConstMdStruPntMem();
-	TestConstPoint();
+	//TestConstPoint();
+	PointerConst();
 }
