@@ -225,10 +225,6 @@ void ConstMdStruPntMem() {
 	printf("repay2：%0.0lfW %d %s\n", repay2->total, repay2->years, repay2->type);
 	printf("repay2：%x %x %x\n", &repay2->total, &repay2->years, &repay2->type);
 
-	struct Loan const *edu = &hse1;
-	printf("edu：%x %x %x\n", &edu->total, &edu->years, &edu->type);
-	edu =&car;
-	printf("edu：%0.0lf %d %s\n", edu->total, edu->years, edu->type);
 }
 
 void TestConstPoint() {
@@ -251,6 +247,29 @@ void PointerConst() {
 	int days = 365;
 	const int *const p_day = &days;//这里只能初始化地址
 	printf("*p_cnst=%d *p_day=%d\n",*p_cnst,*p_day);
+}
+union Category
+{
+	int class;		//班级
+	char *title;	//职称
+};
+union Info {
+	double deposit;
+	int family;
+	char *estate;
+};
+void UnionStru() {
+	char *str = "house";
+	union Info bin;
+	bin.deposit = 90.19;
+	bin.family = 7;
+	//指针成员写在最后，以防不是最后成员被别的成员覆盖掉报错。
+	bin.estate = str;
+
+	printf("%0.2lf %d %s eastate=%x",bin.deposit,bin.family,bin.estate,bin.estate);
+	//union Category lxm = {1,"national"};		//不能初始化全部成员，他们占用同一段存储单元
+	//union Category lxm = {lxm.title="national"};//允许对指定的一个成员初始化
+	
 }
 void main() {
 	//LearnStruct();
@@ -278,5 +297,6 @@ void main() {
 	//StruAndMemHeap();
 	//ConstMdStruPntMem();
 	//TestConstPoint();
-	PointerConst();
+	//PointerConst();
+	UnionStru();
 }
