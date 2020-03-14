@@ -264,13 +264,74 @@ void UnionStru() {
 	bin.deposit = 90.19;
 	bin.family = 7;
 	//指针成员写在最后，以防不是最后成员被别的成员覆盖掉报错。
-	bin.estate = str;
-
-	printf("%0.2lf %d %s eastate=%x",bin.deposit,bin.family,bin.estate,bin.estate);
-	//union Category lxm = {1,"national"};		//不能初始化全部成员，他们占用同一段存储单元
-	//union Category lxm = {lxm.title="national"};//允许对指定的一个成员初始化
-	
+	bin.estate = str;//
+	printf("%0.2lf %x %s eastate=%x",bin.deposit,bin.family,bin.estate,bin.estate);
 }
+
+void UnionTest2() {
+	//union Category lxm = {1,"national"};		//错误：不能初始化全部成员，他们占用同一段存储单元
+	union Category lzc = { 0 };//正确，对第一个成员初始化
+    union Category lxm = {lxm.title="national"};//允许对指定的一个成员初始化
+}
+
+union Data {
+	int n;
+	short sh;
+	char chr;
+};
+void UnionTest3() {
+	union Data dt;
+	//每1位十六进制 对应 4位二进制
+	//每1位八进制   对应 3位二进制
+	//每3位二进制   对应 1位八进制
+	dt.n = 0x87654321;
+	printf("dt.n=%d; dt.sh=%hd; dt.chr=%c\n", dt.n, dt.sh, dt.chr);
+	printf("dt.n=%x; dt.sh=%x; dt.chr=%x\n",dt.n,dt.sh,dt.chr);
+}
+struct FamilyMsg {
+	int age;
+	char name[10];
+	char sex;
+	union Proprietary {
+		char class[15];
+		char job[15];
+	};
+}persons[2];
+
+void UnionExert() {
+	int n = sizeof(persons) / sizeof(persons[0]);
+	for (int i = 0; i < n; i++)
+	{
+		persons[i].age = 18;
+		persons[i].sex = 'F';
+	}
+
+	strcpy(persons[0].name, "mei");
+	strcpy(persons[1].name, "lian");
+
+	strcpy(persons[0].job, "teacher");
+	strcpy(persons[1].class, "College Senior");
+	for (size_t i = 0; i < n; i++)
+	{
+		printf("age=%d; name=%s; sex=%c; class=%s; job=%s\n", persons[i].age, persons[i].name, persons[i].sex, persons[i].class,persons[i].job);
+	}
+}
+void UnionFunc() {
+	struct FamilyMsg bin;
+	bin.age = 30;
+	strcpy(bin.name,"Messi");
+	bin.sex = 'M';
+	strcpy(bin.job, "King");
+	printf("bin:age=%d; name=%s; sex=%c; job=%s\n",bin.age,bin.name,bin.sex,bin.job);
+
+	struct FamilyMsg zc;
+	zc.age = 30;
+	strcpy(zc.name, "Chan");
+	zc.sex = 'F';
+	strcpy(zc.class, "Childhood");
+	printf("Chan:age=%d; name=%s; sex=%c; class=%s\n", zc.age, zc.name, zc.sex, zc.class);
+}
+
 void main() {
 	//LearnStruct();
 	//InputStruct();
@@ -298,5 +359,8 @@ void main() {
 	//ConstMdStruPntMem();
 	//TestConstPoint();
 	//PointerConst();
-	UnionStru();
+	//UnionStru();
+	//UnionTest3();
+	//UnionFunc();
+	UnionExert();
 }
