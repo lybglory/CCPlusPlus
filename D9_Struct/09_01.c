@@ -229,9 +229,14 @@ void ConstMdStruPntMem() {
 	printf("edu：%x %x %x\n", &edu->total, &edu->years, &edu->type);
 	edu =&car;
 	printf("edu：%0.0lf %d %s\n", edu->total, edu->years, edu->type);
+}
 
-
-
+void TestConstPoint() {
+	const int *p_cnst = 2020;
+	int const *p_cnst2 = 5;
+	int num = 0314;
+	//*p_cnst = 0314;		//错误，不能通过指针改变变量的值
+	p_cnst = &num;			//正确，可以通过其他的引用来改变变量的值
 }
 void main() {
 	//LearnStruct();
@@ -257,5 +262,6 @@ void main() {
 	//PntAsStruMemb();
 	//PntHeapStruMem();
 	//StruAndMemHeap();
-	ConstMdStruPntMem();
+	//ConstMdStruPntMem();
+	TestConstPoint();
 }
