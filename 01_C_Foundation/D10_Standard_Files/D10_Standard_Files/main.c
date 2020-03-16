@@ -8,10 +8,15 @@ typedef struct {
 	int age;
 	char sex;
 }PR;
-
+typedef struct Person{
+	char* name;
+	int age;
+	char sex;
+}Prs;
 void tydefStru() {
 	//struct Person Messi = { "Messi",30,'M' };
-	PR Messi= { "Messi",30,'M' };
+	//PR Messi= { "Messi",30,'M' };
+	Prs Messi = { "Messi",30,'M' };
 	printf("%s %d %c\n",Messi.name,Messi.age,Messi.sex);
 }
 void TestTypedef() {
