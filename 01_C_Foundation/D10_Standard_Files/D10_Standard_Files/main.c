@@ -20,5 +20,6 @@ void TestTypedef() {
 	printf("n1=%d; nt=%d\n",n1,nt);
 }
 void main() {
-	TestTypedef();
+	//TestTypedef();
+	tydefStru();
 }
