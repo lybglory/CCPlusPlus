@@ -27,7 +27,18 @@ void FileInput() {
 	}
 	fclose(fp);
 }
+void FileReadChar() {
+	FILE *fp = fopen("note.txt", "r");
+	char chr = 0;
+	//feof返回值=0是，表示没有到文件结尾
+	while (feof(fp)==0) {
+		chr = fgetc(fp);
+		printf("%c", chr);
+	}
+	fclose(fp);
+}
 void main() {
 	//FilesOpen();
-	FileInput();
+	//FileInput();
+	FileReadChar();
 }
