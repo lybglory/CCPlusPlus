@@ -5,16 +5,29 @@
 void FilesOpen() {
 	//FILE *fp = fopen("note.txt","r");
 	//FILE *fp = fopen("../note.txt","r");
-	FILE *fp = fopen("E://note.txt", "w");
+	FILE *fp = fopen("E:/note.txt", "r");
 	if (fp==NULL) {
-		printf("file read error!\n");
+		perror("file read error!\n");
 		return;
 	}
 	else{
-		printf("file read success!\n");
+		perror("file read success!\n");
 	}
 
 }
+
+void FileInput() {
+	char str[] = "TodayIs20200317";
+	FILE *fp = fopen("note.txt", "w");
+	int n = 0;
+	while (!feof(fp)) {
+		printf("str[n]=%c\n",str[n]);
+		char temp =fputc(str[n], fp);
+		n++;
+	}
+	fclose(fp);
+}
 void main() {
-	FilesOpen();
+	//FilesOpen();
+	FileInput();
 }
