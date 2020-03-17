@@ -20,9 +20,9 @@ void FileInput() {
 	char str[] = "TodayIs20200317";
 	FILE *fp = fopen("note.txt", "w");
 	int n = 0;
-	while (!feof(fp)) {
-		printf("str[n]=%c\n",str[n]);
-		char temp =fputc(str[n], fp);
+	while (str[n]!=0) {
+		fputc(str[n], fp);
+		printf("%c", str[n]);
 		n++;
 	}
 	fclose(fp);
