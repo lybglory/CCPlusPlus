@@ -1,2 +1,4 @@
 ﻿  FileOperate.c
+E:\LearingProject\CCPlusPlus\01_C_Foundation\D10_Standard_Files\D10_Standard_Files\FileOperate.c(57,14): warning C4013: “strncmp”未定义；假设外部返回 int
+E:\LearingProject\CCPlusPlus\01_C_Foundation\D10_Standard_Files\D10_Standard_Files\FileOperate.c(57,34): warning C4013: “strlen”未定义；假设外部返回 int
   D10_Standard_Files.vcxproj -> E:\LearingProject\CCPlusPlus\01_C_Foundation\D10_Standard_Files\Debug\D10_Standard_Files.exe

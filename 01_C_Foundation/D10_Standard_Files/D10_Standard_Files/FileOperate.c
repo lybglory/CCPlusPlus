@@ -37,8 +37,38 @@ void FileReadChar() {
 	}
 	fclose(fp);
 }
+//键盘不停的获取输入 将这些获取到的字符串 
+//用fputc写入文件, 直到键盘输入“:quit”退出写入
+void FilePractice() {
+	//打开文件
+	FILE *fp = fopen("IO.txt","w");
+	if (fp==NULL) {
+		perror("read error!");
+		return;
+	}
+
+	char input[100];
+	int n = 0;
+	printf("Please enter the text to write:\n");
+	while (1)
+	{
+		
+		fgets(input,sizeof(input), stdin);
+		if (strncmp(input,"quit",strlen("quit"))==0) {
+			printf("==quit!==");
+			break;
+		}
+		
+		while (input[n]!=0) {
+			fputc(input[n++],fp);
+		}
+	}
+	fclose(fp);
+}
+
 void main() {
 	//FilesOpen();
-	//FileInput();
-	FileReadChar();
+	//FileInput();lianxi
+	//FileReadChar();
+	FilePractice();
 }
