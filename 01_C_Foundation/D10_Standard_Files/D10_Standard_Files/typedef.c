@@ -24,7 +24,7 @@ void TestTypedef() {
 	intType nt = 316;
 	printf("n1=%d; nt=%d\n",n1,nt);
 }
-void main() {
+void main_typedef() {
 	//TestTypedef();
 	tydefStru();
 }
