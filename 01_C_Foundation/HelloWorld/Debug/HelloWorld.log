@@ -1,3 +1,0 @@
-﻿  helloWorld.cpp
-E:\LearingProject\CCPlus\HelloWorld\helloWorld.cpp(5,13): warning C4326: “main”的返回类型应为“int”而非“void”
-  HelloWorld.vcxproj -> E:\LearingProject\CCPlus\HelloWorld\Debug\HelloWorld.exe

@@ -1,6 +1,0 @@
-﻿  Func.c
-e:\ccplusproject\c-c--\day6\func.c(7): warning C4013: “rand”未定义；假设外部返回 int
-  main.c
-e:\ccplusproject\c-c--\day6\main.c(10): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
-  Day6.vcxproj -> E:\CCPlusProject\C-C--\Day6\Debug\Day6.exe
