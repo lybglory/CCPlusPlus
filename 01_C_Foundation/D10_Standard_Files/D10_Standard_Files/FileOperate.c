@@ -48,7 +48,7 @@ void FilePractice() {
 	}
 
 	char input[100];
-	int n = 0;
+	
 	printf("Please enter the text to write:\n");
 	while (1)
 	{
@@ -58,7 +58,7 @@ void FilePractice() {
 			printf("==quit!==");
 			break;
 		}
-		
+		int n = 0;
 		while (input[n]!=0) {
 			fputc(input[n++],fp);
 		}
