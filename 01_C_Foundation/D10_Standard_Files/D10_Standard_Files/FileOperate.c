@@ -81,13 +81,26 @@ void FileFputs() {
 	}
 	//¹Ø±ÕÎÄ¼þ
 	fclose(fp);
-	
+}
 
+void FileFgets() {
+	FILE *fp = fopen("poetry.txt", "r");
+	if (fp==NULL) {
+		perror("read error!");
+		return;
+	}
+
+	char rdBuffer[50]="";
+	while (fgets(rdBuffer, sizeof(rdBuffer), fp)){
+		printf("%s",rdBuffer);
+	}
+	fclose(fp);
 }
 void main() {
 	//FilesOpen();
 	//FileInput();lianxi
 	//FileReadChar();
 	//FilePractice();
-	FileFputs();
+	//FileFputs();
+	FileFgets();
 }

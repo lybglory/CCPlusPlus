@@ -4,3 +4,11 @@
 *.opendb
 *.log
 *.pdb
+*.tlog
+*.lastbuildstate
+*.lastbuildstate
+*.vcxproj
+*.vcxproj
+*.enc
+*.vcxproj
+*.lastbuildstate
