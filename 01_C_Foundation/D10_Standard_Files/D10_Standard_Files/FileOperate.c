@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 //FILE *fopen(const char * filename, const char * mode);
 void FilesOpen() {
 	//FILE *fp = fopen("note.txt","r");
@@ -66,9 +67,27 @@ void FilePractice() {
 	fclose(fp);
 }
 
+void FileFputs() {
+	printf("fputs\n");
+	char *p_chArr[] = { "落霞与孤鹜齐飞，\n","秋水共长天一色。\n","渔舟唱晚，响穷彭蠡之滨；\n","雁阵惊寒，声断衡阳之浦\n" };
+	//打开文件
+	FILE *fp = fopen("poetry.txt", "w");
+	int i = 0;
+	int len = sizeof(p_chArr) / sizeof(p_chArr[0]);
+	//操作文件
+	while (i<len) {
+		fputs(p_chArr[i], fp);
+		i++;
+	}
+	//关闭文件
+	fclose(fp);
+	
+
+}
 void main() {
 	//FilesOpen();
 	//FileInput();lianxi
 	//FileReadChar();
-	FilePractice();
+	//FilePractice();
+	FileFputs();
 }
