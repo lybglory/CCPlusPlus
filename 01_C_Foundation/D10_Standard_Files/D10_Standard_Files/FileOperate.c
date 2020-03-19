@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 //FILE *fopen(const char * filename, const char * mode);
 void FilesOpen() {
 	//FILE *fp = fopen("note.txt","r");
@@ -96,11 +97,38 @@ void FileFgets() {
 	}
 	fclose(fp);
 }
+
+void FileWorksheet() {
+	FILE *fp = fopen("Worksheet.txt","w");
+	if (fp==NULL) {
+		perror("read error!");
+		return;
+	}
+	//100以内的 3+19=
+
+	srand(time(NULL));
+	int n1,n2,index = 0;
+	char operator[4] = { '+','-','*','/' };
+	char arithmetic[10];
+	//50道
+	for (size_t i = 0; i < 50; i++){
+		n1 = rand() % 100;
+		n2 = rand() % 100;
+		index = rand() % 100 % 4;
+		sprintf(arithmetic, "%d%c%d=\n", n1, operator[index], n2);
+		printf("%s", arithmetic);
+		fputs(arithmetic, fp);
+	}
+	
+	fclose(fp);
+
+}
 void main() {
 	//FilesOpen();
 	//FileInput();lianxi
 	//FileReadChar();
 	//FilePractice();
 	//FileFputs();
-	FileFgets();
+	//FileFgets();
+	FileWorksheet();
 }
