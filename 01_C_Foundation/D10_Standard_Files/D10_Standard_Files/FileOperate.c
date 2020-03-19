@@ -121,7 +121,55 @@ void FileWorksheet() {
 	}
 	
 	fclose(fp);
+}
 
+void Solve() {
+	//打开文件：只读
+	FILE *r_fp = fopen("Worksheet.txt", "r");
+	if (r_fp==NULL) {
+		perror("read error!");
+		return;
+	}
+
+	FILE *w_fp= fopen("Solve.txt", "w");
+	if (w_fp == NULL) {
+		perror("read error!");
+		return;
+	}
+
+	char chrs[20];
+	int n1, n2, index= 0;
+	float result = 0;
+	char operator[4] = { '+','-','*','/' };
+	while (fgets(chrs,sizeof(chrs),r_fp))
+	{
+		printf("%s",chrs);
+		//解包
+		sscanf(chrs, "%d%c%d=\n", &n1, &operator[index], &n2);
+		switch (operator[index])
+		{
+		case '+':
+			result = n1 + n2;
+			break;
+		case '-':
+			result = n1 - n2;
+			break;
+		case '*':
+			result = n1 * n2;
+			break;
+		case '/':
+			result = n1 / n2;
+			break;
+		}
+		//进行组包：
+		char answers[20];
+		sprintf(answers, "%d%c%d=%0.1lf\n", n1, operator[index], n2,result);
+		//计算结果写入新文件
+		fputs(answers, w_fp);
+	}
+
+	fclose(r_fp);
+	fclose(w_fp);
 }
 void main() {
 	//FilesOpen();
@@ -130,5 +178,6 @@ void main() {
 	//FilePractice();
 	//FileFputs();
 	//FileFgets();
-	FileWorksheet();
+	//FileWorksheet();
+	Solve();
 }
