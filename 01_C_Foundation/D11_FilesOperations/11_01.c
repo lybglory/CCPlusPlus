@@ -51,19 +51,45 @@ void Testfprintf() {
 		return;
 	}
 	int len = sizeof(prs) / sizeof(prs[0]);
-	int formatLen = strlen("name=[];age=[];sex=[]");
-	printf("strformatLeng=%d\n", formatLen);
 	for (size_t i = 0; i < len; i++){
-		int files=fprintf(wfp, "name=[%s];age=[%d];sex=[%c]\n", prs[i].name,prs[i].age,prs[i].sex);
+		int files=fprintf(wfp, "name=%s age=%d sex=%c\n", prs[i].name,prs[i].age,prs[i].sex);
 		printf("当前写入字符总数=%d\n",files);
 	}
 	
 
 	fclose(wfp);
 }
+
+void Testfscanf() {
+	struct Person rec[3];
+	memset(rec,0,sizeof(rec));				//内存空间初始化
+	printf("sizeof(rec)=%d\n",sizeof(rec));
+	FILE *rfp = fopen("fprintf.txt", "r");	//写入文件
+	if (rfp == NULL) {
+		perror("read error!");
+		return;
+	}
+
+	//feof返回值 非零值读完了；等于0没有读完
+	int n = 0;
+	while(feof(rfp)==0) {
+		//读取出来的数据赋值给结构体成员
+		//printf("n=%d\n",n);
+		fscanf(rfp,"name=%s age=%d sex=%c\n",rec[n].name,&rec[n].age,&rec[n].sex);
+		n++;
+	}
+
+	int files = n;
+	for (size_t i = 0; i < files; i++)
+	{
+		printf("%s %d %c\n", rec[i].name, rec[i].age, rec[i].sex);
+	}
+	fclose(rfp);
+}
 void main() {
 	//TestFwrite();
 	//TestFRead();
-	Testfprintf();
+	//Testfprintf();
+	Testfscanf();
 }
 
