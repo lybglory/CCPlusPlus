@@ -86,10 +86,94 @@ void Testfscanf() {
 	}
 	fclose(rfp);
 }
+
+
+#define len 50
+void Sortcontent(int* p_arr, int m) {
+
+	//j控制比较趟数：第一趟比较完确定最大值
+	for (size_t j = 0; j < m - 1; j++)
+	{
+		//控制交换次数
+		for (size_t k = 0; k < m - 1 - j; k++)
+		{	//升序排
+			if (p_arr[k] > p_arr[k + 1]) {
+				int temp = 0;
+				temp = p_arr[k];
+				p_arr[k] = p_arr[k + 1];
+				p_arr[k + 1] = temp;
+			}
+		}
+		printf("sort:p_arr[%d]=%d\n", j, p_arr[j]);
+	}
+}
+
+void RandNumGenerate() {
+
+	FILE *wfp = fopen("CreateNum.txt","w");
+	if (wfp == NULL) {
+		perror("read error!");
+		return;
+	}
+	srand(time(NULL));
+	int i = 0;
+	while (i< len) {
+		fprintf(wfp, "%d\n", rand() % 100);
+		i++;
+	}
+	fclose(wfp);
+
+	//排序
+	FILE *rfp = fopen("CreateNum.txt", "r");
+	if (rfp == NULL) {
+		perror("read error!");
+		return;
+	}
+	int num[50] = {0};
+	for (size_t i = 0; i < len; i++)
+	{
+		fscanf(rfp, "%d\n", &num[i]);
+		printf("Bef:num[%d]=%d\n", i, num[i]);
+	}
+
+	fclose(rfp);
+	//j控制比较趟数：第一趟比较完确定最大值
+	//for (size_t j = 0; j < len -1; j++)
+	//{
+	//	//控制交换次数
+	//	for (size_t k = 0; k < len -1-j; k++)
+	//	{	//升序排
+	//		if (num[k]>num[k+1]) {
+	//			int temp = 0;
+	//			temp=num[k];
+	//			num[k] = num[k + 1];
+	//			num[k + 1] = temp;
+	//		}
+	//	}
+	//	printf("sort:num[%d]=%d\n", j, num[j]);
+	//}
+
+	Sortcontent(num,len);
+	//排序后写入文件
+	FILE *sortfp = fopen("sort.txt","w");
+	if (sortfp==NULL) {
+		perror("write error!");
+		return;
+	}
+	for (size_t i = 0; i < len; i++)
+	{
+		fprintf(sortfp,"%d\n",num[i]);
+	}
+	fclose(sortfp);
+}
+
+
+
 void main() {
 	//TestFwrite();
 	//TestFRead();
 	//Testfprintf();
-	Testfscanf();
+	//Testfscanf();
+	RandNumGenerate();
 }
 
