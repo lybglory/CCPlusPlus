@@ -41,8 +41,29 @@ void TestFRead() {
 
 	fclose(rfp);
 }
+void Testfprintf() {
+	struct Person prs[3] = { {"Chan",1,'F'},
+							  {"Bin",30,'M'},
+							  {"Mei",30,'F'} };
+	FILE *wfp = fopen("fprintf.txt", "w");	
+	if (wfp == NULL) {
+		perror("read error!");
+		return;
+	}
+	int len = sizeof(prs) / sizeof(prs[0]);
+	int formatLen = strlen("name=[];age=[];sex=[]");
+	printf("strformatLeng=%d\n", formatLen);
+	for (size_t i = 0; i < len; i++){
+		int files=fprintf(wfp, "name=[%s];age=[%d];sex=[%c]\n", prs[i].name,prs[i].age,prs[i].sex);
+		printf("当前写入字符总数=%d\n",files);
+	}
+	
+
+	fclose(wfp);
+}
 void main() {
 	//TestFwrite();
-	TestFRead();
+	//TestFRead();
+	Testfprintf();
 }
 

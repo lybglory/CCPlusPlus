@@ -5,6 +5,3 @@
 *.log
 *.pdb
 *.tlog
-*.vcxproj
-*.enc
-*.lastbuildstate
