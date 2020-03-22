@@ -169,11 +169,11 @@ void RandNumGenerate() {
 
 
 
-void main() {
+void main_1101() {
 	//TestFwrite();
 	//TestFRead();
 	//Testfprintf();
 	//Testfscanf();
-	RandNumGenerate();
+	//RandNumGenerate();
 }
 
