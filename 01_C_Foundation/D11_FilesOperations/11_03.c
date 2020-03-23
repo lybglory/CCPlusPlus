@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <time.h>
+#include<Windows.h>
 void LinOrWin() {
 	FILE *fp = fopen("prose.txt", "rb");
 	if (fp==NULL) {
@@ -42,8 +43,43 @@ void TestRename() {
 	//rename("rename.txt","newName.txt");
 	remove("newName.txt");
 }
+
+void TestFilebuffer() {
+	//关闭刷新
+	//printf("Date:2020/3/23 23:30");
+	//return;
+
+	//行刷新
+	//printf("Date:2020/3/23 23:30\n");
+	//while (1);
+	//return;
+
+	//强制刷新
+	/*printf("Date:2020/3/23 23:30\n");
+	fflush(stdout);
+	while (1);
+	return;*/
+
+	/*char chr;
+	chr = getchar();
+	printf("chr=%c\n",chr);
+	system("PAUSE");
+	while ((chr=getchar())!='\n') {
+		printf("%c",chr);
+	}
+	system("PAUSE");*/
+	int n;
+	char c;
+	scanf("%d",&n);
+	//fflush(stdin);
+	c = getchar();
+	printf("n=%d; c=#%c#\n",n,c);
+	system("PAUSE");
+	
+}
 void main() {
 	//LinOrWin();
 	//TestFileStat();
-	TestRename();
+	//TestRename();
+	TestFilebuffer();
 }
