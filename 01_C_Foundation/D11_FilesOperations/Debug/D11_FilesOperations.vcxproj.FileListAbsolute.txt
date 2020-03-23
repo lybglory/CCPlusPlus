@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\01_C_Foundation\D11_FilesOperations\Debug\D11_FilesOperations.exe
+E:\CCPlusProject\CCPlusPlus\01_C_Foundation\D11_FilesOperations\Debug\D11_FilesOperations.pdb
