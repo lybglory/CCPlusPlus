@@ -67,7 +67,7 @@ void TestFtell() {
 		p_chr = NULL;
 	}
 }
-void main() {
+void main_11_02() {
 	//Testrewind();
 	//Testfseek();
 	TestFtell();
