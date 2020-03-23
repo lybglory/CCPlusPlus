@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <time.h>    
+#include <time.h>
 void LinOrWin() {
 	FILE *fp = fopen("prose.txt", "rb");
 	if (fp==NULL) {
@@ -18,16 +18,13 @@ void LinOrWin() {
 		if (buff[n]=='\n') {
 			if (buff[n-1]=='\r') {
 				printf("windows file\n");
-			}
-			else
-			{
+			}else{
 				printf("Linux file\n");
 			}
 		}
 		n++;
 	}
 	fclose(fp);
-
 }
 
 void TestFileStat() {
@@ -40,7 +37,13 @@ void TestFileStat() {
 	timeInfo = localtime(&fTime);
 	printf("last access time:%s\n", asctime(timeInfo));
 }
+
+void TestRename() {
+	//rename("rename.txt","newName.txt");
+	remove("newName.txt");
+}
 void main() {
 	//LinOrWin();
-	TestFileStat();
+	//TestFileStat();
+	TestRename();
 }
