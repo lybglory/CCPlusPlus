@@ -23,8 +23,9 @@ extern void InitWall() {
 		printf("\n");
 	}
 }
-
+//蛇
 Snake sk;
+//食物
 Food fd;
 //3、初始化食物
 extern void InitFood() {
@@ -47,11 +48,30 @@ extern void InitSnake() {
 extern void Show() {
 	//1、显示食物
 	COORD coord;	//光标
-	coord.X = fd.x;
+	coord.X = fd.x;	//设置食物光标
 	coord.Y = fd.y;
 
 	//光标定位
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 	putchar('*');
+
+	//2、绘制蛇：初始化长度2
+	for (size_t i = 0; i < sk.length; i++)
+	{
+		//设置光标
+		coord.X = sk.point[i].x;
+		coord.Y = sk.point[i].y;
+		//定位
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+		//绘制蛇头
+		if (i==0) {
+			putchar('@');
+		}
+		else {
+			putchar('>');
+		}
+
+	}
+
 }
 

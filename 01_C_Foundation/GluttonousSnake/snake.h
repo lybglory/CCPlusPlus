@@ -13,7 +13,9 @@ typedef struct{
 
 //🐍的类型：长度、坐标
 typedef struct  {
+	//蛇的长度
 	int length;
+	//蛇的坐标
 	SnakePoint point[Wide*Hight];
 }Snake;
 
