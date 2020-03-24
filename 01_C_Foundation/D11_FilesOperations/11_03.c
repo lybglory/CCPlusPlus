@@ -77,9 +77,41 @@ void TestFilebuffer() {
 	system("PAUSE");
 	
 }
+void TestBuffer() {
+	
+	char chr;
+	chr = getchar();
+	printf("chr=%c\n",chr);
+	system("PAUSE");
+	while ((chr=getchar())!='\n') {
+		printf("%c",chr);
+	}
+	system("PAUSE");
+}
+void TestBuffer2() {
+	FILE *fp = fopen("buffer.txt","w+");
+	if (fp==NULL) {
+		perror("open error!");
+		return;
+	}
+
+	char ch;
+	while (1) {
+		scanf("%c",&ch);
+		if (ch=='q') {
+			break;
+		}
+		
+		fflush(fp);		// µ ±–¥»Î¥≈≈Ã
+		fputc(ch,fp);
+	}
+	fclose(fp);
+}
 void main() {
 	//LinOrWin();
 	//TestFileStat();
 	//TestRename();
-	TestFilebuffer();
+	//TestFilebuffer();
+	//TestBuffer();
+	TestBuffer2();
 }
