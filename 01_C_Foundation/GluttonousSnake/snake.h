@@ -1,6 +1,6 @@
 ﻿#pragma once
-#define Wide 50		//长：50
-#define Hight 20	//高：20
+#define Wide 40		//长：50
+#define Hight 10	//高：20
 extern void InitWall();
 
 //2、定义🐍、食物类型

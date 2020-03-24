@@ -74,7 +74,7 @@ extern void Show() {
 		}
 		else {
 			//绘制蛇身
-			putchar('>');
+			putchar('+');
 		}
 	}
 	//处理尾巴
@@ -149,7 +149,7 @@ extern void StartGame() {
 		sk.point[0].y += diry;
 		//update显示
 		Show();
-		Sleep(500);
+		Sleep(300);
 
 	}//while_end
 }
