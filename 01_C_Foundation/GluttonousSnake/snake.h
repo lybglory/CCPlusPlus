@@ -23,5 +23,6 @@ typedef struct {
 	int y;
 
 }Food;
-
+extern void InitFood();
 extern void InitSnake();
+extern void Show();

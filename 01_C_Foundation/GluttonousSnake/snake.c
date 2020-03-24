@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <Windows.h>
 #include "snake.h"
+
 //1、初始化墙
 extern void InitWall() {
 	//控制Y(第几行)
@@ -25,7 +27,7 @@ extern void InitWall() {
 Snake sk;
 Food fd;
 //3、初始化食物
-void InitFood() {
+extern void InitFood() {
 	fd.x = rand() % Wide;
 	fd.y = rand() % Hight;
 }
@@ -39,5 +41,17 @@ extern void InitSnake() {
 
 	sk.point[1].x = Wide / 2-1;	//蛇身在蛇头的左边  O🐍
 	sk.point[1].y = Hight / 2;	//y轴不变
+}
+
+//4、显示
+extern void Show() {
+	//1、显示食物
+	COORD coord;	//光标
+	coord.X = fd.x;
+	coord.Y = fd.y;
+
+	//光标定位
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+	putchar('*');
 }
 

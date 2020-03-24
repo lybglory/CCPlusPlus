@@ -6,4 +6,12 @@
 void main() {
 	InitWall();
 	srand(time(NULL));	//设置随机种子数
+	InitFood();
+	InitSnake();
+	Show();
+
+
+
+	getchar();
+
 }
