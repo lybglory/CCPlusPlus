@@ -5,4 +5,5 @@
 #include "snake.h"	//自定义的头文件
 void main() {
 	InitWall();
+	srand(time(NULL));	//设置随机种子数
 }
