@@ -3,7 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include <conio.h>	//kbhit函数的头文件 
 #include "snake.h"
+Snake sk;			//蛇
+Food fd;			//食物
+int dirx = 0;		//方向
+int diry = 0;
+int tailx = 0;		//尾部
+int taily = 0;
 
 //1、初始化墙
 extern void InitWall() {
@@ -23,10 +30,7 @@ extern void InitWall() {
 		printf("\n");
 	}
 }
-//蛇
-Snake sk;
-//食物
-Food fd;
+
 //3、初始化食物
 extern void InitFood() {
 	fd.x = rand() % Wide;
@@ -70,8 +74,25 @@ extern void Show() {
 		else {
 			putchar('>');
 		}
-
 	}
+}
 
+extern void StartGame() {
+	char keycode = 'A';
+	//蛇的移动的规则条件:不可以碰到到墙
+	while (sk.point[0].x>=0 && sk.point[0].x<Wide
+		&& sk.point[0].y >= 0 && sk.point[0].y < Hight)
+	{	//不可以碰到自己
+		for (size_t i = 0; i < sk.length; i++)
+		{
+			return;
+		}
+
+		//碰到食物
+		if (sk.point[0].x==fd.x&&sk.point[0].y==fd.y) {
+			sk.length++;	//蛇变长
+			InitFood();		//初始化食物
+		}
+	}//while_end
 }
 
