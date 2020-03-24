@@ -3,15 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include "snake.h"	//自定义的头文件
+#include <time.h>
 void main() {
-	InitWall();
+	
 	srand(time(NULL));	//设置随机种子数
+	InitWall();
 	InitFood();
 	InitSnake();
-	Show();
-
-
-
-	getchar();
+	//Show();
+	StartGame();
 
 }

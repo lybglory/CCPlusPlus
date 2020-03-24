@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
+#include <time.h>
 #include <conio.h>	//kbhit函数的头文件 
 #include "snake.h"
 Snake sk;			//蛇
@@ -44,7 +45,7 @@ extern void InitSnake() {
 	sk.point[0].x = Wide / 2;	//🐍头位置
 	sk.point[0].y = Hight / 2;
 
-	sk.point[1].x = Wide / 2-1;	//蛇身在蛇头的左边  O🐍
+	sk.point[1].x = (Wide / 2)-1;	//蛇身在蛇头的左边  O🐍
 	sk.point[1].y = Hight / 2;	//y轴不变
 }
 
@@ -72,20 +73,28 @@ extern void Show() {
 			putchar('@');
 		}
 		else {
+			//绘制蛇身
 			putchar('>');
 		}
 	}
+	//处理尾巴
+	coord.X = tailx;
+	coord.Y = taily;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+	putchar(' ');
 }
 
 extern void StartGame() {
-	char keycode = 'A';
+	char keycode = 'D';
 	//蛇的移动的规则条件:不可以碰到到墙
 	while (sk.point[0].x>=0 && sk.point[0].x<Wide
 		&& sk.point[0].y >= 0 && sk.point[0].y < Hight)
-	{	//不可以碰到自己
-		for (size_t i = 0; i < sk.length; i++)
+	{	//不可以碰到自己,必须是蛇身
+		for (size_t i = 1; i < sk.length; i++)
 		{
-			return;
+			if (sk.point[0].x==sk.point[i].x &&sk.point[0].y== sk.point[i].y) {
+				return;
+			}
 		}
 
 		//碰到食物
@@ -95,10 +104,9 @@ extern void StartGame() {
 		}
 
 		//控制蛇移动
-		//判断是否按下.
+		//is press?
 		if (_kbhit()) {
 			keycode = _getch();
-			_getch();
 		}
 
 		//判断是哪个键
@@ -125,6 +133,23 @@ extern void StartGame() {
 			diry = 0;
 			break;
 		}
+		//move 
+		//记录蛇尾巴
+		tailx = sk.point[sk.length - 1].x;
+		taily = sk.point[sk.length - 1].y;
+
+		//除了蛇头，蛇身从后往前挪(倒叙循环)
+		for (int j=sk.length-1; j >0; j--)
+		{
+			sk.point[j].x = sk.point[j-1].x;
+			sk.point[j].y = sk.point[j - 1].y;
+		}
+		//update蛇头位置
+		sk.point[0].x += dirx;
+		sk.point[0].y += diry;
+		//update显示
+		Show();
+		Sleep(500);
 
 	}//while_end
 }

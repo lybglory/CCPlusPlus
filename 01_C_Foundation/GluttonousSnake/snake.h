@@ -28,3 +28,4 @@ typedef struct {
 extern void InitFood();
 extern void InitSnake();
 extern void Show();
+extern void StartGame();
