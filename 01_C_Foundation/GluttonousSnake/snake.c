@@ -93,6 +93,39 @@ extern void StartGame() {
 			sk.length++;	//蛇变长
 			InitFood();		//初始化食物
 		}
+
+		//控制蛇移动
+		//判断是否按下.
+		if (_kbhit()) {
+			keycode = _getch();
+			_getch();
+		}
+
+		//判断是哪个键
+		switch (keycode)
+		{
+		case 'w':
+		case 'W':
+			dirx = 0;	//up
+			diry = -1;
+			break;
+		case 's':
+		case 'S':
+			dirx = 0;	//Down
+			diry = 1;
+			break;
+		case 'a':
+		case 'A':
+			dirx = -1;	//Left
+			diry = 0;
+			break;
+		case 'd':
+		case 'D':
+			dirx = 1;	//Right
+			diry = 0;
+			break;
+		}
+
 	}//while_end
 }
 
