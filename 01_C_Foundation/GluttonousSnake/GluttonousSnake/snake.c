@@ -10,10 +10,11 @@ extern void InitWall() {
 
 		//¿ØÖÆxÖá
 		for (int x = 0; x <= Wide; x++) {
-			if (x == Wide) {
-				printf("|");
+			if (x == Wide|| y == Hight) {
+				printf(".");
 			}
-			else {
+			else 
+			{
 				printf(" ");
 			}
 		}
