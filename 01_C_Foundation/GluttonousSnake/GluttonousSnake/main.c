@@ -2,3 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "snake.h"	//自定义的头文件
+void main() {
+	InitWall();
+}
