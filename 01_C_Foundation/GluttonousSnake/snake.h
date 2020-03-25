@@ -1,7 +1,7 @@
 ﻿#pragma once
 #define Wide 40		//长：50
 #define Hight 10	//高：20
-extern void InitWall();
+
 
 //2、定义🐍、食物类型
 
@@ -25,6 +25,8 @@ typedef struct {
 	int y;
 
 }Food;
+
+extern void InitWall();
 extern void InitFood();
 extern void InitSnake();
 extern void Show();

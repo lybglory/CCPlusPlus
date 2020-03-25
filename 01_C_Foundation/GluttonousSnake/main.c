@@ -17,5 +17,4 @@ void main() {
 	InitFood();
 	InitSnake();
 	StartGame();
-
 }
