@@ -10,7 +10,7 @@ typedef struct {
 	int money;		//12~15
 	
 }Person;
-void main() {
+void main_0326() {
 	Person pr = { 30,"LZZ",'M',90};
 	char *p = &pr;
 	printf("age=%d;  name=%s; sex=%c; money=%d\n",pr.age,pr.name, pr.sex,pr.money);

@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\01_UseOfTypedef\Debug\01_UseOfTypedef.exe
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\01_UseOfTypedef\Debug\01_UseOfTypedef.pdb
