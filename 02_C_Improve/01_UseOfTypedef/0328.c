@@ -8,6 +8,23 @@ void TestConst() {
 	*p = 2019;
 	printf("num=%d\n",num);
 }
+
+void test() {
+
+	int a = 10;
+
+	//1. 直接修改
+	a = 20;
+	printf("直接修改,a:%d\n", a);
+
+	//2. 间接修改
+	int* p = &a;
+	*p = 30;
+
+	printf("间接修改,a:%d\n", a);
+}
+
+
 void main() {
 	TestConst();
 }
