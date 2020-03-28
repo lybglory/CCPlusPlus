@@ -19,7 +19,7 @@ void MemoConsider2(int **p) {
 	printf("**p=%d\n", **p);
 }
 
-void main() {
+void main_memo() {
 	int *p_n = NULL;
 	MemoConsider2(&p_n);
 	printf("*p_n=%d\n",*p_n);
