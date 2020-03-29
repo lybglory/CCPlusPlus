@@ -11,6 +11,6 @@ void MacroFun() {
 	int result = Minus(n1, n2)*0;//2020-2019*0=2020
 	printf("result=%d\n",result);
 }
-void main() {
+void main_0329_1() {
 	MacroFun();
 }
