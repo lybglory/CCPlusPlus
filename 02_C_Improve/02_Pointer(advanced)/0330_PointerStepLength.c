@@ -22,11 +22,20 @@ void GetStructValue() {
 	struct Person pr = { 30,"Messi",'M',900 };
 	char *p = &pr;
 	printf("offset money=%d\n",offsetof(struct Person,money));
-	printf("money=%d\n", *(int *)(p + 16));
+	printf("money=%d\n", *(int *)(char *)(p + 16));
 	printf("sex=%c\n", *(char *)(p + offsetof(struct Person, sex)));
 	printf("name=%s\n", (char*)(p + offsetof(struct Person, name)));
 }
+
+void GetStructValue2() {
+	struct Person pr = { 30,"Messi",'M',900 };
+	printf("offset money=%d\n", offsetof(struct Person, money));
+	printf("money=%d\n", *(int*)((char*)(&pr) + 16));
+	printf("sex=%c\n", *((char*)(&pr) + offsetof(struct Person, sex)));
+	printf("name=%s\n", (char*)(&pr) + offsetof(struct Person, name));
+}
 void main() {
 	//test01();
-	GetStructValue();
+	//GetStructValue();
+	GetStructValue2();
 }
