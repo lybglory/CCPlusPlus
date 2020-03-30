@@ -16,7 +16,7 @@ void HowMemoStored() {
 	printf("*(p+1)=%x\n", *(p+1));	//43
 	printf("*(p+2)=%x\n", *(p + 2));//5
 }
-void main() {
+void main_0329_02() {
 	//TestStackDirect();
 	HowMemoStored();
 }
