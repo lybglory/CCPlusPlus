@@ -29,11 +29,33 @@ void CopyStr3(char* p_src, char* p_dest) {
 		
 	}
 }
+
+void test() {
+	int year = 2019;	//两个变量
+	int *p = NULL;
+	//建立关系
+	//指针指向谁，就把谁的地址赋值给指针
+	p = &year;
+	//通过*操作内存
+	*p = 2020;
+}
+
+void CalledFunc(char *p) {
+	strcpy(p,"Today is Thuesday");
+}
+void MainFunc() {
+	char *p_str = malloc(sizeof(char)*20);
+	memset(p_str,0,sizeof(char)*20);
+	CalledFunc(p_str);
+	printf("p_str=%s\n",p_str);
+
+}
 void main() {
 	char src[] = "2020/03/31.Today is cloudy";
 	char str[100];
 	//CopyStr1(src,str);
 	//CopyStr2(src, str);
-	CopyStr3(src, str);
-	printf("str=%s\n",src);
+	//CopyStr3(src, str);
+	//printf("str=%s\n",src);
+	MainFunc();
 }
