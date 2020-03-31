@@ -49,6 +49,7 @@ void MainFunc() {
 	CalledFunc(p_str);
 	printf("p_str=%s\n",p_str);
 }
+
 void CalledFunc2(char **p) {
 	int len = strlen("Today is Thuesday");
 	*p = (char *)malloc(sizeof(len)+1);
@@ -59,13 +60,17 @@ void MainFunc2() {
 	char *p_str=NULL;
 	CalledFunc2(&p_str);
 	printf("p_str=%s\n", p_str);
+	if (p_str!=NULL) {
+		free(p_str);
+		p_str = NULL;
+	}
 }
-void main() {
+void main_0331() {
 	char src[] = "2020/03/31.Today is cloudy";
 	char str[100];
 	//CopyStr1(src,str);
 	//CopyStr2(src, str);
-	//CopyStr3(src, str);
-	//printf("str=%s\n",src);
-	MainFunc2();
+	CopyStr3(src, str);
+	printf("str=%s\n",src);
+	//MainFunc2();
 }

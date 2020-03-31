@@ -24,5 +24,11 @@
     <ClCompile Include="0330_PointerStepLength.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0331.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0401.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
