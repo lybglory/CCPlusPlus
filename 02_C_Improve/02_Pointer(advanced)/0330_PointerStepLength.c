@@ -34,8 +34,8 @@ void GetStructValue2() {
 	printf("sex=%c\n", *((char*)(&pr) + offsetof(struct Person, sex)));
 	printf("name=%s\n", (char*)(&pr) + offsetof(struct Person, name));
 }
-void main() {
+void main_0330() {
 	//test01();
 	//GetStructValue();
-	GetStructValue2();
+	//GetStructValue2();
 }
