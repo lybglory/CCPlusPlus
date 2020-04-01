@@ -26,7 +26,7 @@ void StrReverse2(char *p) {
 	}
 }
 
-void main() {
+void main_0401() {
 	char str[30] = "Date:2020/04/01 1:20";
 	printf("before=%s\n",str);
 	//StrReverse1(str);
