@@ -33,7 +33,7 @@ void GetStr() {
 	printf("result1=%s\nresult2=%s\n", result1,result2);
 }
 
-int FindSubstr(char *str,char *subStr) {
+int FindSubStrUnderlying(char *str,char *subStr) {
 	int num = 0;
 	while (*str!='\0') {
 		if (*str!=*subStr) {
@@ -65,48 +65,34 @@ int FindSubstr(char *str,char *subStr) {
 
 	}//while(*str!=0)_end
 }
+
 void FindSubstr2(char* str, char* subStr) {
-	int strLen = strlen(str);
-	int subLen = strlen(subStr);
-	int j = 0;
-
-	for (size_t i = 0; i < strLen; i++)
-	{
-
-		if (str[i] == subStr[j]) {
-			printf("%d Match!str[%d]=%c; %d Char\n", j, i, str[i],j);
-			char *tempStr = str;
-			char *tempSubStr = subStr;
-			for (size_t x = 0; x < subLen; x++)
-			{
-				if (tempStr[i]==tempSubStr[x]) {
-					
-				}
-			}
-			
-			if (j>=subLen) {
-				j=0;
-			}
-		}
-		else
-		{
-			printf("Not match:%d\n", i);
-		}
-
+	char *p_match = NULL;
+	char *tmpStr = str;
+	printf("str=%s\n",str);
+	while (p_match=strstr(tmpStr,subStr)) {
+		int index = p_match - str;
+		printf("match! index=%d\n", index);
+		tmpStr= p_match+strlen(subStr);
 	}
 }
+
 void main() {
 	//Test1();
 	//Test2();
 	//Test3();
 	//GetStr();
-	char *str = "shit! cnm! cnb cnm cndy cn mlgb";
-	/*int index=FindSubstr(str,"cm");
+	
+	char *str = "shit! c nm! cnb cnmmlgb cnmcndycnm cnycng";
+	/*
+	int index= FindSubStrUnderlying(str,"cnm");
 	if (index!=-1) {
 		printf("find! index=%d\n",index);
 	}
 	else {
 		printf("Not find!");
-	}*/
+	}
+	*/
 	FindSubstr2(str,"cnm");
+
 }
