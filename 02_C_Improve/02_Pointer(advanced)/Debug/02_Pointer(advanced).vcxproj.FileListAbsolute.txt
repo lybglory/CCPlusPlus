@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\02_Pointer(advanced)\Debug\02_Pointer(advanced).exe
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\02_Pointer(advanced)\Debug\02_Pointer(advanced).pdb

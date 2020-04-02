@@ -36,7 +36,7 @@ void TestRealloc() {
 		p = NULL;
 	}
 }
-void main() {
+void main_0401_calloc() {
 	//TestCalloc();
 	TestRealloc();
 }

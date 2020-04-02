@@ -144,6 +144,7 @@
     <ClCompile Include="0331.c" />
     <ClCompile Include="0401.c" />
     <ClCompile Include="0401_calloc.c" />
+    <ClCompile Include="0402_sscanf.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
