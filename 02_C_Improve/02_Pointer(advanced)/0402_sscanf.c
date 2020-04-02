@@ -25,8 +25,16 @@ void Test3() {
 	printf("result=%s\n", result);
 }
 
+void GetStr() {
+	char *str = "email#messi@gmail.com";
+	char result1[50] = { 0 };
+	char result2[50] = { 0 };
+	sscanf(str,"%*[a-z]#%[a-z]%*[@]%s",result1,result2);
+	printf("result1=%s\nresult2=%s\n", result1,result2);
+}
 void main() {
 	//Test1();
 	//Test2();
-	Test3();
+	//Test3();
+	GetStr();
 }
