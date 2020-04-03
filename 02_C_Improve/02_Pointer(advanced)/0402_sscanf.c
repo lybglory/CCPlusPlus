@@ -64,6 +64,8 @@ int FindSubStrUnderlying(char *str,char *subStr) {
 		}
 
 	}//while(*str!=0)_end
+
+	return -1;
 }
 
 void FindSubstr2(char* str, char* subStr) {
@@ -77,7 +79,7 @@ void FindSubstr2(char* str, char* subStr) {
 	}
 }
 
-void main() {
+void main_0402_sscanf() {
 	//Test1();
 	//Test2();
 	//Test3();

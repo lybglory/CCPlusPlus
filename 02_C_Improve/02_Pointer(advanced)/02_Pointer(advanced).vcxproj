@@ -145,6 +145,7 @@
     <ClCompile Include="0401.c" />
     <ClCompile Include="0401_calloc.c" />
     <ClCompile Include="0402_sscanf.c" />
+    <ClCompile Include="0403_PointerError-pronePoint.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

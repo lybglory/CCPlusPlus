@@ -36,5 +36,8 @@
     <ClCompile Include="0402_sscanf.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0403_PointerError-pronePoint.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
