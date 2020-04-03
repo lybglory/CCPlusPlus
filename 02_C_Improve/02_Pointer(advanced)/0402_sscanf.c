@@ -11,7 +11,7 @@ void Test1(){
 	printf("result1=%s\n",result);
 
 }
-void Test2() {
+void PointerVerlay() {
 	char result[50] = { 0 };
 	char *date = "Date:2020/04/02 15:00.Bad year";
 	sscanf(date, "%4s", result);

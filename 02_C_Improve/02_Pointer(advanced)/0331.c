@@ -30,7 +30,7 @@ void CopyStr3(char* p_src, char* p_dest) {
 	}
 }
 
-void test() {
+void Test2() {
 	int year = 2019;	//两个变量
 	int *p = NULL;
 	//建立关系
