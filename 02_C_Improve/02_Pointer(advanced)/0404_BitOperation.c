@@ -15,7 +15,7 @@ void PrintfArray(int **secPointer,int len) {
 }
 
 //heap area
-void SecondaryPointerOutput() {
+void SecondaryPointerInput() {
 	int **sec_p = malloc(sizeof(int) * 5);
 	memset(sec_p,0, sizeof(int) * 5);
 	int array[5] = { 2020,4,4,23,50 };
@@ -31,10 +31,28 @@ void SecondaryPointerOutput() {
 	}
 }
 
-void SecondaryPointerOutPut2() {
-	
+
+
+//The secondary pointer parameter output feature 
+//refers to the memory allocated by the called function
+void SecondaryPointerOutput(char **p) {
+	*p = malloc(sizeof(char)*100);
+	memset(p, 0, sizeof(char) * 100);
+	*p = "Just returned from Qingming Festival is!2020/04/05 0:50";
+}
+void FreeArea(char **p_heap) {
+	if (*p_heap!=NULL) {
+		printf("p_heap is wild pointer\n");
+		free(*p_heap);
+		*p_heap = NULL;
+	}
 }
 void main() {
 	//BitTest1();
-	SecondaryPointerOutput();
+	//SecondaryPointerInput();
+	char *p_stack = NULL;
+	SecondaryPointerOutput(&p_stack);
+
+	printf("*point=%s\n",p_stack);
+	FreeArea(&p_stack);	//free heap area
 }
