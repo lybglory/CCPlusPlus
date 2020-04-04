@@ -15,7 +15,7 @@ void PrintfArray(int **secPointer,int len) {
 }
 
 //heap area
-void SecondaryPointerInput() {
+void SecondaryPointerOutput() {
 	int **sec_p = malloc(sizeof(int) * 5);
 	memset(sec_p,0, sizeof(int) * 5);
 	int array[5] = { 2020,4,4,23,50 };
@@ -30,7 +30,11 @@ void SecondaryPointerInput() {
 		sec_p = NULL;
 	}
 }
+
+void SecondaryPointerOutPut2() {
+	
+}
 void main() {
 	//BitTest1();
-	SecondaryPointerInput();
+	SecondaryPointerOutput();
 }
