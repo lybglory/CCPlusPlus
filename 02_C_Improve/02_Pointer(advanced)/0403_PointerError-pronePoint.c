@@ -28,7 +28,8 @@ void PointOverlay() {
 	}
 }
 
-void main() {
+
+void main_0403() {
 	//Test();
 	PointOverlay();
 }
