@@ -147,6 +147,7 @@
     <ClCompile Include="0402_sscanf.c" />
     <ClCompile Include="0403_PointerError-pronePoint.c" />
     <ClCompile Include="0404_BitOperation.c" />
+    <ClCompile Include="0405_NSFileHandle.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

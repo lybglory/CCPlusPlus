@@ -47,7 +47,7 @@ void FreeArea(char **p_heap) {
 		*p_heap = NULL;
 	}
 }
-void main() {
+void main_0404() {
 	//BitTest1();
 	//SecondaryPointerInput();
 	char *p_stack = NULL;

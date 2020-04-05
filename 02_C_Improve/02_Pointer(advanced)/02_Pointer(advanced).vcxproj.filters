@@ -42,5 +42,8 @@
     <ClCompile Include="0404_BitOperation.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0405_NSFileHandle.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
