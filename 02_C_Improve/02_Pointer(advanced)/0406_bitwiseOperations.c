@@ -17,6 +17,13 @@ void Parity() {
 	}
 }
 
+void BitwiseOr() {
+	int n1 = 4;	//0100
+	int n2 = 7;	//0111
+				//0111=7
+	printf("%d | %d = %d\n",n1,n2,n1|n2);
+}
 void main() {
-	Parity();
+	//Parity();
+	BitwiseOr();
 }
