@@ -148,6 +148,7 @@
     <ClCompile Include="0403_PointerError-pronePoint.c" />
     <ClCompile Include="0404_BitOperation.c" />
     <ClCompile Include="0405_NSFileHandle.c" />
+    <ClCompile Include="0406_bitwiseOperations.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

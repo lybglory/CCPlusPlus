@@ -76,7 +76,7 @@ void freeSpace(char** pArray, int len)
 
 }
 
-void main() {
+void main_0405() {
 	FILE * fp = fopen("poetry.txt", "r");
 	if (fp == NULL) {
 		perror("Open error!");
