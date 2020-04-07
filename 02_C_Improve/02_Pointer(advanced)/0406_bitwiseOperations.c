@@ -44,8 +44,17 @@ void XOR() {
 
 	printf("after :n1=%d n2=%d\n",n1,n2);
 }
+
+void LeftShift() {
+	int n = 4;	//0000 0100
+				//0001 0000 =16
+	int sftl = n << 2;
+	printf("%d << %d = %d",n,2,sftl);
+}
+
 void main() {
 	//Parity();
 	//BitwiseOr();
-	XOR();
+	//XOR();
+	LeftShift();
 }
