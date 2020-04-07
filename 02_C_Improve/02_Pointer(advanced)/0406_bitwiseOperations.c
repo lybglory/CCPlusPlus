@@ -51,10 +51,16 @@ void LeftShift() {
 	int sftl = n << 2;
 	printf("%d << %d = %d",n,2,sftl);
 }
-
+void RightShift() {
+	int n = 4;	//0000 0100
+				//0000 0001 =1
+	int sftr = n >> 2;
+	printf("%d >> %d = %d", n, 2, sftr);
+}
 void main() {
 	//Parity();
 	//BitwiseOr();
 	//XOR();
-	LeftShift();
+	//LeftShift();
+	RightShift();
 }
