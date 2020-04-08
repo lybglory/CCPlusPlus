@@ -10,6 +10,6 @@ void LinearArray01() {
 	printf("&array  =%d\n",&array);
 	printf("&array+1=%d\n", &array+1);
 }
-void main() {
+void main_0407() {
 	LinearArray01();
 }

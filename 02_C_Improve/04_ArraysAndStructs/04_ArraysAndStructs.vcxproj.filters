@@ -18,5 +18,8 @@
     <ClCompile Include="0407_Array.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0408_ArrayIndex.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
