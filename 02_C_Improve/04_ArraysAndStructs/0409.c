@@ -17,6 +17,19 @@ void Multidimensional() {
 	printf("\n");
 
 }
+
+void ArrayPointDefine1() {
+	int array[4] = { 2020,2019,2018,2017 };
+	typedef int arr[4];
+	arr *arr_p = &array;
+	for (size_t i = 0; i < sizeof(array)/sizeof(array[0]); i++)
+	{
+		printf("%d\n", (*arr_p)[i]);
+	}
+}
+
+
 void main() {
-	Multidimensional();
+	//Multidimensional();
+	ArrayPointDefine1();
 }
