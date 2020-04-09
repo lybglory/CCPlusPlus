@@ -41,8 +41,19 @@ void ArrayPointDefine2() {
 		printf("%d\n", *((*arr_P) + i));
 	}
 }
+
+void ArrayPointDefine3() {
+	int arr[5] = { 1, 2, 3, 4, 5 };
+
+	int *arr_p = arr;
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d\n", arr_p[i]);
+	}
+}
 void main() {
 	//Multidimensional();
 	//ArrayPointDefine1();
-	ArrayPointDefine2();
+	//ArrayPointDefine2();
+	ArrayPointDefine3();
 }
