@@ -8,6 +8,6 @@ void ArrayIndexTest() {
 	printf("*p = %d\n", *p);
 	printf("*p = %d\n", p[-1]);
 }
-void main() {
+void main_0408() {
 	ArrayIndexTest();
 }
