@@ -28,8 +28,21 @@ void ArrayPointDefine1() {
 	}
 }
 
+void ArrayPointDefine2() {
+	int arr[5] = { 1, 2, 3, 4, 5 };
 
+	typedef int(*ARRAY)[5];
+
+	ARRAY arr_P = &arr;
+
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d\n", (*arr_P)[i]);
+		printf("%d\n", *((*arr_P) + i));
+	}
+}
 void main() {
 	//Multidimensional();
-	ArrayPointDefine1();
+	//ArrayPointDefine1();
+	ArrayPointDefine2();
 }
