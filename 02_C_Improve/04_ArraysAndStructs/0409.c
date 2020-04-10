@@ -46,14 +46,21 @@ void ArrayPointDefine3() {
 	int arr[5] = { 1, 2, 3, 4, 5 };
 
 	int *arr_p = arr;
+
+	//int arr[5] = { 1, 2, 3, 4, 5 };
+
+	// 语法： 数组元素类型 （* 数组指针变量名称）[元素个数]
+	//int(*p)[5] = &arr;
+	// *p == arr
 	for (int i = 0; i < 5; i++)
 	{
+		//printf("%d\n", (*p)[i]);
 		printf("%d\n", arr_p[i]);
 	}
 }
-void main() {
+void main_0409() {
 	//Multidimensional();
 	//ArrayPointDefine1();
 	//ArrayPointDefine2();
-	ArrayPointDefine3();
+	//ArrayPointDefine3();
 }
