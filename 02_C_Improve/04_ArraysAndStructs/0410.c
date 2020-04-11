@@ -21,6 +21,6 @@ void DyadicArray() {
 	}
 }
 
-void main() {
+void main_0410() {
 	DyadicArray();
 }
