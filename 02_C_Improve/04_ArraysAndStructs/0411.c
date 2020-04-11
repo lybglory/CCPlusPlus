@@ -53,7 +53,7 @@ void PrintfArray(int *arrP,int len) {
 	}
 }
 
-void PtArrSelectionSort(char *p[], int len) {
+void PtArrSelectionSort(char **p, int len) {
 	for (size_t i = 0; i < len; i++)
 	{
 		int min = i;
@@ -79,7 +79,7 @@ void PrintfPointerArr(char **p,int len) {
 	}
 }
 void PointerArr() {
-	char *str[] = {"Date:2020/4/12","Time:0:30","Missing glue pudding"};
+	char *str[] = {"Date:2020/4/12","Time:0:35","Missing glue pudding"};
 	int len = sizeof(str) / sizeof(char*);
 	PtArrSelectionSort(str,len);
 	PrintfPointerArr(str, len);
