@@ -15,7 +15,19 @@ void NormalSort(int* p, int len) {
 		}
 	}
 }
-
+void BubbleSort(int* p, int len) {
+	for (size_t x = 0; x < len-1; x++)
+	{
+		for (size_t y = 0; y < len-1-x; y++)
+		{
+			if (p[y] > p[y+1]) {
+				int temp = p[y];
+				p[y] = p[y+1];
+				p[y+1] = temp;
+			}
+		}
+	}
+}
 void SelectionSort(int *p,int len) {
 	for (int i = 0; i < len; i++)
 	{	//2020,2016,2019,2017,2018
@@ -44,6 +56,7 @@ void main() {
 	int array[] = { 2020,2016,2019,2017,2018 };
 	int arrayLen = sizeof(array) / sizeof(array[0]);
 	//NormalSort(array,arrayLen);
-	SelectionSort(array,arrayLen);
+	BubbleSort(array, arrayLen);
+	//SelectionSort(array,arrayLen);
 	PrintfArray(array,arrayLen);
 }
