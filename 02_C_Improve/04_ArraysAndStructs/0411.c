@@ -84,7 +84,7 @@ void PointerArr() {
 	PtArrSelectionSort(str,len);
 	PrintfPointerArr(str, len);
 }
-void main() {
+void main_0411() {
 	//int array[] = { 2020,2016,2019,2017,2018 };
 	//int arrayLen = sizeof(array) / sizeof(array[0]);
 	//NormalSort(array,arrayLen);
