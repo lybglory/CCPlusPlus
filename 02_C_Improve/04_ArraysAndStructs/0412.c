@@ -116,12 +116,42 @@ void FormalParameter() {
 	PrintArray02(arr);
 	PrintArray03(arr);
 }
+typedef struct  {
+	char* name;
+	int age;
+}Person;
+void StrucAssignOper() {
+	Person bin;
+	bin.name = (char*)malloc(strlen("bin")+1);
+	memset(bin.name, 0, strlen("bin") + 1);
+	strcpy(bin.name,"bin");
+	bin.age = 20;
+	Person messi;
+	messi.age = 30;
+	messi.name = (char *)malloc(strlen("Messi")+1);
+	memset(messi.name,0, strlen("Messi") + 1);
+	strcpy(messi.name, "Messi");
+	bin = messi;		//浅拷贝之后，一旦free，会有内存泄漏
+	
 
+	printf("bin  :%s %d\n", bin.name, bin.age);
+	printf("messi:%s %d\n", messi.name, messi.age);
+
+	if (messi.name!=NULL) {
+		free(messi.name);
+		messi.name = NULL;
+	}
+	if (bin.name != NULL) {
+		free(bin.name);
+		bin.name = NULL;
+	}
+}
 void main() {
 	//int lines = 4;
 	//char **p=HeapArea(lines);
 	//PrintfSecPoint(p,lines);
 	//FreeHeapArea(p, lines);
 	//StorageCharacter();
-	FormalParameter();
+	//FormalParameter();
+	StrucAssignOper();
 }
