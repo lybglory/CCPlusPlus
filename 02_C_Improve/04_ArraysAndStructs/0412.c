@@ -73,10 +73,55 @@ void StorageCharacter() {
 	IterateThrough((int*)arr2, len);
 }
 
+
+//二维数组的第1种形式
+void PrintArray01(int arr[3][3]) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("arr1[%d][%d]:%d ", i, j, arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+//二维数组的第2种形式
+void PrintArray02(int arr[][3]) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("arr2[%d][%d]:%d ", i, j, arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+//二维数组的第3种形式
+void PrintArray03(int(*arr)[3]) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("arr3[%d][%d]:%d ", i, j, arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void FormalParameter() {
+
+	int arr[][3] = {
+		{ 2020, 2019, 2018 },
+		{ 2017, 2016, 2015 },
+		{ 2014, 2013, 2012 }
+	};
+
+	PrintArray01(arr);
+	PrintArray02(arr);
+	PrintArray03(arr);
+}
+
 void main() {
 	//int lines = 4;
 	//char **p=HeapArea(lines);
 	//PrintfSecPoint(p,lines);
 	//FreeHeapArea(p, lines);
-	StorageCharacter();
+	//StorageCharacter();
+	FormalParameter();
 }
