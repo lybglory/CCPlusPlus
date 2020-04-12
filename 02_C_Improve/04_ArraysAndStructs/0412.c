@@ -50,9 +50,33 @@ void FreeHeapArea(char **p,int len) {
 	}
 	free(p);
 }
+
+void IterateThrough(int* arr, int len) {
+	for (int i = 0; i < len; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+void StorageCharacter() {
+	int arr[][3] = {
+		{ 2020, 2019, 2018 },
+		{ 2017, 2016, 2015 },
+		{ 2014, 2013, 2012 }
+	};
+
+	int arr2[][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	int len = sizeof(arr2) / sizeof(int);
+
+	int* p = (int*)arr;
+	IterateThrough((int*)arr, len);
+	IterateThrough((int*)arr2, len);
+}
+
 void main() {
-	int lines = 4;
-	char **p=HeapArea(lines);
-	PrintfSecPoint(p,lines);
-	FreeHeapArea(p, lines);
+	//int lines = 4;
+	//char **p=HeapArea(lines);
+	//PrintfSecPoint(p,lines);
+	//FreeHeapArea(p, lines);
+	StorageCharacter();
 }
