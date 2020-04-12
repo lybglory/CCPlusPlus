@@ -131,9 +131,18 @@ void StrucAssignOper() {
 	messi.name = (char *)malloc(strlen("Messi")+1);
 	memset(messi.name,0, strlen("Messi") + 1);
 	strcpy(messi.name, "Messi");
-	bin = messi;		//浅拷贝之后，一旦free，会有内存泄漏
+	//bin = messi;		//浅拷贝之后，一旦free，会有内存泄漏
 	
-
+	
+	//--解决办法：先释放被赋值属性的堆区空间
+	if (bin.name!=NULL) {
+		free(bin.name);
+		bin.name = NULL;
+	}
+	//然后再重新分配
+	bin.name = (char*)malloc(strlen(messi.name)+1);
+	strcpy(bin.name,messi.name);
+	//----
 	printf("bin  :%s %d\n", bin.name, bin.age);
 	printf("messi:%s %d\n", messi.name, messi.age);
 
