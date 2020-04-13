@@ -155,7 +155,7 @@ void StrucAssignOper() {
 		bin.name = NULL;
 	}
 }
-void main() {
+void main_0412() {
 	//int lines = 4;
 	//char **p=HeapArea(lines);
 	//PrintfSecPoint(p,lines);
