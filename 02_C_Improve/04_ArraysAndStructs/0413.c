@@ -8,7 +8,7 @@ typedef struct {
 
 }Person;
 Person **StructHeapArea() {
-	Person **tempStruct = (Person **)malloc(sizeof(Person **)*3);
+	Person **tempStruct = (Person **)malloc(sizeof(Person *)*3);
 	for (size_t i = 0; i < 3; i++)
 	{
 		tempStruct[i] = (Person *)malloc(sizeof(Person));
