@@ -47,7 +47,7 @@ void PrintfStuctArray(Info **infos,int len) {
 	for (int i = 0; i < len; i++)
 	{	
 		printf("%s\n",infos[i]->name);
-		for (int j = 0; j < familyLen; i++)
+		for (int j = 0; j < familyLen; j++)
 		{
 			printf("  %s\n",infos[i]->family[j]);
 		}
