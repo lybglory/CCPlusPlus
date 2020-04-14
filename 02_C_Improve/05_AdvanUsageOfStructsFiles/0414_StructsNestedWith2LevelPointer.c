@@ -53,11 +53,45 @@ void PrintfStuctArray(Info **infos,int len) {
 		}
 	}
 }
+void FreeTwoLevelHeap(Info **info,int len) {
+	if (info==NULL) {
+		return;
+	}
+	for (int i = 0; i < len; i++)
+	{	//free name attribute
+		if (info[i]->name!=NULL) {
+			free(info[i]->name);
+			info[i]->name = NULL;
+		}
+		//free family attribute elemet
+		for (int j = 0; j < len+1; j++)
+		{
+			if (info[i]->family[j]!=NULL) {
+				free(info[i]->family[j]);
+				info[i]->family[j] = NULL;
+			}
+		}
+		//free family attribute
+		if (info[i]->family!= NULL) {
+			free(info[i]->family);
+			info[i]->family= NULL;
+		}
+		//free struct element
+		if (info[i]!= NULL) {
+			free(info[i]);
+			info[i] = NULL;
+		}
+	}//for_end
+	//free struct
+	free(info);
+	info = NULL;
+}
 void CalledFunc1() {
 	Info **infos = NULL;			
 	int n = 2;
 	StructTwoLevelPointer(&infos, n);//没有返回值，传入2级指针的地址==3级指针修饰
 	PrintfStuctArray(infos,n);
+	FreeTwoLevelHeap(infos, n);
 }
 void main() {
 	CalledFunc1();
