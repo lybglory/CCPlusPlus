@@ -5,19 +5,45 @@
 #include <stddef.h>	//offset
 #pragma pack (show)	//32bit默认是8，64bit默认是16
 typedef struct PeopleInfo{
-	int age;				//0~3
-	char *name;		//4~7	//8~15		
-	double money;	//8~15	//16~22
-	char sex;		//16~17	//24~27
-	int member;				//28~31
-}Info;
+	int age;		//0~3	
+	char *name;		
+	double money;	
+	char sex;		
+	int member;		
+}Info;				
+
+typedef struct PeopleInfo2 {
+					
+	int age;		//0~3
+	char name[10];	//4~13	
+	char sex;		//14	
+	double money;	//16~23	
+	int member;		//24~27	
+	
+}Info2;				//sizeof(Info2)=32
 
 void MemoAlign() {
 	printf("siezof(Info)=%d\n",sizeof(Info));
-	Info messi = { 33,"Messi",90,'M' };
-	int offset=offsetof(Info, member);
-	printf("offset=%d\n",offset);
+	Info bingo = { 33,"bingo",90,'M',7 };
+	int offset1 = offsetof(Info, name);
+	int offset2 = offsetof(Info, money);
+	int offset3 = offsetof(Info, sex);
+	int offset4 = offsetof(Info, member);
+	printf("bingo offset:name=%d; money=%d; sex=%d; member=%d\n", offset1, offset2, offset3, offset4);
+	printf("sex=%c\n\n", *((char*)(&bingo) +offset3));
+}
+
+void MemoAlign2() {
+	printf("siezof(Info2)=%d\n", sizeof(Info2));
+	Info2 messi = { 33,"Messi",'M',90,7 };
+	int offset1 = offsetof(Info2, name);
+	int offset2 = offsetof(Info2, sex);
+	int offset3 = offsetof(Info2, money);
+	int offset4 = offsetof(Info2, member);
+	printf("Messi offset:name=%d; sex=%d; money=%d; member=%d\n", offset1, offset2, offset3, offset4);
+	printf("name=%s\n", (char *)(&messi) + offset1);
 }
 void main() {
 	MemoAlign();
+	MemoAlign2();
 }
