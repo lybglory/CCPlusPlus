@@ -93,6 +93,6 @@ void CalledFunc1() {
 	PrintfStuctArray(infos,n);
 	FreeTwoLevelHeap(infos, n);
 }
-void main() {
+void main_0414() {
 	CalledFunc1();
 }
