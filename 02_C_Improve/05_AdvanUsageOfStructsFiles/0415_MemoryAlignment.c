@@ -43,7 +43,7 @@ void MemoAlign2() {
 	printf("Messi offset:name=%d; sex=%d; money=%d; member=%d\n", offset1, offset2, offset3, offset4);
 	printf("name=%s\n", (char *)(&messi) + offset1);
 }
-void main() {
+void main_0415() {
 	MemoAlign();
 	MemoAlign2();
 }
