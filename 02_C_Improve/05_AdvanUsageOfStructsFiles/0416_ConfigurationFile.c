@@ -9,4 +9,7 @@ void main() {
 	struct ConfigInfo *cfgInfo = NULL;
 	//
 	Filesanalysis("config.txt", lines,&cfgInfo );
+	printf("heroName=%s\n", GetKeyValue("heroName", cfgInfo, lines));
+	printf("heroInfo=%s\n", GetKeyValue("heroInfo", cfgInfo, lines));
+	FreeStruHeap(cfgInfo);
 }
