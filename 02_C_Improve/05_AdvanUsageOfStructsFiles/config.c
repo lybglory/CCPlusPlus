@@ -24,7 +24,7 @@ extern int GetFileLine(const char *path) {
 	return lines;
 }
 //
-extern int IsValidLine(char *buffer) {
+int IsValidLine(char *buffer) {
 	//#英雄的姓名
 	//heroName:朱友珪
 	//没有':'表示不是有效数据,空格开头也不是有效数据
@@ -37,13 +37,13 @@ extern int IsValidLine(char *buffer) {
 	}
 }
 
-extern void Filesanalysis(const *filePath,int lines, struct ConfigInfo **struConfig) {
-	struct ConfigInfo *tempCfg = (struct ConfigInfo*)malloc(sizeof(struct ConfigInfo)*lines);
-	if (tempCfg==NULL) {
+extern void Filesanalysis(const *filePath,int lines, struct config **cfg_p) {
+	struct config *tmpCfg = (struct config*)malloc(sizeof(struct config)*lines);
+	if (tmpCfg==NULL) {
 		perror("config pinter is null!");
 		return;
 	}
-	memset(tempCfg,0, sizeof(struct ConfigInfo)*lines);
+	memset(tmpCfg,0, sizeof(struct config)*lines);
 	FILE *fp = fopen(filePath, "r");
 	if (fp == NULL) {
 		perror("open error!");
@@ -53,25 +53,25 @@ extern void Filesanalysis(const *filePath,int lines, struct ConfigInfo **struCon
 	int i = 0;
 	while (fgets(buffer,sizeof(buffer),fp)!=NULL) {
 		if (IsValidLine(buffer)) {
-			memset(tempCfg[i].key,0,20);
-			memset(tempCfg[i].value, 0, 50);
+			memset(tmpCfg[i].key,0,20);
+			memset(tmpCfg[i].value, 0, 50);
 			//heroName:朱友珪
 			char *pos = strchr(buffer, ':');
 			//printf("buffer=%s;pos=%s\n",buffer,pos);
 			//数组名代表元素的首地址
-			strncpy(tempCfg[i].key,buffer,pos-buffer);
-			strncpy(tempCfg[i].value, pos+1,strlen(pos+1)-1);
+			strncpy(tmpCfg[i].key,buffer,pos-buffer);
+			strncpy(tmpCfg[i].value, pos+1,strlen(pos+1)-1);
 			//printf("config[%d].key=%s\n",i, config[i].key);
 			//printf("config[%d].value=%s\n", i, config[i].value);
 			i++;
 		}
 		memset(buffer,0, sizeof(buffer));
 	}//while_end
-	*struConfig = tempCfg;
+	*cfg_p = tmpCfg;
 	fclose(fp);
 }
 
-extern char *GetKeyValue(char *key,struct ConfigInfo *cfg,int lines) {
+extern char *GetKeyValue(char *key,struct config *cfg,int lines) {
 	for (size_t i = 0; i < lines; i++)
 	{
 		if (strcmp(key,cfg[i].key)==0) {
@@ -80,7 +80,7 @@ extern char *GetKeyValue(char *key,struct ConfigInfo *cfg,int lines) {
 	}
 }
 
-extern void FreeStruHeap(struct ConfigInfo *config) {
+extern void FreeStruHeap(struct config *config) {
 	if (config!=NULL) {
 		free(config);
 		config = NULL;

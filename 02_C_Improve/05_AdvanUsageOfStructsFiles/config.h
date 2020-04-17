@@ -1,9 +1,13 @@
 #pragma once
-extern struct ConfigInfo {
+extern struct config {
 	char key[64];
 	char value[64];
 };
+//
 extern int GetFileLine(const char *path);
-extern void Filesanalysis(const *filePath, int lines, struct ConfigInfo **config);
-extern char *GetKeyValue(char *key, struct ConfigInfo* cfg, int lines);
-extern void FreeStruHeap(struct ConfigInfo *cfg);
+//
+extern void Filesanalysis(const *filePath, int lines, struct config **config);
+//
+extern char *GetKeyValue(char *key, struct config* cfg, int lines);
+//
+extern void FreeStruHeap(struct config *cfg);
