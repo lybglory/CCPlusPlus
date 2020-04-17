@@ -51,8 +51,11 @@ extern void Filesanalysis(const *filePath,int lines, struct ConfigInfo **struCon
 	int i = 0;
 	while (fgets(buffer,sizeof(buffer),fp)!=NULL) {
 		if (IsValidLine(buffer)) {
+			memset(config[i].key,0,20);
+			memset(config[i].value, 0, 50);
 			//heroName:朱友珪
 			char *pos = strchr(buffer, ':');
+			//printf("buffer=%s;pos=%s\n",buffer,pos);
 			//数组名代表元素的首地址
 			strncpy(config[i].key,buffer,pos-buffer);
 			strncpy(config[i].value, pos+1,strlen(pos+1)-1);
@@ -60,8 +63,8 @@ extern void Filesanalysis(const *filePath,int lines, struct ConfigInfo **struCon
 			printf("config[%d].value=%s\n", i, config[i].value);
 			i++;
 		}
-
+		memset(buffer,0, sizeof(buffer));
 	}//while_end
 	*struConfig = config;
-
 }
+
