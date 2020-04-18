@@ -17,16 +17,40 @@ extern void Encryption(char *sourceFile,char *encryptFile) {
 		perror("open error!");
 		return;
 	}
-	char temp;
-	while (fgetc(fp_r)!=EOF) {		//EOF just for window OS
-		temp = fgetc(fp_r);
-		short tmpShort = (short)temp;
+	char tmpChar;
+	while ( (tmpChar = fgetc(fp_r))!=EOF ) {	//EOF just for window OS
+		short tmpShort = (short)tmpChar;
 		tmpShort = tmpShort << 4;
 		tmpShort = tmpShort | 0x8000;		//(1000) =(8)
 		tmpShort = tmpShort + rand() % 16;	//(0~15)
-		printf("%d\n", tmpShort);
+		//printf("%d\n", tmpShort);
 		fprintf(fp_w,"%hd",tmpShort);		//write to file
 	}
 	fclose(fp_r);
 	fclose(fp_w);
+}
+extern void Decryption(char* encryptFile, char* decryptFile) {
+	//1000 0010 0011 0011	<<	1
+	//0000 0100 0110 0110	>>	5 ( <<4  <<1 )
+	//00000 0000 0100 011
+	FILE *encryFP = fopen(encryptFile, "r");
+	FILE *decryFP = fopen(decryptFile, "w");
+	if (encryFP==NULL||decryFP==NULL) {
+		perror("open error!");
+		return;
+	}
+	short tmpShort;
+	while (feof(encryFP) == 0)			//0值表示没读到结尾
+	{
+		fscanf(encryFP, "%hd", &tmpShort);	//Format read
+		//tmpShort =tmpShort << 1;		//Remove the high
+		//tmpShort= tmpShort >> 5;
+		tmpShort <<= 1;		//Remove the high
+		tmpShort >>= 5;
+		char tempChar = (char)tmpShort;
+		//printf("%c", tempChar);
+		fputc(tempChar, decryFP);
+	}
+	fclose(encryFP);
+	fclose(decryFP);
 }

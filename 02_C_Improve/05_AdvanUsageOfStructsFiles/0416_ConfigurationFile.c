@@ -15,4 +15,5 @@ void main() {
 	FreeStruHeap(cfgInfo);
 	//encryption
 	Encryption("config.txt", "encryption.txt");
+	Decryption("encryption.txt", "decryption.txt");
 }

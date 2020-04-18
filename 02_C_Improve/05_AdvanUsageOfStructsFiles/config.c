@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "config.h"
+#include "Crypto.h"
 //
 extern int GetFileLine(const char *path) {
 	FILE *fp_read = fopen(path,"r");
@@ -61,8 +62,7 @@ extern void Filesanalysis(const *filePath,int lines, struct config **cfg_p) {
 			//数组名代表元素的首地址
 			strncpy(tmpCfg[i].key,buffer,pos-buffer);
 			strncpy(tmpCfg[i].value, pos+1,strlen(pos+1)-1);
-			//printf("config[%d].key=%s\n",i, config[i].key);
-			//printf("config[%d].value=%s\n", i, config[i].value);
+			
 			i++;
 		}
 		memset(buffer,0, sizeof(buffer));
