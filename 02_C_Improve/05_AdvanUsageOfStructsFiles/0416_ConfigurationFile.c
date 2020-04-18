@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "config.h"
+#include "Crypto.h"
 void main() {
 	int lines=GetFileLine("config.txt");
 	printf("lines=%d\n",lines);
@@ -12,4 +13,6 @@ void main() {
 	printf("heroName=%s\n", GetKeyValue("heroName", cfgInfo, lines));
 	printf("heroInfo=%s\n", GetKeyValue("heroInfo", cfgInfo, lines));
 	FreeStruHeap(cfgInfo);
+	//encryption
+	Encryption("config.txt", "encryption.txt");
 }

@@ -27,9 +27,15 @@
     <ClCompile Include="0416_ConfigurationFile.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Crypto.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Crypto.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

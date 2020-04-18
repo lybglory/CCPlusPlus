@@ -142,9 +142,11 @@
     <ClCompile Include="0415_MemoryAlignment.c" />
     <ClCompile Include="config.c" />
     <ClCompile Include="0416_ConfigurationFile.c" />
+    <ClCompile Include="Crypto.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
+    <ClInclude Include="Crypto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
