@@ -4,6 +4,7 @@
 #include <string.h>
 #include "config.h"
 #include "Crypto.h"
+#include "time.h"
 void main() {
 	int lines=GetFileLine("config.txt");
 	printf("lines=%d\n",lines);
@@ -13,7 +14,9 @@ void main() {
 	printf("heroName=%s\n", GetKeyValue("heroName", cfgInfo, lines));
 	printf("heroInfo=%s\n", GetKeyValue("heroInfo", cfgInfo, lines));
 	FreeStruHeap(cfgInfo);
+	srand(time(NULL));
 	//encryption
+	//-32195-709-1502
 	Encryption("config.txt", "encryption.txt");
 	Decryption("encryption.txt", "decryption.txt");
 }

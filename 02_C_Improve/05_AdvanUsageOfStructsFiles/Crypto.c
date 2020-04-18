@@ -3,9 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Crypto.h"
-#include <time.h>	//time func
 extern void Encryption(char *sourceFile,char *encryptFile) {
-	srand(time(NULL));
+
 	//#英雄的Id  #-->35(ASCII)-->(0010 0011)
 	//0000 0000 0010 0011 << 4
 	//0000 0010 0011 0000 |		Unification goes negative
@@ -43,10 +42,10 @@ extern void Decryption(char* encryptFile, char* decryptFile) {
 	while (feof(encryFP) == 0)			//0值表示没读到结尾
 	{
 		fscanf(encryFP, "%hd", &tmpShort);	//Format read
-		//tmpShort =tmpShort << 1;		//Remove the high
-		//tmpShort= tmpShort >> 5;
-		tmpShort <<= 1;		//Remove the high
-		tmpShort >>= 5;
+		tmpShort =tmpShort << 1;		//Remove the high
+		tmpShort= tmpShort >> 5;
+		//tmpShort <<= 1;		//Remove the high
+		//tmpShort >>= 5;
 		char tempChar = (char)tmpShort;
 		//printf("%c", tempChar);
 		fputc(tempChar, decryFP);
