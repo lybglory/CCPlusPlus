@@ -51,6 +51,6 @@ void DynamicLinked() {
 	free(node4);
 }
 void main() {
-	StaticLinked();
+	//StaticLinked();
 	DynamicLinked();
 }
