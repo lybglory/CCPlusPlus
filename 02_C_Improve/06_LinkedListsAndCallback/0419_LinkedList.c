@@ -23,6 +23,34 @@ void StaticLinked() {
 		pLink = pLink->linkNext;
 	}
 }
+
+void DynamicLinked() {
+	struct LinkNode *node1 = (struct LinkNode *)malloc(sizeof(struct LinkNode));
+	struct LinkNode *node2 = (struct LinkNode *)malloc(sizeof(struct LinkNode));
+	struct LinkNode *node3 = (struct LinkNode *)malloc(sizeof(struct LinkNode));
+	struct LinkNode *node4 = (struct LinkNode *)malloc(sizeof(struct LinkNode));
+
+	node1->year = 2017;
+	node1->linkNext = node2;
+	node2->year = 2018;
+	node2->linkNext = node3;
+	node3->year = 2019;
+	node3->linkNext = node4;
+	node4->year = 2020;
+	node4->linkNext = NULL;	
+
+	struct LinkNode *pLink = node1;
+	while (pLink != NULL)
+	{
+		printf("Dynamic link:year=%d\n", pLink->year);
+		pLink = pLink->linkNext;
+	}
+	free(node1);
+	free(node2);
+	free(node3);
+	free(node4);
+}
 void main() {
 	StaticLinked();
+	DynamicLinked();
 }
