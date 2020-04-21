@@ -18,5 +18,13 @@
     <ClCompile Include="0419_LinkedList.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0421_InitLinkList.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InitLinkList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "InitLinkList.h"
 struct LinkNode {
 	int year;
 	struct LinkNode *linkNext;
@@ -52,5 +53,9 @@ void DynamicLinked() {
 }
 void main() {
 	//StaticLinked();
-	DynamicLinked();
+	//DynamicLinked();
+	
+	struct Linkls *lkls=InitLinkls();
+	ForeachLink(lkls);
+	//FreePlink(lkls);
 }

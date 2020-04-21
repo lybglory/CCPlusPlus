@@ -139,6 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0419_LinkedList.c" />
+    <ClCompile Include="0421_InitLinkList.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InitLinkList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
