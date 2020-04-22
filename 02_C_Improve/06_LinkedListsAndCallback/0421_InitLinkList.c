@@ -13,9 +13,9 @@ extern struct Linkls *InitLinkls() {
 	lkHead->lkNext = NULL;
 	int val = -1;
 	struct Linkls *lkTail = lkHead;
+	printf("Please insert data. \nEnter -1 to indicate the end of the insert:\n");
 	while (1)
 	{
-		printf("Please insert data. Enter -1 to indicate the end of the insert:\n");
 		scanf("%d",&val);
 		if (val==-1) {
 			break;
@@ -43,9 +43,25 @@ extern void ForeachLink(struct Linkls *lkls) {
 
 }
 
-extern void FreePlink(struct Linkls *lkls) {
-	if (lkls != NULL) {
-		free(lkls);
-		lkls = NULL;
+extern void InsertLink(struct Linkls *lkls,int insertPos,int insertVal) {
+	if (lkls==NULL) {
+		return;
 	}
+
+	struct Linkls *lkCurr = lkls->lkNext;
+	struct Linkls *lkPre = lkls;
+	while (lkCurr!=NULL) {
+		if (lkCurr->year == insertPos) {
+			break;
+		}
+		lkPre = lkCurr;
+		lkCurr = lkCurr->lkNext;
+		//
+	}
+	struct Linkls *newNode = (struct Linkls*)malloc(sizeof(struct Linkls));
+	newNode->year = insertVal;
+	newNode->lkNext = NULL;
+
+	newNode->lkNext = lkCurr;
+	lkPre->lkNext = newNode;
 }

@@ -57,5 +57,8 @@ void main() {
 	
 	struct Linkls *lkls=InitLinkls();
 	ForeachLink(lkls);
-	//FreePlink(lkls);
+	InsertLink(lkls,2020,1990);
+	printf("insert:\n");
+	ForeachLink(lkls);
+
 }

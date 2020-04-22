@@ -6,4 +6,4 @@ struct Linkls{
 
 extern struct Linkls *InitLinkls();
 extern void ForeachLink(struct Linkls* lkls);
-extern void FreePlink(struct Linkls* lkls);
+extern void InsertLink(struct Linkls* lkls, int oldVal, int newVal);
