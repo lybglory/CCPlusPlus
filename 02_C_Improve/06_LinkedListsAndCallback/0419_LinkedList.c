@@ -60,5 +60,7 @@ void main() {
 	InsertLink(lkls,2020,1990);
 	printf("insert:\n");
 	ForeachLink(lkls);
-
+	DeleteLink(lkls, 1990);
+	printf("delete:\n");
+	ForeachLink(lkls);
 }

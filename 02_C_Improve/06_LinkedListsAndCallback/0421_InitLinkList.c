@@ -54,9 +54,8 @@ extern void InsertLink(struct Linkls *lkls,int insertPos,int insertVal) {
 		if (lkCurr->year == insertPos) {
 			break;
 		}
-		lkPre = lkCurr;
-		lkCurr = lkCurr->lkNext;
-		//
+		lkPre = lkCurr;				//记录前一个节点
+		lkCurr = lkCurr->lkNext;	//向后移动
 	}
 	struct Linkls *newNode = (struct Linkls*)malloc(sizeof(struct Linkls));
 	newNode->year = insertVal;
@@ -73,17 +72,19 @@ extern void DeleteLink(struct Linkls *lkhead,int delVal) {
 	struct Linkls *lkpre = lkhead;
 	struct Linkls *lkCurr = lkhead->lkNext;
 	while (lkCurr != NULL)
-	{
+	{	//find need delete，break
 		if (lkCurr->year==delVal) {
 			break;
 		}
-		lkpre = lkCurr;
-		lkCurr = lkCurr->lkNext;
+		//not find,move pointer
+		lkpre = lkCurr;				//记录前一个节点
+		lkCurr = lkCurr->lkNext;	//向后移动
 	}
 	if (lkCurr==NULL) {
 		return;
 	}
-	lkpre->lkNext = lkCurr->lkNext;
+	//
+	lkpre->lkNext = lkCurr->lkNext;//当前节点下一个指针域作为前一个节点
 	free(lkCurr); 
 	lkCurr = NULL;
 }
