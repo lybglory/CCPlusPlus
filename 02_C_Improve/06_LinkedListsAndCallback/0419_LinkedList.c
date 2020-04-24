@@ -57,16 +57,17 @@ void main() {
 	
 	struct Linkls *lkls=InitLinkls();
 	ForeachLink(lkls);
-	InsertLink(lkls,2020,2004);
+	InsertLink(lkls,2020,9900);
 	printf("insert node:\n");
 	ForeachLink(lkls);
-	DeleteLink(lkls, 2004);
+	DeletelkNode(lkls, 9900);
 	printf("delete node:\n");
 	ForeachLink(lkls);
-	ClearLink(lkls);
-	InsertLink(lkls, 2010, 2010);
-	InsertLink(lkls, 2011, 2011);
 	printf("clear link:\n");
+	ClearLink(lkls);
+	printf("reinsert node:\n");
+	InsertLink(lkls, 2000, 2000);
+	InsertLink(lkls, 200, 2001);
 	ForeachLink(lkls);
 	printf("Destory link:\n");
 	DestoryLink(lkls);

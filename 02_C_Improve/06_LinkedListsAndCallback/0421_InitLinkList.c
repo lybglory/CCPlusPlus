@@ -65,7 +65,7 @@ extern void InsertLink(struct Linkls *lkls,int insertPos,int insertVal) {
 	lkPre->lkNext = newNode;
 }
 
-extern void DeleteLink(struct Linkls *lkhead,int delVal) {
+extern void DeletelkNode(struct Linkls *lkhead,int delVal) {
 	if (lkhead==NULL) {
 		return;
 	}
