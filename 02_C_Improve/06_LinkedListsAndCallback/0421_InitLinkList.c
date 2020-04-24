@@ -88,3 +88,19 @@ extern void DeleteLink(struct Linkls *lkhead,int delVal) {
 	free(lkCurr); 
 	lkCurr = NULL;
 }
+extern void ClearLink(struct Linkls *lkHead) {
+	if (lkHead==NULL) {
+		return;
+	}
+	struct Linkls *lkCurr = lkHead->lkNext;
+	while (lkCurr!=NULL)
+	{	//if free lkCurr at first,it will cause a program exception
+		struct Linkls *lkTemp = lkCurr->lkNext;
+		free(lkCurr);
+		lkCurr = lkTemp;
+	}
+	//head assign NULL
+	lkHead->lkNext = NULL;
+}
+
+
