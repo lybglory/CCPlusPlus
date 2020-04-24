@@ -103,4 +103,11 @@ extern void ClearLink(struct Linkls *lkHead) {
 	lkHead->lkNext = NULL;
 }
 
-
+extern void DestoryLink(struct Linkls *lkHead) {
+	if (lkHead==NULL) {
+		return;
+	}
+	ClearLink(lkHead);
+	free(lkHead);
+	lkHead = NULL;
+}

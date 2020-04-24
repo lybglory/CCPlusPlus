@@ -68,5 +68,6 @@ void main() {
 	InsertLink(lkls, 2011, 2011);
 	printf("clear link:\n");
 	ForeachLink(lkls);
-
+	printf("Destory link:\n");
+	DestoryLink(lkls);
 }
