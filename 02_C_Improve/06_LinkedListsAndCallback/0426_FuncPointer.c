@@ -35,16 +35,45 @@ void FuncPointArr() {
 	pFuncArr[0]= FuncPointerDefined1;
 	pFuncArr[1] = FuncPointerDefined2;
 	pFuncArr[2] = FuncPointerDefined3;
+	//called
 	for (size_t i = 0; i < sizeof(pFuncArr)/sizeof(pFuncArr[0]); i++)
 	{
 		pFuncArr[i]("","");
 	}
 
 }
+struct Person { 
+	char *name;
+	int age;
+};
+void PrintfInt(void *n) {
+	int *num =(int *)n;
+	printf("int=%d\n",*num);
+}
+
+void PrintfFloat(void *n) {
+	float *flnum = (float *)n;
+	printf("float=%0.1f\n", *flnum);
+}
+
+void PrintfStruct(void *data) {
+	struct Person *struPerson = (struct Person *)data;
+	printf("name=%s; age=%d\n",struPerson->name,struPerson->age);
+}
+void CallBackFunction(void(*pFunc)(void *),void(*n) ) {
+	pFunc(n);
+}
+
 void main() {
 	//FuncPointerDefined1();
 	//FuncPointerDefined2();
 	//FuncPointerDefined3();
-	FuncPointArr();
+	//FuncPointArr();
+	int n = 2020;
+	CallBackFunction(PrintfInt,&n);
+	float score = 99.7f;
+	CallBackFunction(PrintfFloat, &score);
+	struct Person pr = {"Messi",33};
+	CallBackFunction(PrintfStruct, &pr);
 }
 
