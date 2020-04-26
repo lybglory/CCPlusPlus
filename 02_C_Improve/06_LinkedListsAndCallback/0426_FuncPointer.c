@@ -27,12 +27,24 @@ void FuncPointerDefined2() {
 void FuncPointerDefined3() {
 	void(*pFunc)(char *date, char* dailogue)=Greeting;
 	char *p1 = "deinfed3:2020/04/26";
-	char *p2 = "I would like to reserve a round-trip ticket to Parise,please";
+	char *p2 = "Please call back on Friday to reconfirm";
 	pFunc(p1,p2);
+}
+void FuncPointArr() {
+	void (*pFuncArr[3])(char *date, char *dailogue);
+	pFuncArr[0]= FuncPointerDefined1;
+	pFuncArr[1] = FuncPointerDefined2;
+	pFuncArr[2] = FuncPointerDefined3;
+	for (size_t i = 0; i < sizeof(pFuncArr)/sizeof(pFuncArr[0]); i++)
+	{
+		pFuncArr[i]("","");
+	}
+
 }
 void main() {
 	//FuncPointerDefined1();
 	//FuncPointerDefined2();
-	FuncPointerDefined3();
+	//FuncPointerDefined3();
+	FuncPointArr();
 }
 
