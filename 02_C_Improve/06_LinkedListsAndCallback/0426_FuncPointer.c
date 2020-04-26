@@ -23,8 +23,16 @@ void FuncPointerDefined2() {
 	pFunc *pfunc1 = Greeting;
 	pfunc1(p1, p2);
 }
+
+void FuncPointerDefined3() {
+	void(*pFunc)(char *date, char* dailogue)=Greeting;
+	char *p1 = "deinfed3:2020/04/26";
+	char *p2 = "I would like to reserve a round-trip ticket to Parise,please";
+	pFunc(p1,p2);
+}
 void main() {
 	//FuncPointerDefined1();
-	FuncPointerDefined2();
+	//FuncPointerDefined2();
+	FuncPointerDefined3();
 }
 
