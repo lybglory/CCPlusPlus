@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="0419_LinkedList.c" />
     <ClCompile Include="0421_InitLinkList.c" />
+    <ClCompile Include="0426_FuncPointer.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InitLinkList.h" />

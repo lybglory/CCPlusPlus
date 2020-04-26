@@ -51,7 +51,7 @@ void DynamicLinked() {
 	free(node3);
 	free(node4);
 }
-void main() {
+void main_0419() {
 	//StaticLinked();
 	//DynamicLinked();
 	
