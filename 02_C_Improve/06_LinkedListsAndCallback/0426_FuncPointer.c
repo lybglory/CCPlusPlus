@@ -64,16 +64,18 @@ void CallBackFunction(void(*pFunc)(void *),void(*n) ) {
 	pFunc(n);
 }
 
-void main() {
+void main_0426() {
 	//FuncPointerDefined1();
 	//FuncPointerDefined2();
 	//FuncPointerDefined3();
 	//FuncPointArr();
-	int n = 2020;
-	CallBackFunction(PrintfInt,&n);
-	float score = 99.7f;
-	CallBackFunction(PrintfFloat, &score);
-	struct Person pr = {"Messi",33};
-	CallBackFunction(PrintfStruct, &pr);
+	//int n = 2020;
+	//CallBackFunction(PrintfInt,&n);
+	//float score = 99.7f;
+	//CallBackFunction(PrintfFloat, &score);
+	//struct Person pr = {"Messi",33};
+	//CallBackFunction(PrintfStruct, &pr);
+
+
 }
 
