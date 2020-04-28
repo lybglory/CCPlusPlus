@@ -111,3 +111,23 @@ extern void DestoryLink(struct Linkls *lkHead) {
 	free(lkHead);
 	lkHead = NULL;
 }
+
+extern void ReverseLink(struct Linkls* lkHead) {
+	if (lkHead == NULL) {
+		return;
+	}
+	struct Linkls *ndCurr = lkHead->lkNext;
+	struct Linkls *ndPre = NULL;
+	struct Linkls *ndNext = NULL;
+	while (ndCurr!=NULL)
+	{
+		ndNext = ndCurr->lkNext;
+		//change point
+		ndCurr->lkNext=ndPre;
+		//move point
+		ndPre = ndCurr;
+		ndCurr = ndNext;
+	}
+	//
+	lkHead->lkNext = ndPre;
+}

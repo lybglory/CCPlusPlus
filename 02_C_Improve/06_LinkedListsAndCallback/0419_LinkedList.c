@@ -52,9 +52,6 @@ void DynamicLinked() {
 	free(node4);
 }
 void main_0419() {
-	//StaticLinked();
-	//DynamicLinked();
-	
 	struct Linkls *lkls=InitLinkls();
 	ForeachLink(lkls);
 	InsertLink(lkls,2020,9900);
@@ -71,4 +68,12 @@ void main_0419() {
 	ForeachLink(lkls);
 	printf("Destory link:\n");
 	DestoryLink(lkls);
+}
+void main() {
+	struct Linkls* lkls = InitLinkls();
+	printf("reverse before link:\n");
+	ForeachLink(lkls);
+	printf("reverse after link:\n");
+	ReverseLink(lkls);
+	ForeachLink(lkls);
 }

@@ -49,7 +49,7 @@ int FindElement(void *pr1,void *pr2) {
 	}
 }
 
-void main() {
+void main_0428() {
 	int yearArr[5] = {2020,2019,2018,2017,2016};
 	int yearLeng = sizeof(yearArr) / sizeof(yearArr[0]);
 	int eleSize = sizeof(yearArr[0]);
