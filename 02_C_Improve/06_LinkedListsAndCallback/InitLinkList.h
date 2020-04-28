@@ -11,3 +11,4 @@ extern void DeletelkNode(struct Linkls *lkhead, int delVal);
 extern void ClearLink(struct Linkls *lkHead);
 extern void DestoryLink(struct Linkls *lkHead);
 extern void ReverseLink(struct Linkls* lkHead);
+extern int CountLinks(struct Linkls* lkHead);

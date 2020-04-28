@@ -76,4 +76,5 @@ void main() {
 	printf("reverse after link:\n");
 	ReverseLink(lkls);
 	ForeachLink(lkls);
+	printf("link count=%d\n", CountLinks(lkls));
 }

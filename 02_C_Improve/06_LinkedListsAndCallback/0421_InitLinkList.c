@@ -131,3 +131,17 @@ extern void ReverseLink(struct Linkls* lkHead) {
 	//
 	lkHead->lkNext = ndPre;
 }
+
+extern int CountLinks(struct Linkls* lkHead) {
+	if (lkHead == NULL) {
+		return -1;
+	}
+	struct Linkls* ndCurr = lkHead->lkNext;
+	int count = 0;
+	while (ndCurr != NULL)
+	{
+		count++;
+		ndCurr = ndCurr->lkNext;
+	}
+	return count;
+}
