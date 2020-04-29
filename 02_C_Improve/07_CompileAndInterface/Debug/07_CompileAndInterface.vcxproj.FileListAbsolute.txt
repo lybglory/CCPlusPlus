@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\07_CompileAndInterface\Debug\07_CompileAndInterface.exe
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\07_CompileAndInterface\Debug\07_CompileAndInterface.pdb
