@@ -26,12 +26,6 @@ void PrintfArr(int *p_arr,int length) {
 		printf("p_arr[%d]=%d\n",i,p_arr[i]);
 	}
 }
-void Test01() {
-	int year[] = { 2010,2020,2017,2018,2016,2019 };
-	int len = sizeof(year) / sizeof(year[0]);
-	SelectSortInt(year, len);
-	PrintfArr(year, len);
-}
 
 
 void CommArrSort(int(* callbk)(void*,void *),void *pArr,int len,int eleSize) {
@@ -71,6 +65,7 @@ int CallbkSortIntArr(void *p1,void *p2) {
 	else {
 		return 0;
 	}
+
 }
 void CommPrintfArr(void(* callbkFunc)(void *),void *pArr,int len,int eleSize) {
 	for (int i = 0; i < len; i++)
@@ -79,33 +74,17 @@ void CommPrintfArr(void(* callbkFunc)(void *),void *pArr,int len,int eleSize) {
 		callbkFunc(arrEle);
 	}
 }
-void CallbkPrintfIntArr(void(* data)) {
+void CallbkPrintfArr(void(* data)) {
 	int* num = (int *)data;
 	printf("%d ",*num);
 }
-
-typedef struct {
-	char* pname;
-	int age;
-}SuperStar;
-
-void CallbkPrintfStruArr(void(*data)) {
-	SuperStar *star = data;
-	printf("age=%d; name=%s\n", star->age,star->pname);
+void Test01() {
+	int year[] = {2010,2020,2017,2018,2016,2019};
+	int len = sizeof(year) / sizeof(year[0]);
+	SelectSortInt(year,len);
+	PrintfArr(year, len);
 }
-
-int CallbkSortStruArr(void* p1, void* p2) {
-	SuperStar* s1 = p1;
-	SuperStar* s2 = p2;
-	if (s1->age > s2->age) {
-		return 1;
-	}
-	else {
-		return 0;
-	}
-}
-
-void FuncCalled01() {
+void Test02() {
 	int years[5] = {0};
 	int len=sizeof(years)/sizeof(years[0]);
 	printf("Enter %d element:\n",len);
@@ -113,29 +92,16 @@ void FuncCalled01() {
 		scanf("%d", &years[i]);
 	}
 	printf("Sort before:");
-	CommPrintfArr(CallbkPrintfIntArr, years, len, sizeof(years[0]));
+	CommPrintfArr(CallbkPrintfArr, years, len, sizeof(years[0]));
 	CommArrSort(CallbkSortIntArr, years, len, sizeof(years[0]));
 	printf("\nSort after :");
-	CommPrintfArr(CallbkPrintfIntArr, years, len, sizeof(int));
+	CommPrintfArr(CallbkPrintfArr, years, len, sizeof(int));
 
-}
 
-void FuncCalled02() {
-	SuperStar struArr[] = {
-		{"Messi",33},{"Bin",30},{"Zlatan",39},
-		{"Xavi",40} ,{"Iniesta",36}
-	};
-	int struLen = sizeof(struArr) / sizeof(struArr[0]);
-	int stEleSize = sizeof(struArr[0]);
-	printf("struct before:\n");
-	CommPrintfArr(CallbkPrintfStruArr, struArr, struLen, stEleSize);
-	CommArrSort(CallbkSortStruArr, struArr, struLen, stEleSize);
-	printf("\nstruct after :\n");
-	CommPrintfArr(CallbkPrintfStruArr, struArr, struLen, stEleSize);
 }
 
 void main() {
 	//Test01();
-	//FuncCalled01();
-	FuncCalled02();
+	Test02();
+
 }
