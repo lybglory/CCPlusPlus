@@ -13,9 +13,9 @@ extern struct Linkls *InitLinkls() {
 	lkHead->lkNext = NULL;
 	int val = -1;
 	struct Linkls *lkTail = lkHead;
-	printf("Please insert data. \nEnter -1 to indicate the end of the insert:\n");
 	while (1)
 	{
+		printf("Please insert data. Enter -1 to indicate the end of the insert:\n");
 		scanf("%d",&val);
 		if (val==-1) {
 			break;
@@ -43,10 +43,12 @@ extern void ForeachLink(struct Linkls *lkls) {
 
 }
 
-extern void InsertLink(struct Linkls *lkls,int insertPos,int insertVal) {
-	if (lkls==NULL) {
-		return;
+extern void FreePlink(struct Linkls *lkls) {
+	if (lkls != NULL) {
+		free(lkls);
+		lkls = NULL;
 	}
+<<<<<<< HEAD
 
 	struct Linkls *lkCurr = lkls->lkNext;
 	struct Linkls *lkPre = lkls;
@@ -63,6 +65,8 @@ extern void InsertLink(struct Linkls *lkls,int insertPos,int insertVal) {
 
 	newNode->lkNext = lkCurr;
 	lkPre->lkNext = newNode;
+=======
+>>>>>>> parent of 1142006... link list insert
 }
 
 extern void DeletelkNode(struct Linkls *lkhead,int delVal) {

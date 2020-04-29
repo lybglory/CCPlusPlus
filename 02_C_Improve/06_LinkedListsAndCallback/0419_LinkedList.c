@@ -54,6 +54,7 @@ void DynamicLinked() {
 void main_0419() {
 	struct Linkls *lkls=InitLinkls();
 	ForeachLink(lkls);
+<<<<<<< HEAD
 	InsertLink(lkls,2020,9900);
 	printf("insert node:\n");
 	ForeachLink(lkls);
@@ -77,4 +78,7 @@ void main() {
 	ReverseLink(lkls);
 	ForeachLink(lkls);
 	printf("link count=%d\n", CountLinks(lkls));
+=======
+	//FreePlink(lkls);
+>>>>>>> parent of 1142006... link list insert
 }
