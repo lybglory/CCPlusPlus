@@ -27,7 +27,8 @@ void PrintfArr(int *p_arr,int length) {
 	}
 }
 
-void CommArrSort(void(* pFunc)(void *,void *),void *pArr,int len,int eleSize) {
+
+void CommArrSort(int(* callbk)(void*,void *),void *pArr,int len,int eleSize) {
 	char *temp = (char*)malloc(eleSize);
 	for (int i = 0; i < len; i++)
 	{
@@ -36,7 +37,7 @@ void CommArrSort(void(* pFunc)(void *,void *),void *pArr,int len,int eleSize) {
 		{
 			char *pMin = (char*)pArr + min * eleSize;
 			char *pj = (char*)pArr + eleSize * j;
-			if (CallbkSortIntArr(pMin,pj)) {
+			if (callbk(pMin,pj)) {
 				min = j;
 			}
 		}
@@ -102,4 +103,5 @@ void Test02() {
 void main() {
 	//Test01();
 	Test02();
+
 }
