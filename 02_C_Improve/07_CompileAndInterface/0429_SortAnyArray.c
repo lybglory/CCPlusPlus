@@ -27,31 +27,34 @@ void PrintfArr(int *p_arr,int length) {
 	}
 }
 
-void CallbkArrSort(void(* pFunc)(void *),void *pArr,int len,int eleSize) {
+void CommArrSort(void(* pFunc)(void *,void *),void *pArr,int len,int eleSize) {
 	char *temp = (char*)malloc(eleSize);
 	for (int i = 0; i < len; i++)
 	{
 		int min = i;					//
 		for (int j = 1+i; j < len; j++)
 		{
-			char *pMin = (char*)pArr + i * eleSize;
-			char *p2 = (char*)pArr + eleSize * j;
-			if (SortIntArr(pMin,p2)==1) {
+			char *pMin = (char*)pArr + min * eleSize;
+			char *pj = (char*)pArr + eleSize * j;
+			if (CallbkSortIntArr(pMin,pj)) {
 				min = j;
 			}
 		}
 		if (i!=min) {
 			char *pi = (char *)pArr + i * eleSize;
-			char *pmin = (char*)pArr + min * eleSize;
+			char *pmin = (char *)pArr + min * eleSize;
+			memcpy(temp,pi,eleSize);
 			memcpy(pi, pmin, eleSize);
-			memcpy(pmin, pmin, eleSize);
-
+			memcpy(pmin, temp, eleSize);
 		}
-
+	}//for_end
+	if (temp!=NULL) {
+		free(temp);
+		temp = NULL;
 	}
 }
 
-int SortIntArr(void *p1,void *p2) {
+int CallbkSortIntArr(void *p1,void *p2) {
 	int *n1 = (int *)p1;
 	int *n2 = (int *)p2;
 
@@ -63,6 +66,17 @@ int SortIntArr(void *p1,void *p2) {
 	}
 
 }
+void CommPrintfArr(void(* callbkFunc)(void *),void *pArr,int len,int eleSize) {
+	for (int i = 0; i < len; i++)
+	{
+		char *arrEle = (char*)pArr + i * eleSize;
+		callbkFunc(arrEle);
+	}
+}
+void CallbkPrintfArr(void(* data)) {
+	int* num = (int *)data;
+	printf("%d ",*num);
+}
 void Test01() {
 	int year[] = {2010,2020,2017,2018,2016,2019};
 	int len = sizeof(year) / sizeof(year[0]);
@@ -70,7 +84,19 @@ void Test01() {
 	PrintfArr(year, len);
 }
 void Test02() {
-	
+	int years[5] = {0};
+	int len=sizeof(years)/sizeof(years[0]);
+	printf("Enter %d element:\n",len);
+	for (int i = 0; i < len; i++){
+		scanf("%d", &years[i]);
+	}
+	printf("Sort before:");
+	CommPrintfArr(CallbkPrintfArr, years, len, sizeof(years[0]));
+	CommArrSort(CallbkSortIntArr, years, len, sizeof(years[0]));
+	printf("\nSort after :");
+	CommPrintfArr(CallbkPrintfArr, years, len, sizeof(int));
+
+
 }
 
 void main() {
