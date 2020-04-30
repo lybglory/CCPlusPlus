@@ -73,7 +73,7 @@ void Test02() {
 	
 }
 
-void main() {
+void main_0429() {
 	//Test01();
 	Test02();
 }

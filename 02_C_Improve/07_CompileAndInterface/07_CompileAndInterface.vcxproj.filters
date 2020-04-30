@@ -18,5 +18,8 @@
     <ClCompile Include="0429_SortAnyArray.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0430_Macro.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
