@@ -20,10 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\0430_StaticLib.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\PrintfAnyArr.h">
+    <ClInclude Include="PrintfAnyArr.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

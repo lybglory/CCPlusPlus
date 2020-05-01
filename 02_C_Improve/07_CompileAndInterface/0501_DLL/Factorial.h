@@ -1,2 +1,5 @@
 #pragma once
-_declspec(dllexport) int GetFactorial(int num);
+#ifndef Factorial
+#define Factorial
+	_declspec(dllexport) int GetFactorial(int num);
+#endif

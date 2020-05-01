@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{E67B1B5D-57C9-4A27-A370-231DE305946B}</ProjectGuid>
-    <RootNamespace>TestStaticLib</RootNamespace>
+    <ProjectGuid>{C031EB41-8DE0-4F7B-84B3-53DF8AE33081}</ProjectGuid>
+    <RootNamespace>My0501DLL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,10 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TestStatic.c" />
+    <ClCompile Include="0501_TestDll.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PrintfAnyArr.h" />
+    <ClInclude Include="Factorial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

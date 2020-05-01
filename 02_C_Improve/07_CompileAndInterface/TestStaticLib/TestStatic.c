@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "PrintfAnyArr.h"
+#pragma comment(lib,"./0430_StaticLib.lib")
 void PrintfIntArr(void* data) {
 	int* num = (int*)data;
 	printf("%d\n", *num);
