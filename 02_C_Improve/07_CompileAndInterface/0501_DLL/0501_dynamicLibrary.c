@@ -1,5 +1,5 @@
 #include "Factorial.h"
-int GetFactorial(int num) {
+_declspec(dllexport) int GetFactorial(int num) {
 	if (num==1) {
 		return 1;
 	}
