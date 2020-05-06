@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "SecondParty.h"
 //Init game
 typedef void(*InitGame) (void **player,char *name);
@@ -35,7 +36,7 @@ void PlayGame(InitGame initgame, CoreCombat cmbt,SHowInfo show,LeaveGame leavega
 			show(player);
 		}
 		else {
-			printf("Game failed!");
+			printf("Game Over!");
 			break;
 		}
 	}//while_end
@@ -43,5 +44,5 @@ void PlayGame(InitGame initgame, CoreCombat cmbt,SHowInfo show,LeaveGame leavega
 }
 
 void main() {
-
+	srand(time(NULL));
 }

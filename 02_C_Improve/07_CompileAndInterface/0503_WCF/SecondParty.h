@@ -18,4 +18,4 @@ extern void SHowInfoComm(void* player);
 extern void LeaveGameComm(void *player);
 
 //is vectory
-extern void IsVictoryComm(void *player);
+extern void GetExpComm(void *player);
