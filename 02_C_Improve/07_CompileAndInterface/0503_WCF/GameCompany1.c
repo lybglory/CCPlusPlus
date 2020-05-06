@@ -70,6 +70,7 @@ void LeaveGameComm(void *p) {
 int GetExpComm(int diffcult,int winRate) {
 	int rdm = rand() % 100+1; //1~100
 	//easy:1~90%  medium:1~50%  diffcult:1~30%
+	printf("rate=%d\n",rdm);
 	if (rdm<=winRate) {
 		//victory! return exp;
 		return diffcult * 10;
