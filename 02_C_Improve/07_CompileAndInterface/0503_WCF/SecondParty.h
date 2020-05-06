@@ -1,6 +1,6 @@
 #pragma once
 struct Player {
-	char *name;
+	char name[10];
 	int exp;
 	int level;
 };
@@ -18,4 +18,4 @@ extern void SHowInfoComm(void *p);
 extern void LeaveGameComm(void *p);
 
 //is vectory
-extern void GetExpComm(void *p);
+extern int GetExpComm(int diffcult, int winRate);

@@ -18,31 +18,31 @@ typedef void(*LeaveGame)(void *player);
 
 //function realization
 void PlayGame(InitGame initgame, CoreCombat cmbt,SHowInfo show,LeaveGame leavegame) {
-	void *player = NULL;
+	void *pl = NULL;
 	printf("enter player name:\n");
 	char name[10];
 	scanf("%s",name);
-	initgame(&player, name);
+	initgame(&pl, name);
 	int gameLevel = -1;
+
 	while (1) {
-		getchar();
 		printf("Please select the difficulty of the game:\n");
-		printf("1:simple\n2:medium\n3:diffcult");
+		printf("1:simple 2:medium 3:diffcult\n");
 		scanf("%d",&gameLevel);
-		getchar();
-		int cmbtRect = cmbt(player,gameLevel);
+		int cmbtRect = cmbt(pl,gameLevel);
 		if (cmbtRect==1) {
 			printf("Congratulation!\nShow Info:");
-			show(player);
+			show(pl);
 		}
 		else {
 			printf("Game Over!");
 			break;
 		}
 	}//while_end
-	leavegame(player);
+	leavegame(pl);
 }
 
 void main() {
 	srand(time(NULL));
+	PlayGame(InitGameComm,CoreCombatComm,SHowInfoComm,LeaveGameComm);
 }

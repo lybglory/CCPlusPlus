@@ -139,6 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FirstyParty.c" />
+    <ClCompile Include="SecondParty.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SecondParty.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
