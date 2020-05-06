@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FirstyParty.c">
+    <ClCompile Include="InterfaceDesign.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SecondParty.c">
+    <ClCompile Include="GameCompany1.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

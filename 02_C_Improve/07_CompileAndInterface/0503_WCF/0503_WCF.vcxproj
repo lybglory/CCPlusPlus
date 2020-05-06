@@ -138,8 +138,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FirstyParty.c" />
-    <ClCompile Include="SecondParty.c" />
+    <ClCompile Include="InterfaceDesign.c" />
+    <ClCompile Include="GameCompany1.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SecondParty.h" />

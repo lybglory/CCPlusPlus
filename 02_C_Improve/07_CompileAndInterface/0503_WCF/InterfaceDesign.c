@@ -35,7 +35,7 @@ void PlayGame(InitGame initgame, CoreCombat cmbt,SHowInfo show,LeaveGame leavega
 			show(pl);
 		}
 		else {
-			printf("Game Over!");
+			printf("Game Over!\n");
 			break;
 		}
 	}//while_end

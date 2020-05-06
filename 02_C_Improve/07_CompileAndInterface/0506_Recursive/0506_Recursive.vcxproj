@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D7C91B7E-3B4C-4125-AD36-FF7202BEFF12}</ProjectGuid>
-    <RootNamespace>My0503RecursiveFunc</RootNamespace>
+    <ProjectGuid>{77F6CDCA-4D26-42B7-A69F-7783B6C2F349}</ProjectGuid>
+    <RootNamespace>My0506Recursive</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0503_Fibonacci.c" />
+    <ClCompile Include="0506_Reverse.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
