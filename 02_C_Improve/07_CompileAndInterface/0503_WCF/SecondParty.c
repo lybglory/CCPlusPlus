@@ -5,14 +5,14 @@
 
 #include "SecondParty.h"
 //Init game
-void InitGameComm(void **player, char *name) {
+void InitGameComm(void **p, char *name) {
 
 	struct Player *pl=(struct Player *)malloc(sizeof(struct Player));
 	if (pl==NULL) {
 		perror("player malloc error");
 		return;
 	}
-	*player = pl;
+	*p = pl;
 	strcpy(pl->name, name);
 	pl->exp = 0;
 	pl->level = 0;
@@ -47,13 +47,23 @@ int CoreCombatComm(void *p, int gameDiff) {
 }
 
 //show info
-void SHowInfoComm(void* player) {
-
+void SHowInfoComm(void *p) {
+	struct Player *pl = p;
+	if (pl==NULL) {
+		perror("player is null");
+		return;
+	}
+	printf("player Info:\nName=[%s]  exp=[%d]  level=[%d]\n",pl->name,pl->exp,pl->exp);
 }
 
 //end game
-void LeaveGameComm(void* player) {
-
+void LeaveGameComm(void *p) {
+	if (p== NULL) {
+		perror("player is null!");
+		return;
+	}
+	free(p);
+	p = NULL;
 }
 
 //is vectory
