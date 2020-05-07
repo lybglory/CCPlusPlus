@@ -2,11 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+typedef struct  {
+	char* name;
+	int age;
+}Person;
 struct DyArrStru {
 	void **dyptAddr;	//address
 	int arrCapacity;	//initial capacity
 	int arrCount;		//array count
 };
+
 
 struct DyArrStru *DyArrInit(int capacity) {
 	if (capacity<=0) {
@@ -44,7 +49,7 @@ void InsertArr(struct DyArrStru *dyArr,int pos,void *insertData) {
 	}
 	//insert
 	for (int i = dyArr->arrCount-1; i >=pos ; i--)
-	{
+	{	//µ¹Ðð
 		dyArr->dyptAddr[i + 1] = dyArr->dyptAddr[i];
 	}
 	//update position
@@ -52,6 +57,26 @@ void InsertArr(struct DyArrStru *dyArr,int pos,void *insertData) {
 	dyArr->arrCount++;
 
 }
+
+void PrintDyArrComm(struct DyArrStru* dyArr, void( *callbkFunc)(void *)) {
+	if (dyArr==NULL) {
+		return;
+	}
+	for (int i = 0; i < dyArr->arrCount; i++)
+	{
+		callbkFunc(dyArr->dyptAddr[i]);
+	}
+}
+
+void CallbkDyPrint(void *data) {
+	Person *pr = data;
+	printf("name=%s; age=%d\n",pr->name,pr->age);
+}
+
+void DyArrInsertTest() {
+	
+}
+
 void main() {
 
 }
