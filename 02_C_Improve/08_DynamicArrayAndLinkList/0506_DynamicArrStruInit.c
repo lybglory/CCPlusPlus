@@ -69,10 +69,22 @@ void PrintDyArrComm(struct DyArrStru* dyArr, void( *callbkFunc)(void *)) {
 
 void CallbkDyPrint(void *data) {
 	Person *pr = data;
-	printf("name=%s;		age=%d\n",pr->name,pr->age);
+	printf("%s;		%d\n",pr->name,pr->age);
 }
 
-void DyArrInsertTest() {
+void RemoveDyArrByPos(struct DyArrStru *dyArr,int pos) {
+	//pos max=arrCount-1,exist.so > is not exist
+	if (dyArr==NULL|| pos <= 0 || pos > dyArr->arrCount - 1) {
+		return;
+	}
+
+	for (int i = pos; i < dyArr->arrCount; i++)
+	{	//The latter position moves forward
+		dyArr->dyptAddr[i] = dyArr->dyptAddr[i + 1];
+	}
+	dyArr->arrCount--;//change element count
+}
+void DyArrTest() {
 	struct DyArrStru *dyArr =DyArrInit(3);
 	Person p1 = { "Messi",33 };
 	Person p2 = { "LvBu",35 };
@@ -83,10 +95,17 @@ void DyArrInsertTest() {
 	InsertArr(dyArr, 2, &p2);
 	InsertArr(dyArr, 0, &p3);
 	InsertArr(dyArr, 0, &p4);
+	//"Mei" "Bin" "Messi" "LvBu"
 	PrintDyArrComm(dyArr, CallbkDyPrint);
 	printf("after :Capacity=%d	count=%d\n", dyArr->arrCapacity, dyArr->arrCount);
+	RemoveDyArrByPos(dyArr, 3);	//remove "LvBu"
+	printf("\nremove:Capacity=%d	count=%d\n", dyArr->arrCapacity, dyArr->arrCount);
+	PrintDyArrComm(dyArr, CallbkDyPrint);
+
+
+
 }
 
 void main() {
-	DyArrInsertTest();
+	DyArrTest();
 }
