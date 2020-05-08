@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\08_DynamicArrayAndLinkList\x64\Debug\08_DynamicArrayAndLinkList.exe
+E:\CCPlusProject\CCPlusPlus\02_C_Improve\08_DynamicArrayAndLinkList\x64\Debug\08_DynamicArrayAndLinkList.pdb

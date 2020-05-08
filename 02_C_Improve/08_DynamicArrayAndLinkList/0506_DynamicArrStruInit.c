@@ -74,9 +74,18 @@ void CallbkDyPrint(void *data) {
 }
 
 void DyArrInsertTest() {
-	
+	struct DyArrStru *dyArr =DyArrInit(3);
+	Person p1 = { "Messi",33 };
+	Person p2 = { "LvBu",35 };
+	Person p3 = { "Bin",18 };
+	Person p4 = { "Mei",18 };
+	InsertArr(dyArr, 1, &p1);
+	InsertArr(dyArr, 2, &p2);
+	InsertArr(dyArr, 0, &p3);
+
+	PrintDyArrComm(dyArr, CallbkDyPrint);
 }
 
 void main() {
-
+	DyArrInsertTest();
 }
