@@ -57,19 +57,15 @@ void InsertArr(struct DyArrStru *dyArr,int pos,void *insertData) {
 
 }
 
-void PrintDyArrComm(struct DyArrStru* dyArr, void( *callbkFunc)(void *)) {
+void PrintDyArrComm(struct DyArrStru *dyArr, void( *callbkFunc)(void *)) {
 	if (dyArr==NULL) {
+		printf("dyArr==NULL");
 		return;
 	}
 	for (int i = 0; i < dyArr->arrCount; i++)
 	{
 		callbkFunc(dyArr->dyptAddr[i]);
 	}
-}
-
-void CallbkDyPrint(void *data) {
-	Person *pr = data;
-	printf("%s;		%d\n",pr->name,pr->age);
 }
 
 void RemoveDyArrByPos(struct DyArrStru *dyArr,int pos) {
@@ -98,6 +94,18 @@ void RemoveDyArrByValue(struct DyArrStru *dyArr, void *data,int(* calbkCompare)(
 	}
 }
 
+void ClearDyArr(struct DyArrStru *dyArr) {
+	if (dyArr==NULL) {
+		return;
+	}
+	if (dyArr->dyptAddr!=NULL) {
+		free(dyArr->dyptAddr);
+		dyArr->dyptAddr == NULL;
+	}
+	free(dyArr);
+	dyArr = NULL;
+}
+
 int CalbkCompare(void *data1,void *data2) {
 	Person *p1 = (Person *)data1;
 	Person *p2 = (Person *)data2;
@@ -108,6 +116,12 @@ int CalbkCompare(void *data1,void *data2) {
 		return 0;
 	}
 }
+
+void CallbkDyPrint(void* data) {
+	Person* pr = data;
+	printf("%s;		%d\n", pr->name, pr->age);
+}
+
 void DyArrTest() {
 	struct DyArrStru *dyArr =DyArrInit(3);
 	Person p1 = { "Messi",33 };
@@ -134,9 +148,9 @@ void DyArrTest() {
 	printf("\nremove by value:Capacity=%d	count=%d\n", dyArr->arrCapacity, dyArr->arrCount);
 	PrintDyArrComm(dyArr, CallbkDyPrint);
 
-
-	//remove by value
-
+	//clear dynamic array
+	ClearDyArr(dyArr);
+	dyArr = NULL;			//must be null
 }
 
 void main() {
