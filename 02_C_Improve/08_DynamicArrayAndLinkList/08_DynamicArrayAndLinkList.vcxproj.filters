@@ -18,6 +18,9 @@
     <ClCompile Include="0506_DynamicArrStruInit.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicArr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArr.h">
