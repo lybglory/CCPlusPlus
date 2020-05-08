@@ -41,9 +41,8 @@ void InsertArr(struct DyArrStru *dyArr,int pos,void *insertData) {
 		//2.malloc new space
 		void **newDyptAddr = (void **)malloc(sizeof(void *)*newCapacity);
 		//3.meme copy
-		memcpy(newDyptAddr,dyArr->dyptAddr,sizeof(void *)*newCapacity);
-		
-		free(dyArr->arrCapacity);		//4.free original space
+		memcpy(newDyptAddr,dyArr->dyptAddr,sizeof(void *)*dyArr->arrCapacity);		
+		free(dyArr->dyptAddr);			//4.free original space
 		dyArr->dyptAddr=newDyptAddr;	//5.change pointer
 		dyArr->arrCapacity= newCapacity;//6.update capacity 
 	}
@@ -70,7 +69,7 @@ void PrintDyArrComm(struct DyArrStru* dyArr, void( *callbkFunc)(void *)) {
 
 void CallbkDyPrint(void *data) {
 	Person *pr = data;
-	printf("name=%s; age=%d\n",pr->name,pr->age);
+	printf("name=%s;		age=%d\n",pr->name,pr->age);
 }
 
 void DyArrInsertTest() {
@@ -79,11 +78,13 @@ void DyArrInsertTest() {
 	Person p2 = { "LvBu",35 };
 	Person p3 = { "Bin",18 };
 	Person p4 = { "Mei",18 };
+	printf("before:Capacity=%d	count=%d\n",dyArr->arrCapacity,dyArr->arrCount);
 	InsertArr(dyArr, 1, &p1);
 	InsertArr(dyArr, 2, &p2);
 	InsertArr(dyArr, 0, &p3);
-
+	InsertArr(dyArr, 0, &p4);
 	PrintDyArrComm(dyArr, CallbkDyPrint);
+	printf("after :Capacity=%d	count=%d\n", dyArr->arrCapacity, dyArr->arrCount);
 }
 
 void main() {
