@@ -55,6 +55,6 @@ void DyArrTest() {
 	dyArr = NULL;			//must be null
 }
 
-void main() {
+void main_0506() {
 	DyArrTest();
 }

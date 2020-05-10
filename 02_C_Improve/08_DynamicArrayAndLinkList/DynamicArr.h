@@ -1,6 +1,6 @@
 #pragma once
 struct DyArrStru {
-	void** dyptAddr;	//address
+	void **dyptAddr;	//address
 	int arrCapacity;	//initial capacity
 	int arrCount;		//array count
 };

@@ -21,6 +21,9 @@
     <ClCompile Include="DynamicArr.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0510_LinkStruInit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArr.h">

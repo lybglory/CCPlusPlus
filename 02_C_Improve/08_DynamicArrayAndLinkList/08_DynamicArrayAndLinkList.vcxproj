@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0506_DynamicArrStruInit.c" />
+    <ClCompile Include="0510_LinkStruInit.cpp" />
     <ClCompile Include="DynamicArr.c" />
   </ItemGroup>
   <ItemGroup>
