@@ -8,20 +8,20 @@ struct LinkNode {
 };
 
 struct Dylkls{
-	struct LinkNode *lkHead;	//link head
+	struct LinkNode lkHead;	//link head
 	int lkCount;				//link count
 };
-struct Person {
+typedef struct {
 	char *name;
 	int age;
-};
-void *DylkArrInit() {
+}Person;
+void *DylkInit() {
 	struct Dylkls *dylk = (struct Dylkls *)malloc(sizeof(struct Dylkls));
 	if (dylk==NULL) {
 		return;
 	}
 	//Data domains are not maintained
-	dylk->lkHead->lkNext = NULL;
+	dylk->lkHead.lkNext = NULL;
 	dylk->lkCount = 0;
 	return dylk;
 }
@@ -35,7 +35,7 @@ void InsertDylk(void *v_dylk,void *data,int pos) {
 		pos = tmpDylkArr->lkCount;
 	}
 
-	struct LinkNode *ndCurr = tmpDylkArr->lkHead;
+	struct LinkNode *ndCurr = &tmpDylkArr->lkHead;
 	//Create a temporary node by looping 
 	//to find the location of the precursor node to be inserted
 	for (int i = 0; i < pos; i++)
@@ -57,7 +57,7 @@ void IterateDylkComm(void *v_dylk,void( *calbkPrStru)(void *)) {
 		return;
 	}
 	struct Dylkls *dylk = v_dylk;
-	struct LinkNode *lknd = dylk->lkHead->lkNext;
+	struct LinkNode *lknd = dylk->lkHead.lkNext;
 	for (int i = 0; i < dylk->lkCount; i++)
 	{
 		calbkPrStru(lknd->data);//callback
@@ -65,9 +65,24 @@ void IterateDylkComm(void *v_dylk,void( *calbkPrStru)(void *)) {
 	}
 }
 void CalbkPrStru(void *data) {
-	struct Person *pr = data;
-	printf("%s  %d\n",pr->name,pr->age);
+	Person *pr = data;
+	printf("%s		%d\n",pr->name,pr->age);
+}
+
+void TestDylk() {
+	Person p1 = {"Hua",30};
+	Person p2 = { "Bin",18 };
+	Person p3 = { "Mei",18 };
+	Person p4 = { "Pei",30 };
+	Person p5 = { "Juan",29 };
+	void *v_dylk=DylkInit();
+	InsertDylk(v_dylk, &p1, 0);	//Hua
+	InsertDylk(v_dylk, &p2, 0);//Bin Hua
+	InsertDylk(v_dylk, &p3, 0);//Mei Bin Hua
+	InsertDylk(v_dylk, &p4, 2);//Mei Bin Pei Hua
+	InsertDylk(v_dylk, &p5, 1);//Mei Juan Bin Pei Hua
+	IterateDylkComm(v_dylk, CalbkPrStru);
 }
 void main() {
-
+	TestDylk();
 }
