@@ -7,27 +7,30 @@ struct LinkNode {
 	struct LinkNode *lkNext;	//pointer
 };
 
-struct DyLinkArr{
+struct Dylkls{
 	struct LinkNode *lkHead;	//link head
 	int lkCount;				//link count
 };
-
+struct Person {
+	char *name;
+	int age;
+};
 void *DylkArrInit() {
-	struct DyLinkArr *dylkArr = (struct DyLinkArr *)malloc(sizeof(struct DyLinkArr));
-	if (dylkArr==NULL) {
+	struct Dylkls *dylk = (struct Dylkls *)malloc(sizeof(struct Dylkls));
+	if (dylk==NULL) {
 		return;
 	}
 	//Data domains are not maintained
-	dylkArr->lkHead->lkNext = NULL;
-	dylkArr->lkCount = 0;
-	return dylkArr;
+	dylk->lkHead->lkNext = NULL;
+	dylk->lkCount = 0;
+	return dylk;
 }
 
-void InsertDylk(void *dylkArr,void *data,int pos) {
-	if (dylkArr==NULL||data==NULL) {
+void InsertDylk(void *v_dylk,void *data,int pos) {
+	if (v_dylk==NULL||data==NULL) {
 		return;
 	}
-	struct DyLinkArr *tmpDylkArr=dylkArr;
+	struct Dylkls *tmpDylkArr=v_dylk;
 	if (pos<0|| pos>tmpDylkArr->lkCount) {	//invalid position
 		pos = tmpDylkArr->lkCount;
 	}
@@ -47,6 +50,23 @@ void InsertDylk(void *dylkArr,void *data,int pos) {
 	newNode->lkNext = ndCurr->lkNext;
 	ndCurr->lkNext = newNode;
 	tmpDylkArr->lkCount++;
+}
+
+void IterateDylkComm(void *v_dylk,void( *calbkPrStru)(void *)) {
+	if (v_dylk==NULL) {
+		return;
+	}
+	struct Dylkls *dylk = v_dylk;
+	struct LinkNode *lknd = dylk->lkHead->lkNext;
+	for (int i = 0; i < dylk->lkCount; i++)
+	{
+		calbkPrStru(lknd->data);//callback
+		lknd = lknd->lkNext;	//move pointer
+	}
+}
+void CalbkPrStru(void *data) {
+	struct Person *pr = data;
+	printf("%s  %d\n",pr->name,pr->age);
 }
 void main() {
 
