@@ -12,7 +12,7 @@ struct DyLinkArr{
 	int lkCount;				//link count
 };
 
-struct DyLinkArr *DylkArrInit() {
+void *DylkArrInit() {
 	struct DyLinkArr *dylkArr = (struct DyLinkArr *)malloc(sizeof(struct DyLinkArr));
 	if (dylkArr==NULL) {
 		return;
@@ -23,7 +23,31 @@ struct DyLinkArr *DylkArrInit() {
 	return dylkArr;
 }
 
+void InsertDylk(void *dylkArr,void *data,int pos) {
+	if (dylkArr==NULL||data==NULL) {
+		return;
+	}
+	struct DyLinkArr *tmpDylkArr=dylkArr;
+	if (pos<0|| pos>tmpDylkArr->lkCount) {	//invalid position
+		pos = tmpDylkArr->lkCount;
+	}
 
+	struct LinkNode *ndCurr = tmpDylkArr->lkHead;
+	//Create a temporary node by looping 
+	//to find the location of the precursor node to be inserted
+	for (int i = 0; i < pos; i++)
+	{	//The subscript starts at 0
+		ndCurr = ndCurr->lkNext;
+	}
+	struct LinkNode *newNode = (struct LinkNode *)malloc(sizeof(struct LinkNode));
+	newNode->data = data;
+	newNode->lkNext = NULL;
+
+	//INSERT
+	newNode->lkNext = ndCurr->lkNext;
+	ndCurr->lkNext = newNode;
+	tmpDylkArr->lkCount++;
+}
 void main() {
 
 }
