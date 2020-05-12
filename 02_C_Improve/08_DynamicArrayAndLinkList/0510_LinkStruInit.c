@@ -69,6 +69,28 @@ void CalbkPrStru(void *data) {
 	printf("%s		%d\n",pr->name,pr->age);
 }
 
+void RemoveDylk(void *v_dylk,int pos) {
+	if (v_dylk==NULL) {
+		return;
+	}
+	struct Dylkls *dylk = (struct Dylkls*)v_dylk;
+	if (pos<0||pos>dylk->lkCount-1) {
+		return;
+	}
+	struct LinkNode *lkpre = &dylk->lkHead;
+	struct LinkNode *lkCurr = dylk->lkHead.lkNext;
+
+	for (int i = 0; i < pos; i++)
+	{
+		lkpre = lkCurr;
+		lkCurr = lkCurr->lkNext;	//need delte
+	}
+	if (lkCurr==NULL) {
+		return;
+	}
+	lkpre->lkNext = lkCurr->lkNext;
+	dylk->lkCount--;
+}
 void TestDylk() {
 	Person p1 = {"Hua",30};
 	Person p2 = { "Bin",18 };
@@ -81,6 +103,9 @@ void TestDylk() {
 	InsertDylk(v_dylk, &p3, 0);//Mei Bin Hua
 	InsertDylk(v_dylk, &p4, 2);//Mei Bin Pei Hua
 	InsertDylk(v_dylk, &p5, 1);//Mei Juan Bin Pei Hua
+	IterateDylkComm(v_dylk, CalbkPrStru);
+	RemoveDylk(v_dylk, 3);
+	printf("Delete position 3\n");
 	IterateDylkComm(v_dylk, CalbkPrStru);
 }
 void main() {
