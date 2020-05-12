@@ -90,6 +90,37 @@ void DelDylkByPos(void *v_dylk,int pos) {
 
 	dylk->lkCount--;
 }
+
+void DelDylkByValue(void *v_dylk, void *data,int(* calbkCompar)(void *,void *)) {
+	if (v_dylk == NULL||data==NULL) {
+		return;
+	}
+	struct Dylkls *dylk = (struct Dylkls*)v_dylk;
+	struct LinkNode *ndCurr = dylk->lkHead.lkNext;
+	struct LinkNode* ndPre = &dylk->lkHead;
+	for (int i = 0; i < dylk->lkCount; i++)
+	{
+		if (calbkCompar(ndCurr,data)==0) {
+			ndPre->lkNext = ndCurr->lkNext;
+			free(ndCurr);
+			ndCurr = NULL;
+			dylk->lkCount--;
+			break;
+		}
+		ndPre = ndCurr;
+		ndCurr = ndCurr->lkNext;
+	}
+}
+void CalbkCompareDylk(void *data1,void *data2) {
+	Person *p1 = data1;
+	Person *p2 = data2;
+	if (strcmp(p1->name,p2->name)==0&&p1->age==p2->age) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
 void TestDylk() {
 	Person p1 = {"Hua",30};
 	Person p2 = { "Bin",18 };
@@ -104,7 +135,12 @@ void TestDylk() {
 	InsertDylk(v_dylk, &p5, 1);//Mei Juan Bin Pei Hua
 	IterateDylkComm(v_dylk, CalbkPrStru);
 	DelDylkByPos(v_dylk, 3);
-	printf("----Delete Pei----\n");
+	printf("##Delete by pos:Pei(index=3)##\n");
+	IterateDylkComm(v_dylk, CalbkPrStru);
+	
+	Person delData = { "Hua",30 };
+	printf("##Delete by value:Hua##\n");
+	DelDylkByValue(v_dylk,&delData, CalbkCompareDylk);
 	IterateDylkComm(v_dylk, CalbkPrStru);
 }
 void main() {
