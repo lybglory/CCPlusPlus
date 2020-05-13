@@ -121,6 +121,14 @@ void CalbkCompareDylk(void *data1,void *data2) {
 		return 0;
 	}
 }
+
+int GetlkCount(void *v_dylk) {
+	if (v_dylk == NULL) {
+		return;
+	}
+	struct Dylkls *dylk = (struct Dylkls*)v_dylk;
+	return dylk->lkCount;
+}
 void TestDylk() {
 	Person p1 = { "Hua",30 };
 	Person p2 = { "Bin",18 };
@@ -134,14 +142,16 @@ void TestDylk() {
 	InsertDylk(v_dylk, &p4, 2);//Mei Bin Pei Hua
 	InsertDylk(v_dylk, &p5, 1);//Mei Juan Bin Pei Hua
 	IterateDylkComm(v_dylk, CalbkPrStru);
+	printf("count=%d\n\n", GetlkCount(v_dylk));
 	DelDylkByPos(v_dylk, 3);
 	printf("##Delete by pos:Pei(index=3)##\n");
 	IterateDylkComm(v_dylk, CalbkPrStru);
-	
+	printf("count=%d\n\n",GetlkCount(v_dylk));
 	Person delData = { "Hua",30 };
 	printf("##Delete by value:Hua##\n");
 	DelDylkByValue(v_dylk,&delData, CalbkCompareDylk);
 	IterateDylkComm(v_dylk, CalbkPrStru);
+	printf("count=%d\n", GetlkCount(v_dylk));
 }
 void main() {
 	TestDylk();
