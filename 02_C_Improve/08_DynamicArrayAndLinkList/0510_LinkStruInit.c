@@ -100,7 +100,7 @@ void DelDylkByValue(void *v_dylk, void *data,int(* calbkCompar)(void *,void *)) 
 	struct LinkNode* ndPre = &dylk->lkHead;
 	for (int i = 0; i < dylk->lkCount; i++)
 	{
-		if (calbkCompar(ndCurr,data)==0) {
+		if (calbkCompar(ndCurr->data,data)==1) {
 			ndPre->lkNext = ndCurr->lkNext;
 			free(ndCurr);
 			ndCurr = NULL;
@@ -114,7 +114,7 @@ void DelDylkByValue(void *v_dylk, void *data,int(* calbkCompar)(void *,void *)) 
 void CalbkCompareDylk(void *data1,void *data2) {
 	Person *p1 = data1;
 	Person *p2 = data2;
-	if (strcmp(p1->name,p2->name)==0&&p1->age==p2->age) {
+	if ((strcmp(p1->name,p2->name)==0)&&(p1->age==p2->age)) {
 		return 1;
 	}
 	else {
@@ -122,7 +122,7 @@ void CalbkCompareDylk(void *data1,void *data2) {
 	}
 }
 void TestDylk() {
-	Person p1 = {"Hua",30};
+	Person p1 = { "Hua",30 };
 	Person p2 = { "Bin",18 };
 	Person p3 = { "Mei",18 };
 	Person p4 = { "Pei",30 };
