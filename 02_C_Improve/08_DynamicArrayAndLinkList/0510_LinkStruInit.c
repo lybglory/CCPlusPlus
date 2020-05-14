@@ -145,6 +145,15 @@ void ClearLkls(void *v_dylk) {
 	dylk->lkHead.lkNext = NULL;
 	dylk->lkCount = 0;
 }
+
+void DestroyLinkls(void *v_dylk) {
+	if (v_dylk == NULL) {
+		return;
+	}
+	ClearLkls(v_dylk);
+	free(v_dylk);
+	v_dylk = NULL;
+}
 void TestDylk() {
 	Person p1 = { "Hua",30 };
 	Person p2 = { "Bin",18 };
@@ -167,13 +176,16 @@ void TestDylk() {
 	printf("##Delete by value:Hua##\n");
 	DelDylkByValue(v_dylk,&delData, CalbkCompareDylk);
 	IterateDylkComm(v_dylk, CalbkPrStru);
-	printf("count=%d\n", GetlkCount(v_dylk));
+	printf("count=%d\n\n", GetlkCount(v_dylk));
 
 	printf("##Clear link list##\n");
 	ClearLkls(v_dylk);
 	IterateDylkComm(v_dylk, CalbkPrStru);
-	printf("count=%d\n", GetlkCount(v_dylk));
+	printf("count=%d\n\n", GetlkCount(v_dylk));
 
+	//printf("##Destory link list##\n");
+	DestroyLinkls(v_dylk);
+	//printf("count=%d\n", GetlkCount(v_dylk));
 }
 void main() {
 	TestDylk();
