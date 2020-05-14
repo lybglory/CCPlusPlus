@@ -129,6 +129,22 @@ int GetlkCount(void *v_dylk) {
 	struct Dylkls *dylk = (struct Dylkls*)v_dylk;
 	return dylk->lkCount;
 }
+
+void ClearLkls(void *v_dylk) {
+	if (v_dylk == NULL) {
+		return;
+	}
+	struct Dylkls *dylk = (struct Dylkls*)v_dylk;
+	struct LinkNode *ndCurr = dylk->lkHead.lkNext;
+	for (int i = 0; i < dylk->lkCount; i++)
+	{	
+		struct LinkNode *tempCurrNext = ndCurr->lkNext;
+		free(ndCurr);
+		ndCurr = tempCurrNext;
+	}
+	dylk->lkHead.lkNext = NULL;
+	dylk->lkCount = 0;
+}
 void TestDylk() {
 	Person p1 = { "Hua",30 };
 	Person p2 = { "Bin",18 };
@@ -152,6 +168,12 @@ void TestDylk() {
 	DelDylkByValue(v_dylk,&delData, CalbkCompareDylk);
 	IterateDylkComm(v_dylk, CalbkPrStru);
 	printf("count=%d\n", GetlkCount(v_dylk));
+
+	printf("##Clear link list##\n");
+	ClearLkls(v_dylk);
+	IterateDylkComm(v_dylk, CalbkPrStru);
+	printf("count=%d\n", GetlkCount(v_dylk));
+
 }
 void main() {
 	TestDylk();
