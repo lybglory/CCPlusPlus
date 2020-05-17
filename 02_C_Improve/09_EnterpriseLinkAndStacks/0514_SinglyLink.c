@@ -73,7 +73,7 @@ void CalbkPrinPerson(void *data) {
 	printf("%s	%d\n",pData->name,pData->age);
 }
 
-void RemoveLinkNd(v_etpLink v_lkls,int pos) {
+void DelLkndByPos(v_etpLink v_lkls,int pos) {
 	if (NULL == v_lkls) {
 		return;
 	}
@@ -92,6 +92,48 @@ void RemoveLinkNd(v_etpLink v_lkls,int pos) {
 	lkls->lkndCount--;
 
 }
+int CalbkCmpData(void *d1,void *d2) {
+	PersonInfo *p1 = d1;
+	PersonInfo *p2 = d2;
+	int offset = offsetof(PersonInfo, name);
+	printf("offset=%d\n",offset);
+
+
+}
+void DelLkndByValue(v_etpLink v_lkls, void *delData,int(* calbkCmpData)(void *,void *)) {
+	if (NULL == v_lkls|| delData==NULL) {
+		return;
+	}
+	struct Linkls *lkls = v_lkls;
+	struct Linknd *lkndPre = &lkls->lklsHead;
+	struct Linknd *lkndCurr = lkls->lklsHead.lkndNext;
+	
+	for (int i = 0; i < lkls->lkndCount; i++)
+	{
+		if (calbkCmpData(delData,lkndCurr)==0) {
+			lkndPre->lkndNext = lkndCurr->lkndNext;
+			break;
+		}
+		lkndPre = lkndCurr;
+		lkndCurr=lkndCurr->lkndNext;
+	}
+}
+
+void Destorylknd(v_etpLink v_lkls) {
+	if (NULL == v_lkls ) {
+		return;
+	}
+	free(v_lkls);
+	v_lkls = NULL;
+}
+
+int GetlkndCount(v_etpLink v_lkls) {
+	if (NULL == v_lkls) {
+		return;
+	}
+	struct Linkls *lkls = v_lkls;
+	return lkls->lkndCount;
+}
 
 void TestEtpLinkls() {
 	PersonInfo p1 = {NULL,"Soup",1};
@@ -106,11 +148,16 @@ void TestEtpLinkls() {
 	InsertLknd(v_lkls, &p4, 2);	//Bin Mei Chan Soup
 	InsertLknd(v_lkls, &p5, 0);	//Juan Bin Mei Chan Soup
 	TraversalLinkls(v_lkls,CalbkPrinPerson);
-
+	printf("count=%d\n\n",GetlkndCount(v_lkls));
 	printf("Remove by pos 0\n");
-	RemoveLinkNd(v_lkls,0);
+	DelLkndByPos(v_lkls,0);
 	TraversalLinkls(v_lkls, CalbkPrinPerson);
+	printf("count=%d\n\n", GetlkndCount(v_lkls));
+	printf("Destory link\n");
+	Destorylknd(v_lkls);
+	printf("count=%d\n\n", GetlkndCount(v_lkls));
 }
+
 void main() {
 	TestEtpLinkls();
 }
