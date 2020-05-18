@@ -54,7 +54,7 @@ void PopStack(v_Stack v_stk) {
 	stk->stackCount--;
 }
 
-v_Stack TopStack(v_Stack v_stk) {
+v_Stack GetTopStk(v_Stack v_stk) {
 	if (v_stk == NULL) {
 		return;
 	}
@@ -93,3 +93,31 @@ void DestoryStk(v_Stack v_stk) {
 	v_stk = NULL;
 }
 
+void TestStk() {
+	Person p1 = { "Messi",33 };
+	Person p2 = { "Bingo",18 };
+	Person p3 = { "Mei",18 };
+	Person p4 = { "Soup",1 };
+	Person p5 = { "Kuen",30 };
+
+	v_Stack v_stk = StkInit();
+	PushStack(v_stk, &p1);
+	PushStack(v_stk, &p2);
+	PushStack(v_stk, &p3);
+	PushStack(v_stk, &p4);
+	PushStack(v_stk, &p5);
+	printf("count=%d\n\n",GetStkCount(v_stk));
+
+	while (IsStkNull(v_stk)==0) {					//stack is not null
+		Person *pTop = GetTopStk(v_stk);			//return the last element
+		printf("%s	%d\n",pTop->name,pTop->age);
+		PopStack(v_stk);							//pop,count decreases
+	}
+
+	printf("ater the pop count=%d\n",GetStkCount(v_stk));
+	DestoryStk(v_stk);
+}
+
+void main() {
+	TestStk();
+}

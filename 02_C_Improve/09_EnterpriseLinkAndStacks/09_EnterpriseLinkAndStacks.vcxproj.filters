@@ -18,5 +18,8 @@
     <ClCompile Include="0514_SinglyLink.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0518_SequentialStorageOfTheStack.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
