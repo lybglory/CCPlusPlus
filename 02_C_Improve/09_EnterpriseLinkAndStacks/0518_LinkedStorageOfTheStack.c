@@ -4,11 +4,11 @@
 #include <string.h>
 
 struct StackLknd {					//struct of stack link node
-	struct StackLknd *stkLkndNext;
+	struct StackLknd *next;
 };
 
 struct StackLk {					//struct of stack link
-	struct StackLknd stkLkhead;
+	struct StackLknd head;
 	int stkCount;
 };
 
@@ -20,7 +20,7 @@ typedef struct {
 }Person;
 
 VdStklk StkLkInit() {
-	//Restore real and valid data
+	
 	struct StackLk *stkLk = (struct StackLk*)malloc(sizeof(struct StackLk));
 
 	if (stkLk==NULL) {
@@ -28,11 +28,25 @@ VdStklk StkLkInit() {
 		return;
 	}
 
-	stkLk->stkLkhead.stkLkndNext = NULL;
+	stkLk->head.next = NULL;
 	stkLk->stkCount = 0;
 }
 
-void TestStklk() {}
+void PushStklk(VdStklk vdstklk,void *pushData) {	
+	if (vdstklk == NULL||pushData==NULL) {
+		return;
+	}
+	struct StackLk *stkLk = vdstklk;			//Restore real and valid data
+	struct StackLknd *stkPushData = pushData;	//Fetches the user's first four bytes 
+	stkPushData->next = stkLk->head.next;		//head insert
+	stkLk->head.next = stkPushData;
+	stkLk->stkCount++;
+}
+
+void TestStklk() {
+
+}
+
 void main() {
 	TestStklk();
 }
