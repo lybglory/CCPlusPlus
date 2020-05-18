@@ -118,6 +118,6 @@ void TestStk() {
 	DestoryStk(v_stk);
 }
 
-void main() {
+void main_0518() {
 	TestStk();
 }
