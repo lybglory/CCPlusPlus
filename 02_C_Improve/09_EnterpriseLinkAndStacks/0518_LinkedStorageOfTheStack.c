@@ -57,6 +57,18 @@ void PopStklk(VdStklk vdStklk) {
 	stkLk->stkCount--;
 }
 
+VdStklk GetTopStklk(VdStklk vdStklk) {
+	if (vdStklk == NULL) {
+		return;
+	}
+	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
+	if (stkLk->stkCount == 0) {
+		return NULL;
+	}
+
+	return stkLk->head.next;					//return valid data
+}
+
 void TestStklk() {
 
 }
