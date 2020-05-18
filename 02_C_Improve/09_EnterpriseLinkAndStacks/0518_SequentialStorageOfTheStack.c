@@ -59,3 +59,9 @@ v_Stack TopStack(v_Stack v_stk) {
 	}
 	return stk->dataArr[stk->stackCount - 1];
 }
+
+int GetStkCount(v_Stack v_stk) {
+	if (v_stk == NULL) {
+		return;
+	}
+}
