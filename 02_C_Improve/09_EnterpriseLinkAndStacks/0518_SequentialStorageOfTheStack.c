@@ -35,3 +35,16 @@ void PushStack(v_Stack v_stk,void *pushData) {
 	stk->stackCount++;
 }
 
+//Pop
+void PopStack(v_Stack v_stk) {
+	if (v_stk == NULL) {
+		return;
+	}
+	struct OrderStack* stk = v_stk;
+	if (stk->stackCount == 0) {
+		return;
+	}
+	//the last one to delete
+	stk->dataArr[stk->stackCount - 1] = NULL;
+	stk->stackCount--;
+}
