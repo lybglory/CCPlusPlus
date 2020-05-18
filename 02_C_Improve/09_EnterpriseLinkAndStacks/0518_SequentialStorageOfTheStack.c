@@ -10,6 +10,11 @@ struct OrderStack {
 
 typedef void *v_Stack;
 
+typedef struct{
+	char name[10];
+	int age;
+}Person;
+
 //initializae of stack
 v_Stack StkInit() {
 	struct OrderStack *stk = (struct OrderStack *)malloc(sizeof(struct OrderStack));
@@ -60,8 +65,22 @@ v_Stack TopStack(v_Stack v_stk) {
 	return stk->dataArr[stk->stackCount - 1];
 }
 
+//
 int GetStkCount(v_Stack v_stk) {
 	if (v_stk == NULL) {
 		return;
 	}
+	struct OrderStack *stk = v_stk;
+	return stk->stackCount;
+}
+
+int IsStkNull(v_Stack v_stk) {
+	if (v_stk == NULL) {
+		return -1;
+	}
+	struct OrderStack *stk = v_stk;
+	if (stk->stackCount==0) {
+		return 1;           //stack is null
+	}
+	return 0;				//stack is not null
 }
