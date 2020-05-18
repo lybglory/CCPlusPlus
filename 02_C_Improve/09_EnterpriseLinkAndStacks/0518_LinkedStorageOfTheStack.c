@@ -12,14 +12,15 @@ struct StackLk {					//struct of stack link
 	int stkCount;
 };
 
-typedef	void *VdStklk;				//void * alias
+typedef	void *VdStkLk;				//void * alias
 
 typedef struct {
+	void *pAddr;					//four byte
 	char name[10];
 	int age;
 }Person;
 
-VdStklk StkLkInit() {
+VdStkLk StkLkInit() {
 	
 	struct StackLk *stkLk = (struct StackLk*)malloc(sizeof(struct StackLk));
 
@@ -32,18 +33,18 @@ VdStklk StkLkInit() {
 	stkLk->stkCount = 0;
 }
 
-void PushStklk(VdStklk vdStklk,void *pushData) {	
-	if (vdStklk == NULL||pushData==NULL) {
+void PushStklk(VdStkLk vdStkLk,void *pushData) {	
+	if (vdStkLk == NULL||pushData==NULL) {
 		return;
 	}
-	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
+	struct StackLk *stkLk = vdStkLk;			//Restore real and valid data
 	struct StackLknd *stkPushData = pushData;	//Fetches the user's first four bytes 
 	stkPushData->next = stkLk->head.next;		//head insert
 	stkLk->head.next = stkPushData;
 	stkLk->stkCount++;
 }
 
-void PopStklk(VdStklk vdStklk) {
+void PopStklk(VdStkLk vdStklk) {
 	if (vdStklk == NULL) {
 		return;
 	}
@@ -57,7 +58,7 @@ void PopStklk(VdStklk vdStklk) {
 	stkLk->stkCount--;
 }
 
-VdStklk GetTopStkLk(VdStklk vdStklk) {
+VdStkLk GetTopStkLk(VdStkLk vdStklk) {
 	if (vdStklk == NULL) {
 		return;
 	}
@@ -69,17 +70,17 @@ VdStklk GetTopStkLk(VdStklk vdStklk) {
 	return stkLk->head.next;					//return valid data
 }
 
-int GetStkLkCount(VdStklk vdStklk) {
-	if (vdStklk == NULL) {
+int GetStkLkCount(VdStkLk vdStkLk) {
+	if (vdStkLk == NULL) {
 		return -1;
 	}
-	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
+	struct StackLk *stkLk = vdStkLk;			//Restore real and valid data
 
 	return stkLk->stkCount;
 
 }
 
-int StkLkIsNULL(VdStklk vdStklk) {
+int StkLkIsNULL(VdStkLk vdStklk) {
 	if (vdStklk == NULL) {
 		return -1;
 	}
@@ -91,7 +92,29 @@ int StkLkIsNULL(VdStklk vdStklk) {
 }
 
 void TestStklk() {
+	Person p1 = { NULL,"Messi",33 };
+	Person p2 = { NULL,"Bin",18 };
+	Person p3 = { NULL,"Mei",18 };
+	Person p4 = { NULL,"Soup",1 };
+	Person p5 = { NULL,"Kuen",29 };
 
+	VdStkLk vdStkLk = StkLkInit();
+	PushStklk(vdStkLk, &p1);
+	PushStklk(vdStkLk, &p2);
+	PushStklk(vdStkLk, &p3);
+	PushStklk(vdStkLk, &p4);
+	PushStklk(vdStkLk, &p5);
+	printf("count of linked stack=%d\n\n",GetStkLkCount(vdStkLk));
+
+	while (StkLkIsNULL(vdStkLk)==0)
+	{
+		struct StackLk *stkLk = vdStkLk;			//Restore real and valid data
+		Person *pr = stkLk->head.next;
+		printf("%s	%d\n",pr->name,pr->age);
+
+		PopStklk(vdStkLk);
+	}
+	printf("ater count of pop stack=%d\n\n", GetStkLkCount(vdStkLk));
 }
 
 void main() {
