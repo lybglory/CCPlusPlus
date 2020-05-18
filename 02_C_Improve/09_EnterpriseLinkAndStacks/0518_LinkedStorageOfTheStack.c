@@ -32,15 +32,29 @@ VdStklk StkLkInit() {
 	stkLk->stkCount = 0;
 }
 
-void PushStklk(VdStklk vdstklk,void *pushData) {	
-	if (vdstklk == NULL||pushData==NULL) {
+void PushStklk(VdStklk vdStklk,void *pushData) {	
+	if (vdStklk == NULL||pushData==NULL) {
 		return;
 	}
-	struct StackLk *stkLk = vdstklk;			//Restore real and valid data
+	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
 	struct StackLknd *stkPushData = pushData;	//Fetches the user's first four bytes 
 	stkPushData->next = stkLk->head.next;		//head insert
 	stkLk->head.next = stkPushData;
 	stkLk->stkCount++;
+}
+
+void PopStklk(VdStklk vdStklk) {
+	if (vdStklk == NULL) {
+		return;
+	}
+	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
+	if (stkLk->stkCount==0) {
+		return;
+	}
+	struct StackLknd *stkLkndCurr = stkLk->head.next;	//pointer valid data
+	//free(stkLkndCurr);								//user data no need to free
+	stkLk->head.next = stkLkndCurr->next;											
+	stkLk->stkCount--;
 }
 
 void TestStklk() {

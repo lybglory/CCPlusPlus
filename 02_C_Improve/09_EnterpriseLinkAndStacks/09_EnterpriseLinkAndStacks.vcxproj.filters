@@ -21,5 +21,8 @@
     <ClCompile Include="0518_SequentialStorageOfTheStack.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0518_LinkedStorageOfTheStack.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
