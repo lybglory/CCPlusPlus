@@ -158,6 +158,6 @@ void TestEtpLinkls() {
 	printf("count=%d\n\n", GetlkndCount(v_lkls));
 }
 
-void main() {
+void main_0514() {
 	TestEtpLinkls();
 }
