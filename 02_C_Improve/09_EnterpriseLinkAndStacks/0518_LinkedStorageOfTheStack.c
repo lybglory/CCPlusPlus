@@ -79,6 +79,16 @@ int GetStkLkCount(VdStklk vdStklk) {
 
 }
 
+int StkLkIsNULL(VdStklk vdStklk) {
+	if (vdStklk == NULL) {
+		return -1;
+	}
+	struct StackLk *stkLk = vdStklk;			//Restore real and valid data
+	if (stkLk->stkCount==0) {
+		return 1;				//stack link is null,return 1.
+	}
+	return 0;					//stack link is not null.return 0.
+}
 
 void TestStklk() {
 
