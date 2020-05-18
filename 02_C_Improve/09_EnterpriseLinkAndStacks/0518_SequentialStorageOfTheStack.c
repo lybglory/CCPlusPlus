@@ -21,3 +21,17 @@ v_Stack StkInit() {
 	return stk;
 }
 
+//Push
+void PushStack(v_Stack v_stk,void *pushData) {
+	if (v_stk==NULL|| pushData==NULL) {
+		return;
+	}
+	struct OrderStack *stk = v_stk;
+	if (stk->stackCount==stackMax) {
+		return;
+	}
+	//tail insert
+	stk->dataArr[stk->stackCount] = pushData;
+	stk->stackCount++;
+}
+
