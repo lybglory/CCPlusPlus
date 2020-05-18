@@ -84,3 +84,12 @@ int IsStkNull(v_Stack v_stk) {
 	}
 	return 0;				//stack is not null
 }
+
+void DestoryStk(v_Stack v_stk) {
+	if (v_stk == NULL) {
+		return;
+	}
+	free(v_stk);
+	v_stk = NULL;
+}
+
