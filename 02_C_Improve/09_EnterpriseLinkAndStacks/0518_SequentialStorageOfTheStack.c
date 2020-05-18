@@ -48,3 +48,14 @@ void PopStack(v_Stack v_stk) {
 	stk->dataArr[stk->stackCount - 1] = NULL;
 	stk->stackCount--;
 }
+
+v_Stack TopStack(v_Stack v_stk) {
+	if (v_stk == NULL) {
+		return;
+	}
+	struct OrderStack* stk = v_stk;
+	if (stk->stackCount == 0) {
+		return;
+	}
+	return stk->dataArr[stk->stackCount - 1];
+}
