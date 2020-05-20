@@ -44,7 +44,7 @@ void PopSeqStk(VdSequenStk vdSeqStk) {		//pop stack
 	seqStk->SeqCount--;
 }
 
-VdSequenStk GetSeqTopStk(VdSequenStk vdSeqStk) {		//get top stack
+void *GetSeqTopStk(VdSequenStk vdSeqStk) {		//get top stack
 	if (vdSeqStk == NULL) {
 		return;
 	}

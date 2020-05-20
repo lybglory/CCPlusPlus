@@ -57,7 +57,7 @@ void ShowErrorMsg(char *arith,char *msg,char *chr) {
 	printf("^\n");
 }
 void StkMatch() {
-	char *arithmetic= "2020/(5/20)-(21*50)+(3))";
+	char *arithmetic= "2020/(5/20)-(21*50)+((3)";
 	char *p = arithmetic;
 	VdSequenStk vdSeqStk = SeqStkInit();
 	while (*p !='\0')
@@ -72,14 +72,20 @@ void StkMatch() {
 			}
 			else
 			{
-				ShowErrorMsg(arithmetic, "right bracket matching failed!", p);//is not *p
+				ShowErrorMsg(arithmetic, "Right bracket not match left bracket.Failed!", p);//is not *p
 				break;
 			}
 		}
 		p++;
 	}//while_end
-
 	
+	//
+	while (GetSeqStkCount(vdSeqStk)>0) {
+		ShowErrorMsg(arithmetic,"Left bracket not match right bracket.Failed!",GetSeqTopStk(vdSeqStk));
+		PopSeqStk(vdSeqStk);
+	}
+	DestorySeqStk(vdSeqStk);
+	vdSeqStk = NULL;
 }//func_end
 
 void main() {
