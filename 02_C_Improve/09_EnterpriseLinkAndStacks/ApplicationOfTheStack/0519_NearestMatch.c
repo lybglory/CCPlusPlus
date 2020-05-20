@@ -63,7 +63,7 @@ void StkMatch() {
 	while (*p !='\0')
 	{	//left bracket,return 9.Push
 		if (GetLRBracket(*p) == 9) {
-			PushSeqStk(vdSeqStk, *p);
+			PushSeqStk(vdSeqStk, p);	//must addr
 		}
 		//right bracket,return 0.Pop
 		if (GetLRBracket(*p)==0) {
