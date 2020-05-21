@@ -79,11 +79,22 @@ void *GetTailQueue(VdSeqQue vdSeqQue) {
 }
 
 int GetQueueCount(VdSeqQue vdSeqQue) {
-
+	if (vdSeqQue == NULL) {
+		return;
+	}
+	struct DyArrStru *seqQue = vdSeqQue;
+	return seqQue->arrCount;
 }
 
 int GetQueIsNULL(VdSeqQue vdSeqQue) {
-
+	if (vdSeqQue == NULL) {
+		return -1;
+	}
+	struct DyArrStru *seqQue = vdSeqQue;
+	if (seqQue->arrCount==0) {
+		return 1;			//NULL,return 1
+	}
+	return 0;				//not null,return 0
 }
 
 void DestoryQueue(VdSeqQue vdSeqQue) {
