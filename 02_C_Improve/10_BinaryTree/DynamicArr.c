@@ -31,10 +31,12 @@ void InsertArr(struct DyArrStru *dyArr, int pos, void* insertData) {
 		void **newDyptAddr = (void **)malloc(sizeof(void*)* newCapacity);
 		memcpy(newDyptAddr,dyArr->dyptAddr,sizeof(void *)*dyArr->arrCapacity);
 		free(dyArr->dyptAddr);
+		dyArr->dyptAddr = newDyptAddr;
+		dyArr->arrCapacity = newCapacity;
 	}
 
 	//clearing a space for insertdata
-	for (int i = dyArr->arrCount-1; i >= pos; i++)
+	for (int i = dyArr->arrCount-1; i >= pos; i--)
 	{
 		dyArr->dyptAddr[i+1] = dyArr->dyptAddr[i];
 	}
