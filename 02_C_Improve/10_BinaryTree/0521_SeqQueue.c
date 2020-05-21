@@ -62,8 +62,12 @@ void Dequeue(VdSeqQue vdSeqQue) {
 	RemoveDyArrByPos(seqQue,0);
 }
 
-void* GetHeadQueue(VdSeqQue vdSeqQue) {
-
+void *GetHeadQueue(VdSeqQue vdSeqQue) {
+	if (vdSeqQue == NULL) {
+		return;
+	}
+	struct DyArrStru *seqQue = vdSeqQue;
+	return seqQue->dyptAddr[0];
 }
 
 void* GetTailQueue(VdSeqQue vdSeqQue) {
