@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "DynamicArr.h"
+#include "SeqQueue.h"
+
 typedef struct  {
 	char name[10];
 	int age;
@@ -30,6 +32,40 @@ void TestDyArr() {
 	printf("capacity=%d	count=%d\n", dyArr->arrCapacity, dyArr->arrCount);
 
 }
+
+VdSeqQue SeqQueueInit() {					//queue init
+	struct DyArrStru *seqQue = DyArrInit(3);
+	return seqQue;
+}
+
+void PushQueue(VdSeqQue vdSeqQue, void* pushData) {
+
+}
+
+void PopQueue(VdSeqQue vdSeqQue) {
+
+}
+
+void* GetHeadQueue(VdSeqQue vdSeqQue) {
+
+}
+
+void* GetTailQueue(VdSeqQue vdSeqQue) {
+
+}
+
+int GetQueueCount(VdSeqQue vdSeqQue) {
+
+}
+
+int GetQueIsNULL(VdSeqQue vdSeqQue) {
+
+}
+
+void DestoryQueue(VdSeqQue vdSeqQue) {
+
+}
+
 void main() {
 	TestDyArr();
 }
