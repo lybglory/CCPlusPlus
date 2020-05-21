@@ -38,11 +38,19 @@ VdSeqQue SeqQueueInit() {					//queue init
 	return seqQue;
 }
 
-void PushQueue(VdSeqQue vdSeqQue, void* pushData) {
+void Enqueue(VdSeqQue vdSeqQue, void *pushData) {
+	if (vdSeqQue==NULL || pushData==NULL) {
+		return;
+	}
+	struct DyArrStru* seqQue = vdSeqQue;
+	if (seqQue->arrCount==queueMax) {
+		return;
+	}
 
+	InsertArr(seqQue, seqQue->arrCount, pushData);
 }
 
-void PopQueue(VdSeqQue vdSeqQue) {
+void Dequeue(VdSeqQue vdSeqQue) {
 
 }
 

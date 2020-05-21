@@ -1,11 +1,12 @@
 #pragma once
+#define queueMax 1024
 typedef void *VdSeqQue;
 
 extern VdSeqQue SeqQueueInit();		//queue init
 
-extern void PushQueue(VdSeqQue vdSeqQue,void *pushData);			//push
+extern void Enqueue(VdSeqQue vdSeqQue,void *pushData);			//push
 
-extern void PopQueue(VdSeqQue vdSeqQue);				//pop
+extern void Dequeue(VdSeqQue vdSeqQue);				//pop
 
 extern void *GetHeadQueue(VdSeqQue vdSeqQue);		//head of queue
 
