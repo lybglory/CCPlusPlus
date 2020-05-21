@@ -70,8 +70,12 @@ void *GetHeadQueue(VdSeqQue vdSeqQue) {
 	return seqQue->dyptAddr[0];
 }
 
-void* GetTailQueue(VdSeqQue vdSeqQue) {
-
+void *GetTailQueue(VdSeqQue vdSeqQue) {
+	if (vdSeqQue == NULL) {
+		return;
+	}
+	struct DyArrStru *seqQue = vdSeqQue;
+	return seqQue->dyptAddr[seqQue->arrCount-1];
 }
 
 int GetQueueCount(VdSeqQue vdSeqQue) {
