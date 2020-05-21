@@ -138,11 +138,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0521_SeqQuene.c" />
+    <ClCompile Include="0521_SeqQueue.c" />
+    <ClCompile Include="0522_TestSeqQueue.c" />
     <ClCompile Include="DynamicArr.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArr.h" />
+    <ClInclude Include="SeqQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

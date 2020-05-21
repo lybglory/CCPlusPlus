@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="0521_SeqQuene.c">
+    <ClCompile Include="DynamicArr.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicArr.c">
+    <ClCompile Include="0521_SeqQueue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0522_TestSeqQueue.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SeqQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
