@@ -51,7 +51,15 @@ void Enqueue(VdSeqQue vdSeqQue, void *pushData) {
 }
 
 void Dequeue(VdSeqQue vdSeqQue) {
-
+	if (vdSeqQue == NULL) {
+		return;
+	}
+	struct DyArrStru *seqQue = vdSeqQue;
+	if (seqQue->arrCount == 0) {
+		return;
+	}
+	//first in first out,head remove
+	RemoveDyArrByPos(seqQue,0);
 }
 
 void* GetHeadQueue(VdSeqQue vdSeqQue) {
