@@ -98,9 +98,14 @@ int GetQueIsNULL(VdSeqQue vdSeqQue) {
 }
 
 void DestoryQueue(VdSeqQue vdSeqQue) {
-
+	if (vdSeqQue == NULL) {
+		return;
+	}
+	ClearDyArr(vdSeqQue);
 }
 
+
+
 void main() {
-	TestDyArr();
+	//TestDyArr();
 }
