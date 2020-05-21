@@ -41,3 +41,13 @@ void InsertArr(struct DyArrStru *dyArr, int pos, void* insertData) {
 	dyArr->dyptAddr[pos] = insertData;
 	dyArr->arrCount++;
 }
+
+void PrintDyArrComm(struct DyArrStru *dyArr, void(*callbkFunc)(void*)) {
+	if (dyArr == NULL) {
+		return;
+	}
+	for (int i = 0; i < dyArr->arrCount; i++)
+	{
+		callbkFunc(dyArr->dyptAddr[i]);
+	}
+}
