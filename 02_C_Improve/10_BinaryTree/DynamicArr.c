@@ -53,7 +53,7 @@ void PrintDyArrComm(struct DyArrStru *dyArr, void(*callbkFunc)(void*)) {
 }
 
 void RemoveDyArrByPos(struct DyArrStru *dyArr, int pos) {
-	if (dyArr==NULL|| pos>dyArr->arrCount-1) {
+	if (dyArr==NULL||pos<0|| pos>dyArr->arrCount-1) {
 		return;
 	}
 
@@ -64,4 +64,17 @@ void RemoveDyArrByPos(struct DyArrStru *dyArr, int pos) {
 	}
 
 	dyArr->arrCount--;
+}
+
+void RemoveDyArrByValue(struct DyArrStru *dyArr, void *data, int( *calbkCompare)(void *, void *)) {
+	if (dyArr==NULL||data==NULL) {
+		return;
+	}
+	for (int i = 0; i < dyArr->arrCount; i++)
+	{
+		if (calbkCompare(data, dyArr->dyptAddr[i])==0) {
+			RemoveDyArrByPos(dyArr,i);
+			break;
+		}
+	}
 }
