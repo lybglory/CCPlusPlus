@@ -40,5 +40,4 @@ void InsertArr(struct DyArrStru *dyArr, int pos, void* insertData) {
 	}
 	dyArr->dyptAddr[pos] = insertData;
 	dyArr->arrCount++;
-
 }
