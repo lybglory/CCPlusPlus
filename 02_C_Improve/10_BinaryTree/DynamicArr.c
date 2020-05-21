@@ -51,3 +51,17 @@ void PrintDyArrComm(struct DyArrStru *dyArr, void(*callbkFunc)(void*)) {
 		callbkFunc(dyArr->dyptAddr[i]);
 	}
 }
+
+void RemoveDyArrByPos(struct DyArrStru *dyArr, int pos) {
+	if (dyArr==NULL|| pos>dyArr->arrCount-1) {
+		return;
+	}
+
+
+	for (int i = pos; i < dyArr->arrCount; i++)
+	{
+		dyArr->dyptAddr[i] = dyArr->dyptAddr[i + 1];
+	}
+
+	dyArr->arrCount--;
+}
