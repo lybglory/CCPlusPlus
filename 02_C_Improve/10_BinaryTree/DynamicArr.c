@@ -78,3 +78,16 @@ void RemoveDyArrByValue(struct DyArrStru *dyArr, void *data, int( *calbkCompare)
 		}
 	}
 }
+
+void ClearDyArr(struct DyArrStru *dyArr) {
+	if (dyArr==NULL) {
+		return;
+	}
+	if (dyArr->dyptAddr!=NULL) {
+		free(dyArr->dyptAddr);
+		dyArr->dyptAddr = NULL;
+	}
+
+	free(dyArr);
+	dyArr = NULL;
+}
