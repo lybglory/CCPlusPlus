@@ -32,7 +32,16 @@ void PushLinkQue(VLinkQue vLkQue,void *pushData) {
 }
 
 //pop
-void PopLinkQue(){ }
+void PopLinkQue(VLinkQue vLkQue){
+	if (vLkQue == NULL) {
+		return;
+	}
+	//±¾ÖÊ£¬delete node of head
+	struct StruLkQue *lkQue = vLkQue;
+	struct StruQueLknd *popLkQueData = lkQue->head.next;
+	lkQue->head.next = popLkQueData->next;
+	lkQue->queCount++;
+}
 
 //return head
 VLinkQue GetLinkQueHead(){}
