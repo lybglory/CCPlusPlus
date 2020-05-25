@@ -67,6 +67,6 @@ void TestSeqQue() {
 	DestoryQueue(vdSeqQue);
 }
 
-void main_0522() {
+void main() {
 	TestSeqQue();
 }
