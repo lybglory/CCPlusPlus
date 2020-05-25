@@ -79,7 +79,15 @@ VLinkQue GetLinkQueTail(VLinkQue vLkQue) {
 }
 
 //return count of link queue
-int GetLinkQueCount(){ }
+int GetLinkQueCount(VLinkQue vLkQue) {
+	if (vLkQue == NULL) {
+		return -1;
+	}
+	//
+	struct StruLkQue* lkQue = vLkQue;
+
+	return lkQue->queCount;
+}
 //
 int LinkQueIsNULL(){ }
 //

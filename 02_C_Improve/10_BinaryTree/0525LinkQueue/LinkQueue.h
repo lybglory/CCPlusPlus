@@ -24,11 +24,11 @@ extern void PopLinkQue(VLinkQue vLkQue);
 extern VLinkQue GetLinkQueHead(VLinkQue vLkQue);
 
 //return tail
-VLinkQue GetLinkQueTail();
+VLinkQue GetLinkQueTail(VLinkQue vLkQue);
 
 //return count of link queue
-extern int GetLinkQueCount();
+extern int GetLinkQueCount(VLinkQue vLkQue);
 //
-extern int LinkQueIsNULL();
+extern int LinkQueIsNULL(VLinkQue vLkQue);
 //
-extern void DestroyLinkQue();
+extern void DestroyLinkQue(VLinkQue vLkQue);
