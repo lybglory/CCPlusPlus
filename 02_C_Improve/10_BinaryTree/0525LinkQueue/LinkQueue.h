@@ -12,23 +12,23 @@ struct StruLkQue {
 };
 typedef void *VLinkQue;
 //initialize
-VLinkQue QueLkInit();
+extern VLinkQue LinkQueInit();
 
 //link queue push
-void PushLinkQue();
+extern void PushLinkQue(VLinkQue vLkQue, void *pushData);
 
 //pop
-void PopLinkQue();
+extern void PopLinkQue();
 
 //return head
-VLinkQue GetLinkQueHead();
+extern VLinkQue GetLinkQueHead();
 
 //return tail
 VLinkQue GetLinkQueTail();
 
 //return count of link queue
-int GetLinkQueCount();
+extern int GetLinkQueCount();
 //
-int LinkQueIsNULL();
+extern int LinkQueIsNULL();
 //
-void DestroyLinkQue();
+extern void DestroyLinkQue();

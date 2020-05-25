@@ -4,7 +4,7 @@
 #include <string.h>
 #include "LinkQueue.h"
 //initialize
-VLinkQue QueLkInit(){ 
+VLinkQue LinkQueInit(){ 
 	struct StruLkQue *lkQue = malloc(sizeof(struct StruLkQue));
 	if (lkQue==NULL) {
 		return;
@@ -16,7 +16,20 @@ VLinkQue QueLkInit(){
 }
 
 //link queue push
-void PushLinkQue(){ }
+void PushLinkQue(VLinkQue vLkQue,void *pushData) {
+	if (vLkQue==NULL||pushData==NULL) {
+		return;
+	}
+
+	struct StruLkQue *lkQue = vLkQue;
+	struct StruQueLknd *lkQueNewNode = pushData;
+
+	//±¾ÖÊ£ºtail insert
+	lkQue->tail->next = lkQueNewNode;
+	lkQueNewNode->next = NULL;
+	lkQue->tail = lkQueNewNode;
+	lkQue->queCount++;
+}
 
 //pop
 void PopLinkQue(){ }
