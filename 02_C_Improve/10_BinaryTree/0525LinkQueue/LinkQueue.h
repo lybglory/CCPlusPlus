@@ -1,14 +1,14 @@
 #pragma once
 //link node of queue
 struct StruQueLknd {
-	struct StruQueLknd *queLkndNext;
+	struct StruQueLknd *next;
 };
 
 //struct of queue
 struct StruLkQue {
-	struct StruQueLknd queLklsHead;
+	struct StruQueLknd head;
 	int queCount;
-	struct StruQueLknd *queLklsTail;//Convenient to do end insert
+	struct StruQueLknd *tail;//Convenient to do end insert
 };
 typedef void *VLinkQue;
 //initialize
@@ -28,7 +28,7 @@ VLinkQue GetLinkQueTail();
 
 //return count of link queue
 int GetLinkQueCount();
-
+//
 int LinkQueIsNULL();
-
+//
 void DestroyLinkQue();
