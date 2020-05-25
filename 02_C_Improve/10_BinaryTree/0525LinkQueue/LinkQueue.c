@@ -39,15 +39,44 @@ void PopLinkQue(VLinkQue vLkQue){
 	//±¾ÖÊ£¬delete node of head
 	struct StruLkQue *lkQue = vLkQue;
 	struct StruQueLknd *popLkQueData = lkQue->head.next;
+	//if just one node
+	if (lkQue->queCount==1) {
+		lkQue->head.next = NULL;
+		lkQue->head.next = NULL;
+		lkQue->tail = &lkQue->head;//end to end
+		lkQue->queCount=0;
+		return;
+	}
+
 	lkQue->head.next = popLkQueData->next;
 	lkQue->queCount++;
 }
 
 //return head
-VLinkQue GetLinkQueHead(){}
+VLinkQue GetLinkQueHead(VLinkQue vLkQue){
+	if (vLkQue == NULL) {
+		return;
+	}
+	//
+	struct StruLkQue *lkQue = vLkQue;
+	if (lkQue->queCount==0) {
+		return NULL;
+	}
+	return lkQue->head.next;
+}
 
 //return tail
-VLinkQue GetLinkQueTail(){ }
+VLinkQue GetLinkQueTail(VLinkQue vLkQue) {
+	if (vLkQue == NULL) {
+		return;
+	}
+	//
+	struct StruLkQue* lkQue = vLkQue;
+	if (lkQue->queCount == 0) {
+		return NULL;
+	}
+	return lkQue->tail;
+}
 
 //return count of link queue
 int GetLinkQueCount(){ }

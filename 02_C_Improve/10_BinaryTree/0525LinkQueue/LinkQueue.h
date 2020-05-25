@@ -21,7 +21,7 @@ extern void PushLinkQue(VLinkQue vLkQue, void *pushData);
 extern void PopLinkQue(VLinkQue vLkQue);
 
 //return head
-extern VLinkQue GetLinkQueHead();
+extern VLinkQue GetLinkQueHead(VLinkQue vLkQue);
 
 //return tail
 VLinkQue GetLinkQueTail();
