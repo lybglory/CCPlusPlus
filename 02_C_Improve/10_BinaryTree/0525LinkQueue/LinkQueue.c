@@ -71,7 +71,7 @@ VLinkQue GetLinkQueTail(VLinkQue vLkQue) {
 		return;
 	}
 	//
-	struct StruLkQue* lkQue = vLkQue;
+	struct StruLkQue *lkQue = vLkQue;
 	if (lkQue->queCount == 0) {
 		return NULL;
 	}
@@ -84,15 +84,27 @@ int GetLinkQueCount(VLinkQue vLkQue) {
 		return -1;
 	}
 	//
-	struct StruLkQue* lkQue = vLkQue;
+	struct StruLkQue *lkQue = vLkQue;
 
 	return lkQue->queCount;
 }
 //
-int LinkQueIsNULL(){ }
+int LinkQueIsNULL(VLinkQue vLkQue) {
+	if (vLkQue == NULL) {
+		return -1;
+	}
+	//
+	struct StruLkQue *lkQue = vLkQue;
+	if (lkQue->queCount==0) {
+		return 1;//return 1,link queue is null;
+	}
+	return 0;//return 0,is not null;
+}
 //
-void DestroyLinkQue(){ }
-
-void main() {
-
+void DestroyLinkQue(VLinkQue vLkQue) {
+	if (vLkQue == NULL) {
+		return;
+	}
+	free(vLkQue);
+	vLkQue = NULL;
 }
