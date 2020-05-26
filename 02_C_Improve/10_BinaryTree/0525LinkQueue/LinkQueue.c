@@ -43,7 +43,6 @@ void PopLinkQue(VLinkQue vLkQue){
 	//if just one node
 	if (lkQue->queCount==1) {
 		lkQue->head.next = NULL;
-		lkQue->head.next = NULL;
 		lkQue->tail = &lkQue->head;//end to end
 		lkQue->queCount--;
 		return;
