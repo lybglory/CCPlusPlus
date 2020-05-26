@@ -32,3 +32,6 @@ extern int GetLinkQueCount(VLinkQue vLkQue);
 extern int LinkQueIsNULL(VLinkQue vLkQue);
 //
 extern void DestroyLinkQue(VLinkQue vLkQue);
+
+//
+void PrintStrutComm(VLinkQue vLkQue, void( *calbkPrintf)(void *));

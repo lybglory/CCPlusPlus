@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LinkQueue.h"
+
 //initialize
 VLinkQue LinkQueInit(){ 
 	struct StruLkQue *lkQue = malloc(sizeof(struct StruLkQue));
@@ -107,4 +108,19 @@ void DestroyLinkQue(VLinkQue vLkQue) {
 	}
 	free(vLkQue);
 	vLkQue = NULL;
+}
+
+void PrintStrutComm(VLinkQue vLkQue,void(*calbkPrintf)(void *)) {
+	if (vLkQue ==NULL) {
+		return;
+	}
+
+	struct StruLkQue *lkQue = vLkQue;
+	struct StruQueLknd *lkndQueCurr = lkQue->head.next;
+	for (int i = 0; i < lkQue->queCount; i++)
+	{
+		calbkPrintf(lkndQueCurr);
+		lkndQueCurr = lkndQueCurr->next;
+	}
+
 }
