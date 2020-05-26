@@ -33,8 +33,17 @@ void TestLkQueue() {
 	printf("count of link queue=%d\n",GetLinkQueCount(vlkQue));
 	PrintStrutComm(vlkQue, CalbkPrintfStru);
 	
+	printf("\n==LinkQueue enqueue==\n");
+	while (LinkQueIsNULL(vlkQue) == 0) {
+		Person *pLkQueHead = GetLinkQueHead(vlkQue);
+		printf("head	%s	%d	", pLkQueHead->name, pLkQueHead->age);
 
-
+		Person *pLkQueTail = GetLinkQueTail(vlkQue);
+		printf("tail	%s	%d\n", pLkQueTail->name, pLkQueTail->age);
+		PopLinkQue(vlkQue);
+	}
+	printf("count of link queue=%d\n", GetLinkQueCount(vlkQue));
+	DestroyLinkQue(vlkQue);
 }
 void main() {
 	TestLkQueue();

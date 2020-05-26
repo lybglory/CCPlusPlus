@@ -45,18 +45,18 @@ void PopLinkQue(VLinkQue vLkQue){
 		lkQue->head.next = NULL;
 		lkQue->head.next = NULL;
 		lkQue->tail = &lkQue->head;//end to end
-		lkQue->queCount=0;
+		lkQue->queCount--;
 		return;
 	}
 
 	lkQue->head.next = popLkQueData->next;
-	lkQue->queCount++;
+	lkQue->queCount--;
 }
 
 //return head
 VLinkQue GetLinkQueHead(VLinkQue vLkQue){
 	if (vLkQue == NULL) {
-		return;
+		return NULL;
 	}
 	//
 	struct StruLkQue *lkQue = vLkQue;
@@ -69,7 +69,7 @@ VLinkQue GetLinkQueHead(VLinkQue vLkQue){
 //return tail
 VLinkQue GetLinkQueTail(VLinkQue vLkQue) {
 	if (vLkQue == NULL) {
-		return;
+		return NULL;
 	}
 	//
 	struct StruLkQue *lkQue = vLkQue;
