@@ -20,9 +20,15 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
 
 	//inorder
+	//BinaryTreeRecursion(btRoot->lChildNd);	//1.left
+	//printf("%c ", btRoot->btName);			//2.root
+	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
+
+	//ºóÐø
 	BinaryTreeRecursion(btRoot->lChildNd);	//1.left
-	printf("%c ", btRoot->btName);			//2.root
-	BinaryTreeRecursion(btRoot->rChildNd);	//3.right
+	BinaryTreeRecursion(btRoot->rChildNd);	//2.right
+	printf("%c ", btRoot->btName);			//3.root
+	
 }
 
 void BinaryTreeTest() {
