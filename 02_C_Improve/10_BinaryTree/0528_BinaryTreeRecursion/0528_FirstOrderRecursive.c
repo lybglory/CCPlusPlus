@@ -15,11 +15,14 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 		return;
 	}
 	//ÏÈÐò
-	printf("%c ",btRoot->btName);			//1.root name
-	BinaryTreeRecursion(btRoot->lChildNd);	//2.left
+	//printf("%c ",btRoot->btName);			//1.root name
+	//BinaryTreeRecursion(btRoot->lChildNd);	//2.left
+	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
+
+	//inorder
+	BinaryTreeRecursion(btRoot->lChildNd);	//1.left
+	printf("%c ", btRoot->btName);			//2.root
 	BinaryTreeRecursion(btRoot->rChildNd);	//3.right
-
-
 }
 
 void BinaryTreeTest() {
