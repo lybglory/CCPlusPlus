@@ -31,6 +31,10 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 	
 }
 
+int GetTreeNode(BinaryTreeNode *btRoot,int *p) {
+
+}
+
 void BinaryTreeTest() {
 	BinaryTreeNode btNodeA = { 'A',NULL,NULL };
 	BinaryTreeNode btNodeB = { 'B',NULL,NULL };
