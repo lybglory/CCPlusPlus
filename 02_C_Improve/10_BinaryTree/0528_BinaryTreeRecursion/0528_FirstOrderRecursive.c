@@ -31,8 +31,19 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 	
 }
 
-int GetTreeNode(BinaryTreeNode *btRoot,int *p) {
+//get tree count
+int GetTreeNode(BinaryTreeNode *btRoot,int *p_count) {
+	if (btRoot==NULL) {
+		return 0;
+	}
 
+
+	if (btRoot->rChildNd==NULL&&btRoot->lChildNd==NULL) {
+		(*p_count)++;
+	}
+	GetTreeNode(btRoot->lChildNd, p_count);
+	GetTreeNode(btRoot->rChildNd, p_count);
+	return p_count;
 }
 
 void BinaryTreeTest() {
@@ -57,6 +68,9 @@ void BinaryTreeTest() {
 	btNodeG.lChildNd = &btNodeH;
 
 	BinaryTreeRecursion(&btNodeA);
+	int count = 0;
+	GetTreeNode(&btNodeA, &count);
+	printf("\ntree node=%d\n", count);
 }
 void main() {
 	BinaryTreeTest();
