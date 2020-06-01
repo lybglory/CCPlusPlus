@@ -15,9 +15,9 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 		return;
 	}
 	//ÏÈÐò
-	//printf("%c ",btRoot->btName);			//1.root name
-	//BinaryTreeRecursion(btRoot->lChildNd);	//2.left
-	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
+	printf("%c ",btRoot->btName);			//1.root name
+	BinaryTreeRecursion(btRoot->lChildNd);	//2.left
+	BinaryTreeRecursion(btRoot->rChildNd);	//3.right
 
 	//inorder
 	//BinaryTreeRecursion(btRoot->lChildNd);	//1.left
@@ -25,9 +25,9 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
 
 	//ºóÐø
-	BinaryTreeRecursion(btRoot->lChildNd);	//1.left
-	BinaryTreeRecursion(btRoot->rChildNd);	//2.right
-	printf("%c ", btRoot->btName);			//3.root
+	//BinaryTreeRecursion(btRoot->lChildNd);	//1.left
+	//BinaryTreeRecursion(btRoot->rChildNd);	//2.right
+	//printf("%c ", btRoot->btName);			//3.root
 	
 }
 
@@ -43,7 +43,18 @@ int GetTreeNode(BinaryTreeNode *btRoot,int *p_count) {
 	}
 	GetTreeNode(btRoot->lChildNd, p_count);
 	GetTreeNode(btRoot->rChildNd, p_count);
-	return p_count;
+	return *p_count;
+}
+
+//tree level
+int GetTreeLevel(BinaryTreeNode *btRoot) {
+	if (btRoot == NULL) {
+		return 0;
+	}
+	int lChildLevel = GetTreeLevel(btRoot->lChildNd);
+	int rChildLevel = GetTreeLevel(btRoot->rChildNd);
+	return lChildLevel > rChildLevel ? lChildLevel + 1 : rChildLevel + 1;
+
 }
 
 void BinaryTreeTest() {
@@ -69,8 +80,9 @@ void BinaryTreeTest() {
 
 	BinaryTreeRecursion(&btNodeA);
 	int count = 0;
-	GetTreeNode(&btNodeA, &count);
-	printf("\ntree node=%d\n", count);
+	printf("\ntree node=%d\n", GetTreeNode(&btNodeA, &count));
+
+	printf("tree level=%d\n", GetTreeLevel(&btNodeA));
 }
 void main() {
 	BinaryTreeTest();
