@@ -63,7 +63,7 @@ BinaryTreeNode *BinaryTreeCopy(BinaryTreeNode *btRoot) {
 	}
 
 	BinaryTreeNode *newLChild = BinaryTreeCopy(btRoot->lChildNd);
-	BinaryTreeNode *newRChild = BinaryTreeCopy(btRoot->lChildNd);
+	BinaryTreeNode *newRChild = BinaryTreeCopy(btRoot->rChildNd);
 	BinaryTreeNode *newRoot = malloc(sizeof(BinaryTreeNode));
 	newRoot->lChildNd = newLChild;
 	newRoot->rChildNd = newRChild;
@@ -71,6 +71,15 @@ BinaryTreeNode *BinaryTreeCopy(BinaryTreeNode *btRoot) {
 	return newRoot;
 }
 
+void *FreeBinaryTree(BinaryTreeNode *btRoot) {
+	if (btRoot==NULL) {
+		return;
+	}
+	FreeBinaryTree(btRoot->lChildNd);
+	FreeBinaryTree(btRoot->rChildNd);
+	printf("Has been released %d\n",btRoot->btName);
+	free(btRoot);
+}
 void BinaryTreeTest() {
 	BinaryTreeNode btNodeA = { 'A',NULL,NULL };
 	BinaryTreeNode btNodeB = { 'B',NULL,NULL };
@@ -97,6 +106,12 @@ void BinaryTreeTest() {
 	printf("\ntree node=%d\n", GetTreeNode(&btNodeA, &count));
 
 	printf("tree level=%d\n", GetTreeLevel(&btNodeA));
+
+	BinaryTreeNode *newTreeRoot=BinaryTreeCopy(&btNodeA);
+	printf("Copy:\n");
+	BinaryTreeRecursion(newTreeRoot);
+	printf("free:\n");
+	FreeBinaryTree(newTreeRoot);
 }
 void main() {
 	BinaryTreeTest();
