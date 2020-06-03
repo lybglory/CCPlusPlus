@@ -15,9 +15,9 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 		return;
 	}
 	//ÏÈÐò
-	printf("%c ",btRoot->btName);			//1.root name
-	BinaryTreeRecursion(btRoot->lChildNd);	//2.left
-	BinaryTreeRecursion(btRoot->rChildNd);	//3.right
+	//printf("%c ",btRoot->btName);			//1.root name
+	//BinaryTreeRecursion(btRoot->lChildNd);	//2.left
+	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
 
 	//inorder
 	//BinaryTreeRecursion(btRoot->lChildNd);	//1.left
@@ -25,9 +25,9 @@ void BinaryTreeRecursion(BinaryTreeNode *btRoot) {
 	//BinaryTreeRecursion(btRoot->rChildNd);	//3.right
 
 	//ºóÐø
-	//BinaryTreeRecursion(btRoot->lChildNd);	//1.left
-	//BinaryTreeRecursion(btRoot->rChildNd);	//2.right
-	//printf("%c ", btRoot->btName);			//3.root
+	BinaryTreeRecursion(btRoot->lChildNd);	//1.left
+	BinaryTreeRecursion(btRoot->rChildNd);	//2.right
+	printf("%c ", btRoot->btName);			//3.root
 	
 }
 
@@ -55,6 +55,20 @@ int GetTreeLevel(BinaryTreeNode *btRoot) {
 	int rChildLevel = GetTreeLevel(btRoot->rChildNd);
 	return lChildLevel > rChildLevel ? lChildLevel + 1 : rChildLevel + 1;
 
+}
+
+BinaryTreeNode *BinaryTreeCopy(BinaryTreeNode *btRoot) {
+	if(btRoot==NULL){
+		return;
+	}
+
+	BinaryTreeNode *newLChild = BinaryTreeCopy(btRoot->lChildNd);
+	BinaryTreeNode *newRChild = BinaryTreeCopy(btRoot->lChildNd);
+	BinaryTreeNode *newRoot = malloc(sizeof(BinaryTreeNode));
+	newRoot->lChildNd = newLChild;
+	newRoot->rChildNd = newRChild;
+	newRoot->btName = btRoot->btName;
+	return newRoot;
 }
 
 void BinaryTreeTest() {
