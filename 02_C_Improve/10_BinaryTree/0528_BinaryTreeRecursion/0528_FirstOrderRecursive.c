@@ -108,8 +108,8 @@ void BinaryTreeTest() {
 
 	printf("tree level=%d\n", GetTreeLevel(&btNodeA));
 
+	printf("\nCopy tree:\n");
 	BinaryTreeNode *newTreeRoot=BinaryTreeCopy(&btNodeA);
-	printf("\nCopy tree:\n\n");
 	BinaryTreeRecursion(newTreeRoot);
 	printf("\n\nfree:\n");
 	FreeBinaryTree(newTreeRoot);

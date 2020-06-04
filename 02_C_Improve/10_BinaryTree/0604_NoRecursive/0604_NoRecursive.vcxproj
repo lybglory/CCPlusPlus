@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{73822730-3784-4E56-B54E-DF8F21C49968}</ProjectGuid>
-    <RootNamespace>My0528BinaryTreeRecursion</RootNamespace>
+    <ProjectGuid>{FE889A13-96F8-4EFA-BAB3-5FC48F9A1083}</ProjectGuid>
+    <RootNamespace>My0604NoRecursive</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,7 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="0528_FirstOrderRecursive.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
