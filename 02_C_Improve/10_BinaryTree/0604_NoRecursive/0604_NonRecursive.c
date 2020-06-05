@@ -25,23 +25,24 @@ void NonRecursive(BinaryTreeNode *root) {
 		PopStack(btVStk);
 		if (topNode->flag==1) {
 			//true,printf-->continue
-			printf("%c\n",topNode->btName);
+			printf("%c ",topNode->btName);
 			continue;
 		}
 
 		//false,flag set true
 		topNode->flag = 1;
-		//right push
+		//right push(left--root--right)   stack(right--root--left)
 		if (topNode->rChildNd!=NULL) {
 			PushStack(btVStk,topNode->rChildNd);
 		}
+		//root push
+		PushStack(btVStk, topNode);
 
 		//left push
 		if (topNode->lChildNd!=NULL) {
 			PushStack(btVStk, topNode->lChildNd);
 		}
-		//root push
-		PushStack(btVStk,topNode);
+
 	}
 	DestroyStk(btVStk);
 
