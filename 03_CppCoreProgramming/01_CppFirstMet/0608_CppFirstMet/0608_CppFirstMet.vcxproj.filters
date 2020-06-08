@@ -21,5 +21,19 @@
     <ClCompile Include="0608_DoubleColonScopedOperator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Game1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Game2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Game2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

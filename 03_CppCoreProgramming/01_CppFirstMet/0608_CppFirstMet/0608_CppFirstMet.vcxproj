@@ -141,6 +141,12 @@
   <ItemGroup>
     <ClCompile Include="0608_CppHelloWorld.cpp" />
     <ClCompile Include="0608_DoubleColonScopedOperator.cpp" />
+    <ClCompile Include="Game1.cpp" />
+    <ClCompile Include="Game2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game1.h" />
+    <ClInclude Include="Game2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
