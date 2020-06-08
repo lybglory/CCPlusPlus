@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\01_CppFirstMet\0608_CppFirstMet\Debug\01_CppFirstMet.exe
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\01_CppFirstMet\0608_CppFirstMet\Debug\01_CppFirstMet.pdb
