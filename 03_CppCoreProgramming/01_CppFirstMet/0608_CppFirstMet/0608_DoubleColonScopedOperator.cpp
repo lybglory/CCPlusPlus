@@ -18,7 +18,7 @@ void Test02() {
 	Game1::Attack();
 }
 
-void main() {
+void main_0608_2() {
 	//Test01();
 	Test02();
 }
