@@ -30,6 +30,9 @@
     <ClCompile Include="0609_Const.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0609_Struct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game1.h">

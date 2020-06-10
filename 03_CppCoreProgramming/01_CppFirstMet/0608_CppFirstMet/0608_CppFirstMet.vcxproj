@@ -142,6 +142,7 @@
     <ClCompile Include="0608_CppHelloWorld.cpp" />
     <ClCompile Include="0608_DoubleColonScopedOperator.cpp" />
     <ClCompile Include="0609_Const.cpp" />
+    <ClCompile Include="0609_Struct.cpp" />
     <ClCompile Include="Game1.cpp" />
     <ClCompile Include="Game2.cpp" />
   </ItemGroup>
