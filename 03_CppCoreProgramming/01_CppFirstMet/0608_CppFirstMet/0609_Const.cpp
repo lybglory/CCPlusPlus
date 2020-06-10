@@ -32,8 +32,8 @@ void ConstTest3() {
 	p->age = 75;
 	cout << "name=" << p1.name << ";age=" << p1.age << endl;
 }
-void main() {
+void main_0609() {
 	ConstTest1();
 	ConstTest2();
-	ConstTest3();
+ 	ConstTest3();
 }
