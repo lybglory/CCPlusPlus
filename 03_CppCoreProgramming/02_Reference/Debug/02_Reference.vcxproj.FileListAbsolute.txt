@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\02_Reference\Debug\02_Reference.exe
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\02_Reference\Debug\02_Reference.pdb
