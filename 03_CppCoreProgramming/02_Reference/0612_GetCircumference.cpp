@@ -25,6 +25,6 @@ void TestCircumference() {
 	cout << "Circumference=" << c1.GetCircumference() << endl;
 }
 
-void main() {
+void main_0612() {
 	TestCircumference();
 }
