@@ -21,5 +21,8 @@
     <ClCompile Include="0615_StudentDesign.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0618_InlineFunc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

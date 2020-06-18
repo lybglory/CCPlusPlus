@@ -30,6 +30,6 @@ void TestStClass() {
 	cout << "s1.name=" << s1.name << "; age=" << s1.age<< endl;
 }
 
-void main() {
+void main_0615() {
 	TestStClass();
 }
