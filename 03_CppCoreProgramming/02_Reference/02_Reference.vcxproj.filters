@@ -27,5 +27,8 @@
     <ClCompile Include="0619_Placeholder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0619_Override.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
