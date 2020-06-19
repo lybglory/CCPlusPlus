@@ -12,6 +12,6 @@ void TestInline() {
 	cout << "sum=" << sum << endl;
 }
 
-void main() {
+void main_0618() {
 	TestInline();
 }

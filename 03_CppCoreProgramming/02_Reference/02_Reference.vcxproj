@@ -141,6 +141,7 @@
     <ClCompile Include="0612_GetCircumference.cpp" />
     <ClCompile Include="0615_StudentDesign.cpp" />
     <ClCompile Include="0618_InlineFunc.cpp" />
+    <ClCompile Include="0619_Placeholder.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
