@@ -9,7 +9,7 @@ void Override(int x, int y) {
 	cout << "x="<<x<<";y="<<y << endl;
 }
 
-void main() {
+void main0619_02() {
 	Override(10,30,"Messi");
 	Override(10, 30);
 }

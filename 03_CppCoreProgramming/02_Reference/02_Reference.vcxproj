@@ -143,6 +143,11 @@
     <ClCompile Include="0618_InlineFunc.cpp" />
     <ClCompile Include="0619_Override.cpp" />
     <ClCompile Include="0619_Placeholder.cpp" />
+    <ClCompile Include="0623_ExternC.cpp" />
+    <ClCompile Include="CTestfile.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chead.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
