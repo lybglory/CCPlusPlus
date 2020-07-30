@@ -73,6 +73,6 @@ void TestCube() {
 	}
 }
 
-void main() {
+void main_0701() {
 	TestCube();
 }

@@ -18,5 +18,8 @@
     <ClCompile Include="0701_CubeDesign.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0704_Ref.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\03_ClassAndObject\Debug\03_ClassAndObject.exe
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\03_ClassAndObject\Debug\03_ClassAndObject.pdb
