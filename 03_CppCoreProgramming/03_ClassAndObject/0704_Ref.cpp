@@ -74,11 +74,21 @@ int &TestFunc02() {
 	cout << "static int a : " << a << endl;
 	return a;
 }
-void main() {
+void main_0704_02() {
 	//不能返回局部变量的引用
 	int &ret01 = TestFun01();
 	//如果函数做左值，那么必须返回引用
 	TestFunc02();
 	TestFunc02() = 100;
 	TestFunc02();
+}
+#define COMPARE(x,y) ((x) < (y) ? (x) : (y))
+int Compare(int x, int y) {
+	return x < y ? x : y;
+}
+void MacroFunc() {
+	int a = 1;
+	int b = 3;
+	//cout << "COMPARE(++a, b):" << COMPARE(++a, b) << endl; // 3
+	cout << "Compare(int x,int y):" << Compare(++a, b) << endl; //2
 }
