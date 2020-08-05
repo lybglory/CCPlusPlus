@@ -36,6 +36,12 @@
     <ClCompile Include="0805_ClassTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ConstructorLevel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="0805_CopyConstructFunc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyModule.h">

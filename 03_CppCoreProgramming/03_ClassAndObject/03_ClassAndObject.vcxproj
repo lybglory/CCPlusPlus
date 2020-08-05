@@ -142,7 +142,9 @@
     <ClCompile Include="0704_Ref.cpp" />
     <ClCompile Include="0804_DefaultParameter.cpp" />
     <ClCompile Include="0805_ClassTest.cpp" />
+    <ClCompile Include="0805_CopyConstructFunc.cpp" />
     <ClCompile Include="0805_Placeholder.cpp" />
+    <ClCompile Include="ConstructorLevel.cpp" />
     <ClCompile Include="MyModule.c" />
     <ClCompile Include="TestExternC.cpp" />
   </ItemGroup>

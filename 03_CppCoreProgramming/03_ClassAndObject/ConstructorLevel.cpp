@@ -64,3 +64,20 @@ void test02() {
 	Person person05 = person04; //Person person05 =  Person(person04)
 	person05.PrintPerson();
 }
+
+class Teacher {
+public:
+	Teacher() {
+		cout << "默认构造函数!" << endl;
+	}
+	Teacher(const Teacher& teacher) {
+		cout << "拷贝构造函数!" << endl;
+	}
+public:
+	int mAge;
+};
+void main_0805_07() {
+	Teacher t1;	
+	//Teacher(t1);  //error C2086:“Teacher t1”: 重定义.
+				  //此时等价于 Teacher t1;
+}
