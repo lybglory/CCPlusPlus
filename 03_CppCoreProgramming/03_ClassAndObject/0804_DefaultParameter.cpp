@@ -12,7 +12,7 @@ void TestFunc02(int a, int b = 10, int c = 10) {}
 void TestFunc03(int a = 0, int b = 0);
 void TestFunc03(int a, int b) {}
 
-void main() {
+void main_0804() {
 	//1.如果没有传参数，那么使用默认参数
 	TestFunc01();
 	//2. 如果传一个参数，那么第二个参数使用默认参数

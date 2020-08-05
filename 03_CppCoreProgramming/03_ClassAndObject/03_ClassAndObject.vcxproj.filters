@@ -24,5 +24,8 @@
     <ClCompile Include="0804_DefaultParameter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0805_Placeholder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
