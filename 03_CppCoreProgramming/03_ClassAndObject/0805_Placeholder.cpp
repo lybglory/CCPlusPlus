@@ -38,6 +38,6 @@ void FuncOver(string b) {
 void FuncOver(string b, int a = 10) {
 	cout << "a: " << a << " b:" << b << endl;
 }
-int main_0805_2() {
+void main_0805_2() {
 	//FuncOver("hello"); //这时，两个函数都能匹配调用，产生二义性
 }
