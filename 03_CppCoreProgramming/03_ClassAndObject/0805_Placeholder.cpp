@@ -1,5 +1,5 @@
-#define _CRT_SECURE_NO_WARINGS
-#include <iostream>
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 using namespace std;
 void Placeholder1(int a, int b, int) {
 	//函数内部无法使用占位参数

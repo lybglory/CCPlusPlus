@@ -1,5 +1,5 @@
-#define _CRT_SECURE_NO_WARINGS
-#include <iostream>
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 using namespace std;
 
 void TestFunc01(int a = 10, int b = 20) {
