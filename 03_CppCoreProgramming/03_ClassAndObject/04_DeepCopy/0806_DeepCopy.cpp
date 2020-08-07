@@ -57,4 +57,18 @@ void test01()
 void main() {
 
 	test01();
+
+	//创建字符数组
+	char* pStr = new char[100];
+	//创建整型数组
+	int* pArr1 = new int[100];
+	//创建整型数组并初始化
+	int* pArr2 = new int[10]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	//释放数组内存
+	delete[] pStr;
+	delete[] pArr1;
+	delete[] pArr2;
 }
+
+
