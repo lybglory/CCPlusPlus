@@ -1,5 +1,4 @@
 #include"MyModule.h"
-
 void func1() {
 	printf("hello world!");
 }
