@@ -23,7 +23,7 @@ extern "C" int func2(int a, int b);
 
 #endif
 
-void main() {
+void main_ExternC() {
 	func1();
 	cout << func2(10, 20) << endl;
 }
