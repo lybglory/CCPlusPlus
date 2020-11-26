@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void main() {
+void main_20201125() {
 	int num = 100;
 	do
 	{

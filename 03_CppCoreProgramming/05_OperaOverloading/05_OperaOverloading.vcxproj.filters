@@ -18,5 +18,8 @@
     <ClCompile Include="Daffodil_20201125.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="20201126_MutiplicationTable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
