@@ -147,6 +147,73 @@ void FindContract(ContactList *ctp) {
 	system("cls");
 }
 
+void ModifyContract(ContactList *ctp) {
+	string  modifyName;
+	cout << "Input need your found name of contract" << endl;
+	cin >> modifyName;
+	int rect = ContractIsExist(ctp, modifyName);
+	int modifyType;
+	if (rect != -1) {
+		cout << "1:Modify name\t2:Modify Age\t3:Modify Gender\t4:Modify Addr\t5:Modify Tel" << endl;
+		cin >> modifyType;
+		switch (modifyType)
+		{
+		case 1:
+		{
+			cout << "Modify name:";
+			string editorName;
+			cin >> editorName; 
+			ctp->cntArr[rect].cntName = editorName;
+			cout << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "Modify age:";
+			int editorAge;
+			cin >> editorAge;
+			ctp->cntArr[rect].cntAge = editorAge;
+			cout << endl;
+			break;
+		}
+		case 3:
+		{
+			cout << "Modify Gender:";
+			int editorGender;
+			cin >> editorGender;
+			ctp->cntArr[rect].cntGender = editorGender;
+			cout << endl;
+			break;
+		}
+		case 4:
+		{
+			cout << "Modify Addr:";
+			int editorAddr;
+			cin >> editorAddr;
+			ctp->cntArr[rect].cntAddr = editorAddr;
+			cout << endl;
+			break;
+		}
+		case 5:
+		{
+			cout << "Modify Tel:";
+			int editorTel;
+			cin >> editorTel;
+			ctp->cntArr[rect].cntTel = editorTel;
+			cout << endl;
+			break;
+		}
+
+		default:
+			break;
+		}
+		cout << "Modify successed!" << endl;
+	}
+
+	system("pause");
+	system("cls");
+}
+
 void main() {
 
 	//2¡¢new contractslist
@@ -175,7 +242,8 @@ void main() {
 		case 4:			//find contract
 			FindContract(&cntList);
 			break;
-		case 5:
+		case 5:			//Modify Contract
+			ModifyContract(&cntList);
 			break;
 		case 6:
 			break;
