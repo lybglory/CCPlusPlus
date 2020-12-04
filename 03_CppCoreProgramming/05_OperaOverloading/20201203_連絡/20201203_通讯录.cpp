@@ -81,33 +81,51 @@ void ShowContract(ContactList cntls) {
 	}
 	for (size_t i = 0; i < cntls.cntsNum; i++)
 	{
-		cout << "Name:" << cntls.cntArr->cntName << "\t";
-		cout << "Age:" << cntls.cntArr->cntAge << "\t";
-		cout << "Gender:" << (cntls.cntArr->cntGender==1 ?"男":"女")<< "\t";
-		cout << "Addr:" << cntls.cntArr->cntAddr << "\t";
-		cout << "Tel:" << cntls.cntArr->cntTel << endl;
+		cout << "Name:" << cntls.cntArr[i].cntName << "\t";
+		cout << "Age:" << cntls.cntArr[i].cntAge << "\t";
+		cout << "Gender:" << (cntls.cntArr[i].cntGender==1 ?"男":"女")<< "\t";
+		cout << "Addr:" << cntls.cntArr[i].cntAddr << "\t";
+		cout << "Tel:" << cntls.cntArr[i].cntTel << endl;
 	}
 	system("pause");
 	system("cls");
 }
 
-void DeleteContract(ContactList *ctp,string delName) {
+int ContractIsExist(ContactList *ctp,string delName) {
 	if (ctp->cntsNum<0) {
 		cout << "contract list is empty!" << endl;
-		return;
+		return-1;
 	}
 	for (size_t i = 0; i < ctp->cntsNum; i++)
 	{
 		if (ctp->cntArr[i].cntName == delName) {
-			cout << "The contract was found!--delete!";
-			return;
+			
+			return i;
 		}
 	}
-	cout << "The contract was not found!";
+	return -1;
+	
 	system("pause");
 	system("cls");
 }
 
+void DelContract(ContactList *ctp, string delName) {
+	int rec = ContractIsExist(ctp,delName);
+	if (rec!=-1) {
+		cout << "Found contract!" << endl;
+		for (size_t i = rec; i < ctp->cntsNum; i++)
+		{	//后面的数据覆盖要删除的数据
+			ctp->cntArr[i] = ctp->cntArr[i + 1];
+		}
+		ctp->cntsNum--;
+		cout << "Contract has deleted!" << endl;
+	}
+	else {
+		cout << "Contract was not found!" << endl;
+	}
+	system("pause");
+	system("cls");
+}
 void main() {
 
 	//2、new contractslist
@@ -135,7 +153,9 @@ void main() {
 			string  needDelName;
 			cout << "Input need your del name of contract" << endl;
 			cin >> needDelName;
-			DeleteContract(&cntList,needDelName); 
+			DelContract(&cntList, needDelName);
+
+			
 		}
 			break;
 		case 4:
