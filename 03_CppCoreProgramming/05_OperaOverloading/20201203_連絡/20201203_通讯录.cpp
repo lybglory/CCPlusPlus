@@ -109,8 +109,11 @@ int ContractIsExist(ContactList *ctp,string delName) {
 	system("cls");
 }
 
-void DelContract(ContactList *ctp, string delName) {
-	int rec = ContractIsExist(ctp,delName);
+void DelContract(ContactList *ctp) {
+	string  needDelName;
+	cout << "Input need your del name of contract" << endl;
+	cin >> needDelName;
+	int rec = ContractIsExist(ctp, needDelName);
 	if (rec!=-1) {
 		cout << "Found contract!" << endl;
 		for (size_t i = rec; i < ctp->cntsNum; i++)
@@ -126,6 +129,24 @@ void DelContract(ContactList *ctp, string delName) {
 	system("pause");
 	system("cls");
 }
+
+void FindContract(ContactList *ctp) {
+	string  findName;
+	cout << "Input need your found name of contract" << endl;
+	cin >> findName;
+	int rect = ContractIsExist(ctp, findName);
+	if(rect!=-1){
+		cout << "Name:" << ctp->cntArr[rect].cntName << "\t";
+		cout << "Age:" << ctp->cntArr[rect].cntAge << "\t";
+		cout << "Gender:" << (ctp->cntArr[rect].cntGender == 1 ? "ÄÐ" : "Å®") << "\t";
+		cout << "Addr:" << ctp->cntArr[rect].cntAddr << "\t";
+		cout << "Tel:" << ctp->cntArr[rect].cntTel << endl;
+	}
+	
+	system("pause");
+	system("cls");
+}
+
 void main() {
 
 	//2¡¢new contractslist
@@ -148,17 +169,11 @@ void main() {
 		case 2:			//show contract
 			ShowContract(cntList);
 			break;
-		case 3:			//delete contract
-		{
-			string  needDelName;
-			cout << "Input need your del name of contract" << endl;
-			cin >> needDelName;
-			DelContract(&cntList, needDelName);
-
-			
-		}
+		case 3:			//delete contract	
+			DelContract(&cntList);
 			break;
-		case 4:
+		case 4:			//find contract
+			FindContract(&cntList);
 			break;
 		case 5:
 			break;
