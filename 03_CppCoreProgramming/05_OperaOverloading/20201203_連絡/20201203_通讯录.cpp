@@ -91,23 +91,21 @@ void ShowContract(ContactList cntls) {
 	system("cls");
 }
 
-void DeleteContract(ContactList *ctp) {
+void DeleteContract(ContactList *ctp,string delName) {
 	if (ctp->cntsNum<0) {
 		cout << "contract list is empty!" << endl;
 		return;
 	}
-	cout << "please input need to delete name of contract:" << endl;
-	string deleName;
-	cin >> deleName;
-	while (0<ctp->cntsNum) {
-		if (ctp->cntArr[ctp->cntsNum].cntName == deleName) {
+	for (size_t i = 0; i < ctp->cntsNum; i++)
+	{
+		if (ctp->cntArr[i].cntName == delName) {
 			cout << "The contract was found!--delete!";
-			break;
+			return;
 		}
-		cout << "The contract was not found!";
-		ctp->cntsNum++;
 	}
-	
+	cout << "The contract was not found!";
+	system("pause");
+	system("cls");
 }
 
 void main() {
@@ -133,7 +131,12 @@ void main() {
 			ShowContract(cntList);
 			break;
 		case 3:			//delete contract
-			DeleteContract(&cntList);
+		{
+			string  needDelName;
+			cout << "Input need your del name of contract" << endl;
+			cin >> needDelName;
+			DeleteContract(&cntList,needDelName); 
+		}
 			break;
 		case 4:
 			break;
