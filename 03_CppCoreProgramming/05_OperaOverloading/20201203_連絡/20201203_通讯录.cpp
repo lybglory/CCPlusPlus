@@ -75,7 +75,7 @@ void NewContract(ContactList *cntp) {
 }
 
 void ShowContract(ContactList cntls) {
-	if (cntls.cntsNum<0) {
+	if (cntls.cntsNum<1) {
 		cout << "contract is null!" << endl;
 		return;
 	}
@@ -214,7 +214,20 @@ void ModifyContract(ContactList *ctp) {
 	system("cls");
 }
 
-void main() {
+void ClearContracts(ContactList *ctp) {
+
+	if (ctp->cntsNum<1) {
+		cout << "Contracts is empty!" << endl;
+	}
+	else {
+		ctp->cntsNum = 0;
+		cout << "Contracts has been Clear!" << endl;
+	}
+	system("pause");
+	system("cls");
+}
+
+int main() {
 
 	//2¡¢new contractslist
 	ContactList cntList;
@@ -248,8 +261,12 @@ void main() {
 			ModifyContract(&cntList);
 			break;
 		case 6:			//ClearContracts
+			ClearContracts(&cntList);
 			break;
-		default:
+		case 0:
+			cout << "Welcome to use next time!" << endl;
+			system("pause");
+			return 0;
 			break;
 		}
 	}
