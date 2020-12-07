@@ -92,7 +92,7 @@ void ShowContract(ContactList cntls) {
 }
 
 int ContractIsExist(ContactList *ctp,string delName) {
-	if (ctp->cntsNum<0) {
+	if (ctp->cntsNum<1) {
 		cout << "contract list is empty!" << endl;
 		return-1;
 	}
@@ -188,7 +188,7 @@ void ModifyContract(ContactList *ctp) {
 		case 4:
 		{
 			cout << "Modify Addr:";
-			int editorAddr;
+			string editorAddr;
 			cin >> editorAddr;
 			ctp->cntArr[rect].cntAddr = editorAddr;
 			cout << endl;
@@ -227,7 +227,9 @@ void main() {
 		cout << "please input number(0~6)" << endl;
 
 		cin >> index;
-
+		if (cin.fail()) {
+			break;
+		}
 		switch (index)
 		{
 		case 1:			//new contract
@@ -245,7 +247,7 @@ void main() {
 		case 5:			//Modify Contract
 			ModifyContract(&cntList);
 			break;
-		case 6:
+		case 6:			//ClearContracts
 			break;
 		default:
 			break;
