@@ -8,7 +8,7 @@ public:
 	EmployeeManager();
 
 	void ShowMenu();
-
+	void Exit();
 
 	//Ðé¹¹º¯Êý
 	~EmployeeManager();

@@ -16,4 +16,11 @@ void EmployeeManager:: ShowMenu  () {
 	cout << "**********  7:Clear   ********" << endl;
 }
 
+void EmployeeManager::Exit() {
+	cout << "Welcome to use next time!!" << endl;
+	system("pause");
+	exit(0);
+}
+
+
 EmployeeManager::~EmployeeManager() {}
