@@ -1,2 +1,4 @@
 E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\Project_EmployeeManagerSystem\Debug\20201228_EmployeeManagerSystem.exe
 E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\Project_EmployeeManagerSystem\Debug\20201228_EmployeeManagerSystem.pdb
+E:\LearingProject\CCPlusPlus\03_CppCoreProgramming\Project_EmployeeManagerSystem\Debug\20201228_EmployeeManagerSystem.exe
+E:\LearingProject\CCPlusPlus\03_CppCoreProgramming\Project_EmployeeManagerSystem\Debug\20201228_EmployeeManagerSystem.pdb

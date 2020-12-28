@@ -21,9 +21,18 @@
     <ClCompile Include="EmployeeSystem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Clerk.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EmployeeManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Employee.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Clerk.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

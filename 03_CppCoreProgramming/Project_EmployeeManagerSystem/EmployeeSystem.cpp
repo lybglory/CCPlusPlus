@@ -1,9 +1,17 @@
 #include <iostream>
+using namespace std;
 #include "EmployeeManager.h"
+#include "Employee.h"
+#include "Clerk.h"
 
 void main() {
 	EmployeeManager EM;
 	int select = 0;
+	Employee *employee = new Clerk(1,1,"Messi" );
+	employee->ShowInfo();
+
+
+	/*
 	while (true)
 	{
 		EM.ShowMenu();
@@ -32,4 +40,5 @@ void main() {
 			break;
 		}
 	}
+	*/
 }
