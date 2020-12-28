@@ -4,7 +4,7 @@ using namespace std;
 #include "Employee.h"
 #include "Clerk.h"
 #include "Manager.h"
-
+#include "Boss.h"
 void main() {
 	EmployeeManager EM;
 	int select = 0;
@@ -12,6 +12,9 @@ void main() {
 	employee->ShowInfo();
 	employee = new Manager(2, 2, "Peipu");
 	employee->ShowInfo();
+	employee = new Boss(3,3,"ManCity");
+	employee->ShowInfo();
+	
 	/*
 	while (true)
 	{

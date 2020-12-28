@@ -8,7 +8,7 @@ Manager::Manager(int id, int did, string name) {
 //override
 void Manager::ShowInfo() {
 	cout << "ID=" << m_ID << "\tname=" << m_name << "\tdid=" << m_dID << "\t" << this->GetJobTile()
-		<< "Job Description£ºManager" << endl;
+		<< "Job Description£ºAssigning Tasks" << endl;
 
 }
 
