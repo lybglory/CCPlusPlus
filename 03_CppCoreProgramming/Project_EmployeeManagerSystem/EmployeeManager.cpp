@@ -85,4 +85,9 @@ void EmployeeManager::Exit() {
 }
 
 
-EmployeeManager::~EmployeeManager() {}
+EmployeeManager::~EmployeeManager() {
+	if (this->m_empArr!=NULL) {
+		delete []this->m_empArr;
+		this->m_empArr = NULL;
+	}
+}
