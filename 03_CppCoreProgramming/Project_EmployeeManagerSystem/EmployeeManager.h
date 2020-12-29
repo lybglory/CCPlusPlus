@@ -16,6 +16,8 @@ public:
 	Employee **m_empArr;
 	void AddEmployee();
 	void SaveInfo();
+	bool fileIsExist;
+
 	void ShowMenu();
 	void Exit();
 

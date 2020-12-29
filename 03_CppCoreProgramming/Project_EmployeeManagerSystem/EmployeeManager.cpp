@@ -1,6 +1,16 @@
 #include "EmployeeManager.h"
 
 EmployeeManager::EmployeeManager() {
+	ifstream ifs;
+	ifs.open(FileName, ios::in);
+	if (!ifs.is_open()) {
+		cout << "File does not exist!" << endl;
+		this->m_empNum = 0;
+		this->m_empArr = NULL;
+		this->fileIsExist = true;
+		return;
+	}
+
 	this->m_empArr = NULL;
 	this->m_empNum = 0;
 }
