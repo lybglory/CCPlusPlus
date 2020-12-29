@@ -69,6 +69,7 @@ void EmployeeManager::AddEmployee() {
 		this->m_empArr = newSpace;
 		this->m_empNum = newSize;
 		cout << newSize << " info was added Successfully!" << endl;
+		this->SaveInfo();
 	}
 	else {
 		cout << "enter error!" << endl;
@@ -76,6 +77,18 @@ void EmployeeManager::AddEmployee() {
 
 	system("pause");
 	system("cls");
+}
+
+void EmployeeManager::SaveInfo() {
+	ofstream ofs;
+	ofs.open(FileName, ios::out);
+	//write to file
+	for (size_t i = 0; i < this->m_empNum; i++)
+	{
+		ofs << this->m_empArr[i]->m_ID << "\t" << this->m_empArr[i]->m_name << "\t"
+			<< this->m_empArr[i]->m_dID << endl;
+	}
+	ofs.close();
 }
 
 void EmployeeManager::Exit() {
