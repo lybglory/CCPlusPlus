@@ -1,11 +1,12 @@
 #pragma once
 #include <iostream>
 using namespace std;
+#include <string>
+#include <fstream>
 #include "Clerk.h"
 #include "Manager.h"
 #include "Boss.h"
 #include "Employee.h"
-#include <fstream>
 #define FileName "info.txt"
 
 class EmployeeManager {
@@ -17,6 +18,7 @@ public:
 	void AddEmployee();
 	void SaveInfo();
 	bool fileIsExist;
+	int getEmployeeNum();
 
 	void ShowMenu();
 	void Exit();

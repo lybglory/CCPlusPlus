@@ -3,14 +3,16 @@
 EmployeeManager::EmployeeManager() {
 	ifstream ifs;
 	ifs.open(FileName, ios::in);
+	//1:File does not exist!
 	if (!ifs.is_open()) {
 		cout << "File does not exist!" << endl;
 		this->m_empNum = 0;
 		this->m_empArr = NULL;
 		this->fileIsExist = true;
+		ifs.close();
 		return;
 	}
-
+	//2:The file exists but the data is empty
 	char ch;
 	ifs >> ch;
 	//The file exists but the data is empty
@@ -19,11 +21,15 @@ EmployeeManager::EmployeeManager() {
 		this->m_empNum = 0;
 		this->m_empArr = NULL;
 		this->fileIsExist = true;
+		ifs.close();
 		return;
 	}
 
-	this->m_empArr = NULL;
-	this->m_empNum = 0;
+	//3:The file exists and has data
+	int empNum = this->getEmployeeNum();
+	cout << "employee numm=" << empNum << endl;
+	this->m_empNum = empNum;
+
 }
 void EmployeeManager:: ShowMenu  () {
 	cout << "******************************" << endl;
@@ -89,6 +95,7 @@ void EmployeeManager::AddEmployee() {
 		delete[]this->m_empArr;
 		this->m_empArr = newSpace;
 		this->m_empNum = newSize;
+		this->fileIsExist = true; //update fileIsExist
 		cout << newSize << " info was added Successfully!" << endl;
 		this->SaveInfo();
 	}
@@ -102,7 +109,7 @@ void EmployeeManager::AddEmployee() {
 
 void EmployeeManager::SaveInfo() {
 	ofstream ofs;
-	ofs.open(FileName, ios::out);
+	ofs.open(FileName, ios::out);//open file::write
 	//write to file
 	for (size_t i = 0; i < this->m_empNum; i++)
 	{
@@ -110,6 +117,19 @@ void EmployeeManager::SaveInfo() {
 			<< this->m_empArr[i]->m_dID << endl;
 	}
 	ofs.close();
+}
+
+int EmployeeManager::getEmployeeNum() {
+	ifstream ifs;
+	ifs.open(FileName,ios::in);	//open file:read
+	int id;
+	int dId;
+	string name;
+	int num=0;
+	while (ifs >> id && ifs >> name && ifs >> dId) {
+		num++;
+	}
+	return num;
 }
 
 void EmployeeManager::Exit() {
