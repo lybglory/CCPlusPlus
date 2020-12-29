@@ -11,6 +11,17 @@ EmployeeManager::EmployeeManager() {
 		return;
 	}
 
+	char ch;
+	ifs >> ch;
+	//The file exists but the data is empty
+	if (ifs.eof()) {
+		cout << "The file exists but the data is empty!" << endl;
+		this->m_empNum = 0;
+		this->m_empArr = NULL;
+		this->fileIsExist = true;
+		return;
+	}
+
 	this->m_empArr = NULL;
 	this->m_empNum = 0;
 }
