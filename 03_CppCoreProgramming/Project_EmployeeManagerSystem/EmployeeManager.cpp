@@ -1,7 +1,8 @@
 #include "EmployeeManager.h"
 
 EmployeeManager::EmployeeManager() {
-	
+	this->m_empArr = NULL;
+	this->m_empNum = 0;
 }
 void EmployeeManager:: ShowMenu  () {
 	cout << "******************************" << endl;
@@ -15,6 +16,8 @@ void EmployeeManager:: ShowMenu  () {
 	cout << "**********  6:Rank    ********" << endl;
 	cout << "**********  7:Clear   ********" << endl;
 }
+
+
 
 void EmployeeManager::Exit() {
 	cout << "Welcome to use next time!!" << endl;
