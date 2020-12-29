@@ -12,7 +12,7 @@ public:
 	EmployeeManager();
 	int m_empNum;
 	Employee **m_empArr;
-
+	void AddEmployee();
 	
 	void ShowMenu();
 	void Exit();

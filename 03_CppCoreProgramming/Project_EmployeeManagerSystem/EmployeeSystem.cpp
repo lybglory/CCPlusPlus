@@ -1,21 +1,18 @@
 #include <iostream>
 using namespace std;
 #include "EmployeeManager.h"
-#include "Employee.h"
-#include "Clerk.h"
-#include "Manager.h"
-#include "Boss.h"
+
 void main() {
 	EmployeeManager EM;
 	int select = 0;
-	Employee *employee = new Clerk(1,1,"Messi" );
-	employee->ShowInfo();
-	employee = new Manager(2, 2, "Peipu");
-	employee->ShowInfo();
-	employee = new Boss(3,3,"ManCity");
-	employee->ShowInfo();
+	//Employee *employee = new Clerk(1,1,"Messi" );
+	//employee->ShowInfo();
+	//employee = new Manager(2, 2, "Peipu");
+	//employee->ShowInfo();
+	//employee = new Boss(3,3,"ManCity");
+	//employee->ShowInfo();
 	
-	/*
+
 	while (true)
 	{
 		EM.ShowMenu();
@@ -27,6 +24,7 @@ void main() {
 			EM.Exit();
 			break;
 		case 1:
+			EM.AddEmployee();
 			break;
 		case 2:
 			break;
@@ -44,5 +42,5 @@ void main() {
 			break;
 		}
 	}
-	*/
+	
 }
