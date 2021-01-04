@@ -21,7 +21,7 @@ public:
 	bool fileIsExist;
 	int getEmployeeNum();
 	void InitEmployee();
-
+	void ShowEmployee();
 	void Exit();
 
 	//Ðé¹¹º¯Êý

@@ -23,14 +23,15 @@ void main() {
 		case 0:
 			EM.Exit();
 			break;
-		case 1:
+		case 1:	//Add
 			EM.AddEmployee();
 			break;
-		case 2:
+		case 2:	//Show
+			EM.ShowEmployee();
 			break;
-		case 3:
+		case 3:	//3:Delte
 			break;
-		case 4:
+		case 4:	//4:Modify
 			break;
 		case 5:
 			break;

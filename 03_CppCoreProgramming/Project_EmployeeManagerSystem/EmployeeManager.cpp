@@ -8,7 +8,7 @@ EmployeeManager::EmployeeManager() {
 		cout << "File does not exist!" << endl;
 		this->m_empNum = 0;
 		this->m_empArr = NULL;
-		this->fileIsExist = true;
+		this->fileIsExist = false;
 		ifs.close();
 		return;
 	}
@@ -20,24 +20,28 @@ EmployeeManager::EmployeeManager() {
 		cout << "The file exists but the data is empty!" << endl;
 		this->m_empNum = 0;
 		this->m_empArr = NULL;
-		this->fileIsExist = true;
+		this->fileIsExist = false;
 		ifs.close();
 		return;
 	}
 
 	//3:The file exists and has data
 	int empNum = this->getEmployeeNum();
+	if (empNum>0) {
+		this->fileIsExist = true;
+	}
 	cout << "employee numm=" << empNum << endl;
 	this->m_empNum = empNum;
 	this->m_empArr = new Employee *[this->m_empNum];
-	InitEmployee();
+	this->InitEmployee();
+	
 	for (size_t i = 0; i < this->m_empNum; i++)
 	{
 		cout << "name:" << this->m_empArr[i]->m_name;
 		cout << " id:" << this->m_empArr[i]->m_ID;
 		cout << " did" << this->m_empArr[i]->m_dID<<endl;
 	}
-
+	
 }
 void EmployeeManager:: ShowMenu  () {
 	cout << "******************************" << endl;
@@ -137,7 +141,9 @@ int EmployeeManager::getEmployeeNum() {
 	while (ifs >> id && ifs >> name && ifs >> dId) {
 		num++;
 	}
+	ifs.close();
 	return num;
+
 }
 
 void EmployeeManager::InitEmployee() {
@@ -162,6 +168,20 @@ void EmployeeManager::InitEmployee() {
 		this->m_empArr[index] = employee;
 		index++;
 	}
+	ifs.close();
+}
+
+void EmployeeManager::ShowEmployee() {
+	if (this->fileIsExist) {
+		for (size_t i = 0; i < m_empNum; i++)
+		{
+			this->m_empArr[i]->ShowInfo();
+		}		
+	}else{
+		cout << "File does not exist!" << endl;
+	}
+	system("pause");
+	system("cls");
 }
 
 void EmployeeManager::Exit() {
