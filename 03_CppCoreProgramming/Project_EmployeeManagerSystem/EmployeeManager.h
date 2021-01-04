@@ -13,14 +13,15 @@ class EmployeeManager {
 public:
 	//构造函数
 	EmployeeManager();
+	void ShowMenu();
 	int m_empNum;
 	Employee **m_empArr;
 	void AddEmployee();
 	void SaveInfo();
 	bool fileIsExist;
 	int getEmployeeNum();
+	void InitEmployee();
 
-	void ShowMenu();
 	void Exit();
 
 	//虚构函数

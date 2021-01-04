@@ -29,6 +29,14 @@ EmployeeManager::EmployeeManager() {
 	int empNum = this->getEmployeeNum();
 	cout << "employee numm=" << empNum << endl;
 	this->m_empNum = empNum;
+	this->m_empArr = new Employee *[this->m_empNum];
+	InitEmployee();
+	for (size_t i = 0; i < this->m_empNum; i++)
+	{
+		cout << "name:" << this->m_empArr[i]->m_name;
+		cout << " id:" << this->m_empArr[i]->m_ID;
+		cout << " did" << this->m_empArr[i]->m_dID<<endl;
+	}
 
 }
 void EmployeeManager:: ShowMenu  () {
@@ -130,6 +138,30 @@ int EmployeeManager::getEmployeeNum() {
 		num++;
 	}
 	return num;
+}
+
+void EmployeeManager::InitEmployee() {
+	ifstream ifs;
+	ifs.open(FileName, ios::in);	//open file:read
+	int id;
+	int dId;
+	string name;
+	int index = 0;
+	while (ifs>>id&&ifs>>name&&ifs>>dId) {
+		Employee *employee = NULL;
+		if (dId==1) {
+			employee = new Clerk(id, dId, name);
+		}
+		else if(dId==2)
+		{
+			employee = new Manager(id, dId, name);
+		}
+		else {
+			employee = new Boss(id,dId,name);
+		}
+		this->m_empArr[index] = employee;
+		index++;
+	}
 }
 
 void EmployeeManager::Exit() {
