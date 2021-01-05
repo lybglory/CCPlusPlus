@@ -22,6 +22,8 @@ public:
 	int getEmployeeNum();
 	void InitEmployee();
 	void ShowEmployee();
+	void DeleEmployee();
+	int EmployeeIsExist();
 	void Exit();
 
 	//Ðé¹¹º¯Êý

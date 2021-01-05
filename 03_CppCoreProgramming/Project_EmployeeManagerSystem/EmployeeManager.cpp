@@ -184,6 +184,14 @@ void EmployeeManager::ShowEmployee() {
 	system("cls");
 }
 
+void EmployeeManager::DeleEmployee() {
+
+}
+
+int EmployeeManager::EmployeeIsExist() {
+
+}
+
 void EmployeeManager::Exit() {
 	cout << "Welcome to use next time!!" << endl;
 	system("pause");
