@@ -23,7 +23,7 @@ public:
 	void InitEmployee();
 	void ShowEmployee();
 	void DeleEmployee();
-	int EmployeeIsExist();
+	int EmployeeIsExist(int id);
 	void Exit();
 
 	//Ðé¹¹º¯Êý

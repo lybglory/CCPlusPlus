@@ -185,11 +185,41 @@ void EmployeeManager::ShowEmployee() {
 }
 
 void EmployeeManager::DeleEmployee() {
+	if (this->fileIsExist) {
+		int delID = 0;
+		cout << "Please enter the ID you want to delete" << endl;
+		cin >> delID;
+		int index = EmployeeIsExist(delID);
+		if (index!=-1) {	//employee exist;  m_empNum-1, last position
+			for (size_t i = 0; i < this->m_empNum-1; i++)
+			{
+				this->m_empArr[index] = this->m_empArr[index + 1];
+			}
+			this->m_empNum--;
+			cout << "Delete success!" << endl;
+			this->SaveInfo();
 
+		}
+		else {
+			cout << "Employee doesn't exist" << endl;
+		}
+		
+	}
+	else {
+		cout << "File does not exist!" << endl;
+		return;
+	}
 }
 
-int EmployeeManager::EmployeeIsExist() {
-
+int EmployeeManager::EmployeeIsExist(int id) {
+	int index = -1;
+	for (size_t i = 0; i < this->m_empNum; i++)
+	{
+		if (id==this->m_empArr[i]->m_ID) {
+			index = i;
+		}
+	}
+	return index;
 }
 
 void EmployeeManager::Exit() {
