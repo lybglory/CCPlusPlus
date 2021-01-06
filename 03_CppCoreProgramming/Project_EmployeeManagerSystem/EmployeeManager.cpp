@@ -30,18 +30,18 @@ EmployeeManager::EmployeeManager() {
 	if (empNum>0) {
 		this->fileIsExist = true;
 	}
-	cout << "employee numm=" << empNum << endl;
+	//cout << "employee numm=" << empNum << endl;
 	this->m_empNum = empNum;
 	this->m_empArr = new Employee *[this->m_empNum];
 	this->InitEmployee();
-	
+	/*
 	for (size_t i = 0; i < this->m_empNum; i++)
 	{
 		cout << "name:" << this->m_empArr[i]->m_name;
 		cout << " id:" << this->m_empArr[i]->m_ID;
 		cout << " did" << this->m_empArr[i]->m_dID<<endl;
 	}
-	
+	*/
 }
 void EmployeeManager:: ShowMenu  () {
 	cout << "******************************" << endl;
@@ -209,6 +209,8 @@ void EmployeeManager::DeleEmployee() {
 		cout << "File does not exist!" << endl;
 		return;
 	}
+	system("pause");
+	system("cls");
 }
 
 int EmployeeManager::EmployeeIsExist(int id) {

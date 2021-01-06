@@ -30,6 +30,7 @@ void main() {
 			EM.ShowEmployee();
 			break;
 		case 3:	//3:Delte
+			EM.DeleEmployee();
 			break;
 		case 4:	//4:Modify
 			break;
