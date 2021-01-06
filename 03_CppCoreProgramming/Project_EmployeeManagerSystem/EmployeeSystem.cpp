@@ -33,6 +33,7 @@ void main() {
 			EM.DeleEmployee();
 			break;
 		case 4:	//4:Modify
+			EM.ModifyEmployee();
 			break;
 		case 5:
 			break;

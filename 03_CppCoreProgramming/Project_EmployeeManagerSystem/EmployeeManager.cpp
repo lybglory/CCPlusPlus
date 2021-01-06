@@ -207,7 +207,58 @@ void EmployeeManager::DeleEmployee() {
 	}
 	else {
 		cout << "File does not exist!" << endl;
-		return;
+	}
+	system("pause");
+	system("cls");
+}
+
+void EmployeeManager::ModifyEmployee() {
+	if (this->fileIsExist) {
+		cout << "Please enter the ID of the employee you need to modify" << endl;
+		int mID = 0;
+		cin >> mID;
+		int index = this->EmployeeIsExist(mID);
+		if (index!=-1) {
+			//first,delete data
+			delete this->m_empArr[index];
+			int newID;
+			string newName;
+			int newDID;
+			cout << "Found! ID=" << mID << ",please enter New ID:"<<endl;
+			cin >> newID;
+			cout << "please enter new name:" << endl;
+			cin >> newName;
+			cout << "Enter New department Id:\t1:Clerk	\t2:Manager\t3:Boss" << endl;
+			cin >> newDID;
+			if (newDID > 3 && newDID < 1) {
+				cout << "Enter error!default department Id =1" << endl;
+				newDID = 1;
+			}
+			Employee *employ = NULL;
+			switch (newDID)
+			{
+			case 1:
+				employ = new Clerk(newID, newDID, newName);
+				break;
+			case 2:
+				employ = new Manager(newID, newDID, newName);
+				break;
+			case 3:
+				employ = new Boss(newID, newDID, newName);
+				break;
+			default:
+				break;
+			}
+			this->m_empArr[index] = employ;
+			cout << this->m_empArr[index]->m_ID<<" modify successed!" << endl;
+			this->SaveInfo();
+		}
+		else {
+			cout << "no such person!" << endl;
+		}
+	}
+	else {
+		cout << "File does not exist!" << endl;
 	}
 	system("pause");
 	system("cls");
