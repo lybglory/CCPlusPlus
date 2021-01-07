@@ -280,10 +280,6 @@ void EmployeeManager::FindEmployee() {
 		cout << "Search Mode	1:by ID	2:by name" << endl;
 		int fSelect ;
 		cin >> fSelect;
-		if (fSelect!=1 &&fSelect!=2) {
-			cout << "enter error,default by ID!" << endl;
-			fSelect = 1;
-		}
 		if (fSelect == 1) {
 			//find:by ID
 			cout << "Please enter the ID you need to find:" << endl;
@@ -296,7 +292,7 @@ void EmployeeManager::FindEmployee() {
 			else {
 				cout << "no such person!" << endl;
 			}
-		}else{
+		}else if(fSelect==2){
 			//find:by name
 			cout << "Please enter the name you need to find:" << endl;
 			string fname;
@@ -312,6 +308,8 @@ void EmployeeManager::FindEmployee() {
 			if (!isFind) {
 				cout << "no such person!" << endl;
 			}
+		}else {
+			cout << "Enter error!Search Mode    1:by ID    2:by name" << endl;
 		}
 
 	}else{
