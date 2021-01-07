@@ -275,6 +275,52 @@ int EmployeeManager::EmployeeIsExist(int id) {
 	return index;
 }
 
+void EmployeeManager::FindEmployee() {
+	if (this->fileIsExist) {
+		cout << "Search Mode	1:by ID	2:by name" << endl;
+		int fSelect ;
+		cin >> fSelect;
+		if (fSelect!=1 &&fSelect!=2) {
+			cout << "enter error,default by ID!" << endl;
+			fSelect = 1;
+		}
+		if (fSelect == 1) {
+			//find:by ID
+			cout << "Please enter the ID you need to find:" << endl;
+			int fID;
+			cin >> fID;
+			int rect = this->EmployeeIsExist(fID);
+			if (rect != -1) {
+				this->m_empArr[rect]->ShowInfo();
+			}
+			else {
+				cout << "no such person!" << endl;
+			}
+		}else{
+			//find:by name
+			cout << "Please enter the name you need to find:" << endl;
+			string fname;
+			cin >> fname;
+			bool isFind = false;
+			for (size_t i = 0; i < this->m_empNum; i++)
+			{
+				if (fname == this->m_empArr[i]->m_name) {
+					this->m_empArr[i]->ShowInfo();
+				}
+				isFind = true;
+			}
+			if (!isFind) {
+				cout << "no such person!" << endl;
+			}
+		}
+
+	}else{
+		cout << "File does not exist!" << endl;
+	}
+	system("pause");
+	system("cls");
+}
+
 void EmployeeManager::Exit() {
 	cout << "Welcome to use next time!!" << endl;
 	system("pause");

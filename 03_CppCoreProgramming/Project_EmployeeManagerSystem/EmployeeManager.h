@@ -25,6 +25,8 @@ public:
 	void DeleEmployee();
 	int EmployeeIsExist(int id);
 	void ModifyEmployee();
+	void FindEmployee();
+
 	void Exit();
 
 	//Ðé¹¹º¯Êý

@@ -35,7 +35,8 @@ void main() {
 		case 4:	//4:Modify
 			EM.ModifyEmployee();
 			break;
-		case 5:
+		case 5:	//5:Find
+			EM.FindEmployee();
 			break;
 		case 6:
 			break;
