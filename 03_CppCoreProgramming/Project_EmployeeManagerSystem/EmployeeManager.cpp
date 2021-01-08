@@ -359,6 +359,36 @@ void EmployeeManager::SortEmployee() {
 	}
 }
 
+void EmployeeManager::ClearEmployee() {
+	if (this->fileIsExist) {
+		cout << "1:Are you sure delete?	" << "  2:Cancel"<<endl;
+		int select;
+		cin >> select;
+		if (select==1) {
+			ofstream ofs(FileName,ios::trunc);
+			ofs.close();
+
+			for (size_t i = 0; i < this->m_empNum; i++)
+			{
+				delete this->m_empArr[i];
+				this->m_empArr[i] = NULL;
+			}
+			delete []this->m_empArr;
+			this->m_empArr = NULL;
+			this->m_empNum = 0;
+			this->fileIsExist = false;
+			cout << "delete successed!" << endl;
+		}
+	}
+	else
+	{
+		cout << "File does not exist!" << endl;
+
+	}
+	system("pause");
+	system("cls");
+}
+
 void EmployeeManager::Exit() {
 	cout << "Welcome to use next time!!" << endl;
 	system("pause");

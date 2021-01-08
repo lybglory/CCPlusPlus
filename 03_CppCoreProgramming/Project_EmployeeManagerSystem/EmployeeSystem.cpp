@@ -41,7 +41,8 @@ void main() {
 		case 6:	//6:Sort
 			EM.SortEmployee();
 			break;
-		case 7:
+		case 7:	//7:clear
+			EM.ClearEmployee();
 			break;
 		default:
 			break;
