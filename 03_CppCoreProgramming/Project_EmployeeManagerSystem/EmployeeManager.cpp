@@ -319,6 +319,76 @@ void EmployeeManager::FindEmployee() {
 	system("cls");
 }
 
+void EmployeeManager::SortEmployee() {
+	if (this->fileIsExist) {
+		cout << "select sort type	1:ascending sort  2:descending order" << endl;
+		int select = 0;
+		cin >> select;
+		for (size_t i = 0; i < this->m_empNum; i++)
+		{
+			int minOrMax = i;
+			for (size_t j = i + 1; j < this->m_empNum; j++)
+			{
+				if (select == 1) {
+
+					if (this->m_empArr[minOrMax]->m_ID > this->m_empArr[j]->m_ID) {
+						minOrMax = j;
+					}
+				}
+				else if (select==2) {
+					if (this->m_empArr[minOrMax]->m_ID < this->m_empArr[j]->m_ID) {
+						minOrMax = j;
+					}
+				}
+			}
+			if (minOrMax != i) {
+				Employee *temp = this->m_empArr[i];
+				this->m_empArr[i] = this->m_empArr[minOrMax];
+				this->m_empArr[minOrMax] = temp;
+			}
+		}
+		cout << "Sort successed! The sorted result:" << endl;
+		this->SaveInfo();
+		this->ShowEmployee();
+	}
+	else
+	{
+		cout << "File does not exist!" << endl;
+		system("pause");
+		system("cls");
+	}
+}
+
+void EmployeeManager::ClearEmployee() {
+	if (this->fileIsExist) {
+		cout << "1:Are you sure delete?	" << "  2:Cancel"<<endl;
+		int select;
+		cin >> select;
+		if (select==1) {
+			ofstream ofs(FileName,ios::trunc);
+			ofs.close();
+
+			for (size_t i = 0; i < this->m_empNum; i++)
+			{
+				delete this->m_empArr[i];
+				this->m_empArr[i] = NULL;
+			}
+			delete []this->m_empArr;
+			this->m_empArr = NULL;
+			this->m_empNum = 0;
+			this->fileIsExist = false;
+			cout << "delete successed!" << endl;
+		}
+	}
+	else
+	{
+		cout << "File does not exist!" << endl;
+
+	}
+	system("pause");
+	system("cls");
+}
+
 void EmployeeManager::Exit() {
 	cout << "Welcome to use next time!!" << endl;
 	system("pause");

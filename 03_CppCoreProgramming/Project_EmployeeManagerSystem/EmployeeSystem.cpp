@@ -38,9 +38,11 @@ void main() {
 		case 5:	//5:Find
 			EM.FindEmployee();
 			break;
-		case 6:
+		case 6:	//6:Sort
+			EM.SortEmployee();
 			break;
-		case 7:
+		case 7:	//7:clear
+			EM.ClearEmployee();
 			break;
 		default:
 			break;

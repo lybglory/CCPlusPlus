@@ -26,6 +26,8 @@ public:
 	int EmployeeIsExist(int id);
 	void ModifyEmployee();
 	void FindEmployee();
+	void SortEmployee();
+	void ClearEmployee();
 
 	void Exit();
 
