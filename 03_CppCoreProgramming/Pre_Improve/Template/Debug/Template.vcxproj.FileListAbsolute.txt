@@ -1,0 +1,2 @@
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\Pre_Improve\Template\Debug\Template.exe
+E:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\Pre_Improve\Template\Debug\Template.pdb
