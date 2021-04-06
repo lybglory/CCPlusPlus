@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Template", "Template.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Template_Sort", "..\Template_Sort\Template_Sort.vcxproj", "{E4979A45-5117-434A-B4CA-091CA13D6825}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemlateFunc", "..\TemlateFunc\TemlateFunc.vcxproj", "{359E4551-26C9-4E7F-BDAA-D40626CD2711}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{E4979A45-5117-434A-B4CA-091CA13D6825}.Release|x64.Build.0 = Release|x64
 		{E4979A45-5117-434A-B4CA-091CA13D6825}.Release|x86.ActiveCfg = Release|Win32
 		{E4979A45-5117-434A-B4CA-091CA13D6825}.Release|x86.Build.0 = Release|Win32
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Debug|x64.ActiveCfg = Debug|x64
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Debug|x64.Build.0 = Debug|x64
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Debug|x86.ActiveCfg = Debug|Win32
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Debug|x86.Build.0 = Debug|Win32
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Release|x64.ActiveCfg = Release|x64
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Release|x64.Build.0 = Release|x64
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Release|x86.ActiveCfg = Release|Win32
+		{359E4551-26C9-4E7F-BDAA-D40626CD2711}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
