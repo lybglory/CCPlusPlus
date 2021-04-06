@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20201212_Override", "202012
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20201217_Calculator", "20201217_Calculator\20201217_Calculator.vcxproj", "{6DB0BEF7-D0E6-432D-856D-362BDFFEE08B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20210406_ArrayClass", "20210406_ArrayClass\20210406_ArrayClass.vcxproj", "{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{6DB0BEF7-D0E6-432D-856D-362BDFFEE08B}.Release|x64.Build.0 = Release|x64
 		{6DB0BEF7-D0E6-432D-856D-362BDFFEE08B}.Release|x86.ActiveCfg = Release|Win32
 		{6DB0BEF7-D0E6-432D-856D-362BDFFEE08B}.Release|x86.Build.0 = Release|Win32
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Debug|x64.ActiveCfg = Debug|x64
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Debug|x64.Build.0 = Debug|x64
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Debug|x86.ActiveCfg = Debug|Win32
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Debug|x86.Build.0 = Debug|Win32
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x64.ActiveCfg = Release|x64
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x64.Build.0 = Release|x64
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x86.ActiveCfg = Release|Win32
+		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
