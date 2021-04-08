@@ -38,6 +38,11 @@ void MyArray::TailPush(int data)
 	this->m_arrSize++;
 }
 
+void MyArray::FromPosPush(int pos,int data)
+{
+	this->addr[pos] = data;
+}
+
 int MyArray::GetFromPosData(int pos)
 {
 	return this->addr[pos];
