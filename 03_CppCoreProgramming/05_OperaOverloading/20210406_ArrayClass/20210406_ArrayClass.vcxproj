@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArrayClassEncapsulation.cpp" />
+    <ClCompile Include="ArrayMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayClassEncapsulation.h" />

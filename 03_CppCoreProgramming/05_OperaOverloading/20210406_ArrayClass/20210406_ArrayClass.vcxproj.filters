@@ -18,6 +18,9 @@
     <ClCompile Include="ArrayClassEncapsulation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayClassEncapsulation.h">
