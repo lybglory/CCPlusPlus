@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20201217_Calculator", "2020
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20210406_ArrayClass", "20210406_ArrayClass\20210406_ArrayClass.vcxproj", "{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20210409_左移运算符重载", "20210409_左移运算符重载\20210409_左移运算符重载.vcxproj", "{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x64.Build.0 = Release|x64
 		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x86.ActiveCfg = Release|Win32
 		{6625D7C2-6799-421D-A3A2-BA069FCA0F5E}.Release|x86.Build.0 = Release|Win32
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Debug|x64.ActiveCfg = Debug|x64
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Debug|x64.Build.0 = Debug|x64
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Debug|x86.ActiveCfg = Debug|Win32
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Debug|x86.Build.0 = Debug|Win32
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Release|x64.ActiveCfg = Release|x64
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Release|x64.Build.0 = Release|x64
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Release|x86.ActiveCfg = Release|Win32
+		{45F02EBE-CE32-446C-8EC5-D8965DE4EBF3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
