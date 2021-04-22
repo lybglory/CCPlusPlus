@@ -3,7 +3,7 @@
 #include "OverrideLeft.h"
 using namespace std;
 
-ostream& operator<<(ostream &cout,Person &p) {
+ostream& operator<<(ostream &cout,Person p) {
 	cout <<"age="<< p.m_age <<";id="<<p.m_ID<< endl;
 	return cout;
 }
