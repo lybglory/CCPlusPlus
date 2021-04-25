@@ -30,6 +30,10 @@ public:
 		this->m_person = p;
 	}
 
+	Person *operator->() {
+		return this->m_person;
+	}
+
 
 	~Smartpt() {
 		cout << "~Smartpt()" << endl;
@@ -48,6 +52,7 @@ void Test() {
 	p->ShowAge();
 
 	Smartpt smpt(new Person(30));
+	smpt->ShowAge();
 	
 }
 
