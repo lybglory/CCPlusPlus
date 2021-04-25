@@ -34,6 +34,9 @@ public:
 		return this->m_person;
 	}
 
+	Person &operator*() {
+		return *this->m_person;
+	}
 
 	~Smartpt() {
 		cout << "~Smartpt()" << endl;
@@ -53,6 +56,7 @@ void Test() {
 
 	Smartpt smpt(new Person(30));
 	smpt->ShowAge();
+	(*smpt).ShowAge();
 	
 }
 
