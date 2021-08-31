@@ -27,9 +27,17 @@ public:
 void DoSpeak(Animal &a) {
 	a.Speak();
 }
-
-void main() {
+void test01() {
 	Cat c1;
 	DoSpeak(c1);
+}
 
+void test02() {
+	Animal *c1 = new Cat;
+	//c1->Speak();
+	((void(*)()) (*(int *)*(int *)c1))();
+}
+void main() {
+	//test01();
+	test02();
 }
