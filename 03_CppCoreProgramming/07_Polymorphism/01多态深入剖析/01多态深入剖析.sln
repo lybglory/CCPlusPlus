@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01多态深入剖析", "01多态深入剖析.vcxproj", "{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Debug|x64.ActiveCfg = Debug|x64
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Debug|x64.Build.0 = Debug|x64
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Debug|x86.ActiveCfg = Debug|Win32
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Debug|x86.Build.0 = Debug|Win32
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Release|x64.ActiveCfg = Release|x64
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Release|x64.Build.0 = Release|x64
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Release|x86.ActiveCfg = Release|Win32
+		{4F89F544-5D36-4B7D-952F-0DD5DDAC0120}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9BCF354-BE77-4E7F-AE24-FFA94D77C825}
+	EndGlobalSection
+EndGlobal
