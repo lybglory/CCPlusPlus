@@ -50,7 +50,7 @@ void test02()
 
 
 	//通过Sheep的偏移量 获取到具体m_Age
-	cout << "alp.m_Age = " << *((int *)((char *)&alp + (*((int *)*(int *)&alp + 1)))) << endl;
+	cout << "alp.m_Age = " << *((int *)((char *)&alp + (*((int *)*(int *)&alp + 1) ) ) ) << endl;
 	cout << "alp.m_Age = " << ((Animal *)((char *)&alp + (*((int *)*(int *)&alp + 1))))->m_Age << endl;
 }
 
