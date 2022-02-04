@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4f89f544-5d36-4b7d-952f-0dd5ddac0120": {
+      "ProjectGuid": "4f89f544-5d36-4b7d-952f-0dd5ddac0120",
+      "DisplayName": "01多态深入剖析",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "bfc7a179-46eb-4985-80ab-b943ab4fe663": {
+      "ProjectGuid": "bfc7a179-46eb-4985-80ab-b943ab4fe663",
+      "DisplayName": "02虚析构和纯虚析构",
+      "ColorIndex": 1
+    },
+    "fa1bb98a-fc99-45b4-a090-6ddacef1fd04": {
+      "ProjectGuid": "fa1bb98a-fc99-45b4-a090-6ddacef1fd04",
+      "DisplayName": "03_类模板",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

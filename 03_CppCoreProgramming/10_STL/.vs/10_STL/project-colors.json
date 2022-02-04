@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6dfe791b-1aef-4c2e-a94f-a5279c482b81": {
+      "ProjectGuid": "6dfe791b-1aef-4c2e-a94f-a5279c482b81",
+      "DisplayName": "10_STL",
+      "ColorIndex": 0
+    },
+    "1059765b-f7cb-4cb5-a7b8-776f254e1026": {
+      "ProjectGuid": "1059765b-f7cb-4cb5-a7b8-776f254e1026",
+      "DisplayName": "02_String容器",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

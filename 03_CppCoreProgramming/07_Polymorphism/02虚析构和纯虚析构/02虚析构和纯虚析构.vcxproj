@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4f89f544-5d36-4b7d-952f-0dd5ddac0120}</ProjectGuid>
-    <RootNamespace>My01多态深入剖析</RootNamespace>
+    <ProjectGuid>{bfc7a179-46eb-4985-80ab-b943ab4fe663}</ProjectGuid>
+    <RootNamespace>My02虚析构和纯虚析构</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01多态深入剖析.cpp" />
+    <ClCompile Include="20211206_虚析构和纯虚析构.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

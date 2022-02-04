@@ -4,6 +4,7 @@ using namespace std;
 
 class Animal {
 public:
+	virtual void Eat() = 0;
 	 virtual void Speak() {
 		cout << "Anmail try to speak" << endl;
 	}
@@ -11,6 +12,7 @@ public:
 
 class Cat :public Animal{
 public:
+	virtual void Eat() {};
 	void Speak() {
 		cout << "Cat try to speak" << endl;
 	}
@@ -37,7 +39,7 @@ void test02() {
 	//c1->Speak();
 	((void(*)()) (*(int *)*(int *)c1))();
 }
-void main() {
+void main01() {
 	//test01();
 	test02();
 }

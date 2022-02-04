@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e967598c-ea78-4693-8067-6b4f5499072d": {
+      "ProjectGuid": "e967598c-ea78-4693-8067-6b4f5499072d",
+      "DisplayName": "09_IO异常",
+      "ColorIndex": 0
+    },
+    "855fd48f-dec5-4a97-abe6-6f35441bd284": {
+      "ProjectGuid": "855fd48f-dec5-4a97-abe6-6f35441bd284",
+      "DisplayName": "02_动态类型转换",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

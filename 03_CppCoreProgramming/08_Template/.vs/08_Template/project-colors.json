@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "63e734fd-0b03-48c7-8d99-b6feee2fb942": {
+      "ProjectGuid": "63e734fd-0b03-48c7-8d99-b6feee2fb942",
+      "DisplayName": "08_Template",
+      "ColorIndex": 0
+    },
+    "9f2cc181-3d32-4a56-bcaa-4302e07cbfe0": {
+      "ProjectGuid": "9f2cc181-3d32-4a56-bcaa-4302e07cbfe0",
+      "DisplayName": "02_类模板实现通用数组",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "a7a2a36c-3c53-4ccb-b52e-425623e2dda5": {
+      "ProjectGuid": "a7a2a36c-3c53-4ccb-b52e-425623e2dda5",
+      "DisplayName": "杂项文件",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

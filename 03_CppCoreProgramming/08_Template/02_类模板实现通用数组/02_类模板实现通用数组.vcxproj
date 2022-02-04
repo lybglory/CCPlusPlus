@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4f89f544-5d36-4b7d-952f-0dd5ddac0120}</ProjectGuid>
-    <RootNamespace>My01多态深入剖析</RootNamespace>
+    <ProjectGuid>{9f2cc181-3d32-4a56-bcaa-4302e07cbfe0}</ProjectGuid>
+    <RootNamespace>My02类模板实现通用数组</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="01多态深入剖析.cpp" />
+    <ClCompile Include="20211211_数组类的封装.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyArray.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
