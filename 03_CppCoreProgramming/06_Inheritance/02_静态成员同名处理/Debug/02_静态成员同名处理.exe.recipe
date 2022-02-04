@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\06_Inheritance\01对象模型\Debug\01对象模型.exe</FullPath>
+      <FullPath>D:\CCPlusProject\CCPlusPlus\03_CppCoreProgramming\06_Inheritance\01对象模型\Debug\02_静态成员同名处理.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
